@@ -20,10 +20,6 @@ const CoachSection: React.FC = () => {
         'Hormonal Health Specialisation',
       ],
     },
-    {
-      icon: Users,
-      label: 'Clients Transformed',
-    },
   ];
 
   return (
