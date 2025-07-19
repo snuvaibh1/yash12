@@ -80,10 +80,22 @@ const CoachSection: React.FC = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              With over years of experience transforming bodies and minds, 
-              I've developed a proven system that cuts through the noise and 
-              delivers real, lasting results. No gimmicks, no shortcuts—just 
-              elite-level coaching for serious individuals.
+Coach Yash is a NASM-CPT & CNC certified expert, specializing in men’s lifestyle, hormonal health, and body recomposition.
+He helps busy professionals build elite physiques without sacrificing work-life balance or energy.
+With diplomas in body transformation and hormonal mastery, Yash turns average routines into high-performance lifestyles.
+
+✅ Credentials & Specialisations:
+NASM Certified Personal Trainer (CPT)
+
+NASM Certified Nutrition Coach (CNC)
+
+Diploma in Managing a Busy Work Life
+
+Diploma in Body Recomposition
+
+Specialisation in Men’s Lifestyle Coaching
+
+Specialisation in Men’s Hormonal Health Management
             </motion.p>
 
             {/* Achievements Grid */}
