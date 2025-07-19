@@ -195,7 +195,7 @@ const GlobalResultsMap: React.FC = () => {
             <span className="text-primary">Transformation Network</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Our elite coaching system delivers results across India. 
+            Operating in 14+ countries.
             See where transformations are happening right now.
           </p>
         </motion.div>
