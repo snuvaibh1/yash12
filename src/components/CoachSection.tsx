@@ -53,7 +53,7 @@ const CoachSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 1 }}
             >
 
-              <div className="text-white/60 text-xs md:text-sm">CLC Funder</div>
+              <div className="text-white/60 text-xs md:text-sm">CLC Founder</div>
             </motion.div>
           </motion.div>
 
