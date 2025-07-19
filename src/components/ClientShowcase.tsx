@@ -85,7 +85,7 @@ const CardStackShowcase: React.FC = () => {
             >
               {/* Browser Bar */}
               <div className="bg-[#1f2937] px-4 py-2 border-b border-white/10">
-                <span className="text-white/70 text-sm font-semibold">{t.name}</span>
+                <span className="text-white/70 text-xl font-semibold">{t.name}</span>
               </div>
 
               {/* Image */}
