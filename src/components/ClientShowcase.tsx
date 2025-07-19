@@ -20,7 +20,7 @@ const testimonials = [
   },
 ];
 
-const CardStackShowcase = () => {
+const CardStackShowcase: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,13 +34,13 @@ const CardStackShowcase = () => {
       const first = cardOrder[0];
 
       gsap.to(first, {
-        y: 600,
+        y: 700,
         opacity: 0,
         duration: 1.2,
         ease: 'power2.inOut',
         onComplete: () => {
           container.appendChild(first);
-          gsap.set(first, { y: -600, opacity: 0 });
+          gsap.set(first, { y: -700, opacity: 0 });
           gsap.to(first, { y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' });
 
           cardOrder.push(cardOrder.shift()!);
@@ -73,7 +73,10 @@ const CardStackShowcase = () => {
         </div>
 
         {/* Card Stack */}
-        <div className="relative w-[320px] h-[420px]" ref={containerRef}>
+        <div
+          className="relative w-[400px] h-[520px] md:w-[400px] md:h-[520px]"
+          ref={containerRef}
+        >
           {testimonials.map((t, i) => (
             <div
               key={i}
