@@ -15,7 +15,7 @@ const testimonials = [
     image: 'https://i.imgur.com/gye7S1r.png',
   },
   {
-    name: 'Simran G.',
+    name: 'Romell',
     image: 'https://i.imgur.com/miPEVL9.jpeg',
   },
 ];
