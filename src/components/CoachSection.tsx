@@ -52,7 +52,7 @@ const CoachSection: React.FC = () => {
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 1 }}
             >
-              <div className="text-2xl md:text-3xl font-black text-primary mb-2">98%</div>
+
               <div className="text-white/60 text-xs md:text-sm">Success Rate</div>
             </motion.div>
           </motion.div>
