@@ -3,7 +3,7 @@ import gsap from 'gsap';
 
 const testimonials = [
   {
-    name: 'Abhishek T.',
+    name: 'Akhil Jamwal',
     image: 'https://i.imgur.com/3YhHECe.png',
   },
   {
