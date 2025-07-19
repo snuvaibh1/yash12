@@ -355,8 +355,9 @@ const GlobalResultsMap: React.FC = () => {
             viewport={{ once: true }}
           >
             {[
-              { icon: Users, label: 'World-wide Clients', value: '803+', color: 'text-blue-400'
+              { icon: Users, label: 'World-wide Clients', value: '803+', color: 'text-blue-400' },
               { icon: Globe, label: 'Countries', value: '14+', color: 'text-green-400' },
+              { icon: Trophy, label: 'Success Rate', value: '98%', color: 'text-yellow-400' },
               { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-primary' }
             ].map((stat, index) => (
               <motion.div
