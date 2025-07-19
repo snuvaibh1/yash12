@@ -348,16 +348,14 @@ const GlobalResultsMap: React.FC = () => {
 
           {/* World Stats */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
             {[
-              { icon: Users, label: 'World-wide Clients', value: '803+', color: 'text-blue-400' },
               { icon: Globe, label: 'Cities', value: '25+', color: 'text-green-400' },
-              { icon: Trophy, label: 'Success Rate', value: '98%', color: 'text-yellow-400' },
               { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-primary' }
             ].map((stat, index) => (
               <motion.div
