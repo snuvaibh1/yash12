@@ -8,12 +8,7 @@ const CoachSection: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const achievements = [
-    { icon: Award, label: 'Certified Trainer', description: "NASM Certified Personal Trainer (CPT)",
-  "NASM Certified Nutrition Coach (CNC)",
-  "Diploma in Managing a Busy Work Life",
-  "Diploma in Body Recomposition",
-  "Specialisation in Men’s Lifestyle Coaching",
-  "Specialisation in Men’s Hormonal Health Management" },
+    { icon: Award, label: 'Certified Trainer' },
     { icon: Users, label: 'Clients Transformed' }
   ];
 
