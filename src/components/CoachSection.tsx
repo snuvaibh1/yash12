@@ -8,8 +8,22 @@ const CoachSection: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const achievements = [
-    { icon: Award, label: 'Certified Trainer' },
-    { icon: Users, label: 'Clients Transformed' }
+    {
+      icon: Award,
+      label: 'Certified Trainer',
+      subItems: [
+        'NASM-CPT (Certified Personal Trainer)',
+        'NASM-CNC (Certified Nutrition Coach)',
+        'Diploma in Body Recomposition',
+        'Diploma in Managing Busy Work Life',
+        'Men’s Lifestyle Coaching',
+        'Hormonal Health Specialisation',
+      ],
+    },
+    {
+      icon: Users,
+      label: 'Clients Transformed',
+    },
   ];
 
   return (
@@ -28,15 +42,12 @@ const CoachSection: React.FC = () => {
             transition={{ duration: 1, delay: 0.2 }}
           >
             <div className="relative overflow-hidden rounded-3xl">
-              {/* Actual Coach Image (Improved Quality) */}
               <img
                 src="https://i.imgur.com/GXjL89U.jpeg"
                 alt="Coach Yash"
                 className="w-full h-full object-cover rounded-3xl aspect-[4/5]"
                 onLoad={() => setImageLoaded(true)}
               />
-
-              {/* Gradient Overlay */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent rounded-3xl"
                 initial={{ opacity: 0 }}
@@ -45,14 +56,12 @@ const CoachSection: React.FC = () => {
               />
             </div>
 
-            {/* Floating Stats */}
             <motion.div
               className="absolute -right-4 md:-right-8 top-1/2 transform -translate-y-1/2 bg-charcoal/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-primary/20"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 1 }}
             >
-
               <div className="text-white/60 text-xs md:text-sm">CLC Founder</div>
             </motion.div>
           </motion.div>
@@ -80,22 +89,7 @@ const CoachSection: React.FC = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-Coach Yash is a NASM-CPT & CNC certified expert, specializing in men’s lifestyle, hormonal health, and body recomposition.
-He helps busy professionals build elite physiques without sacrificing work-life balance or energy.
-With diplomas in body transformation and hormonal mastery, Yash turns average routines into high-performance lifestyles.
-
-✅ Credentials & Specialisations:
-NASM Certified Personal Trainer (CPT)
-
-NASM Certified Nutrition Coach (CNC)
-
-Diploma in Managing a Busy Work Life
-
-Diploma in Body Recomposition
-
-Specialisation in Men’s Lifestyle Coaching
-
-Specialisation in Men’s Hormonal Health Management
+              Coach Yash is a NASM-CPT & CNC certified expert, specializing in men’s lifestyle, hormonal health, and body recomposition. He helps busy professionals build elite physiques without sacrificing work-life balance or energy. With diplomas in body transformation and hormonal mastery, Yash turns average routines into high-performance lifestyles.
             </motion.p>
 
             {/* Achievements Grid */}
@@ -110,12 +104,17 @@ Specialisation in Men’s Hormonal Health Management
                   whileHover={{ scale: 1.05, borderColor: 'rgba(255, 0, 64, 0.3)' }}
                 >
                   <achievement.icon className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
-                  <div className="text-xl md:text-2xl font-bold text-white mb-1">
-                    {achievement.value}
-                  </div>
-                  <div className="text-xs md:text-sm text-white/60">
+                  <div className="text-xs md:text-sm text-white/60 font-medium mb-2">
                     {achievement.label}
                   </div>
+                  {/* Bullet points only for Certified Trainer */}
+                  {achievement.subItems && (
+                    <ul className="text-left list-disc list-inside text-white/50 text-[10px] md:text-xs space-y-1 mt-2">
+                      {achievement.subItems.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                 </motion.div>
               ))}
             </div>
