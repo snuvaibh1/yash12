@@ -195,7 +195,8 @@ const GlobalResultsMap: React.FC = () => {
             <span className="text-primary">Transformation Network</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Operating in 14+ countries.
+            Our elite coaching system delivers results across India. 
+            See where transformations are happening right now.
           </p>
         </motion.div>
 
@@ -353,10 +354,8 @@ const GlobalResultsMap: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            {[
-              { icon: Users, label: 'World-wide Clients', value: '803+', color: 'text-blue-400' },
-              { icon: Globe, label: 'Cities', value: '25+', color: 'text-green-400' },
-              { icon: Trophy, label: 'Success Rate', value: '98%', color: 'text-yellow-400' },
+            {
+              { icon: Globe, label: 'Countries', value: '14+', color: 'text-green-400' },
               { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-primary' }
             ].map((stat, index) => (
               <motion.div
