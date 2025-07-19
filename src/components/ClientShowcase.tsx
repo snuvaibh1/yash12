@@ -7,7 +7,7 @@ const testimonials = [
     image: 'https://i.imgur.com/3YhHECe.png',
   },
   {
-    name: 'Nikhil V.',
+    name: 'Jeetu Naik',
     image: 'https://i.imgur.com/g7n7IJi.jpeg',
   },
   {
