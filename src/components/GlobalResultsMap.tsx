@@ -196,7 +196,6 @@ const GlobalResultsMap: React.FC = () => {
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Operating in 14+ countries.
-            See where transformations are happening right now.
           </p>
         </motion.div>
 
