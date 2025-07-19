@@ -1,138 +1,70 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { motion } from 'framer-motion';
-import { Globe, Target } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { MapPin, Users, Trophy, Target, Globe } from 'lucide-react';
 
-const testimonials = [
-  {
-    name: 'Akhil Jamwal',
-    image: 'https://i.imgur.com/3YhHECe.png',
-  },
-  {
-    name: 'Jeetu Naik',
-    image: 'https://i.imgur.com/g7n7IJi.jpeg',
-  },
-  {
-    name: 'Joel',
-    image: 'https://i.imgur.com/gye7S1r.png',
-  },
-  {
-    name: 'Akarsh',
-    image: 'https://i.imgur.com/miPEVL9.jpeg',
-  },
-];
+const GlobalResultsMap: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start']
+  });
 
-const StatsAndTransformations = () => {
-  const marqueeRef = useRef<HTMLDivElement>(null);
+  const rotateX = useTransform(scrollYProgress, [0, 1], [0, 360]);
+  const rotateY = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.2, 0.8]);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const marquee = marqueeRef.current;
-      if (!marquee) return;
+  const [activeLocation, setActiveLocation] = useState<number | null>(null);
 
-      gsap.to(marquee, {
-        xPercent: -50,
-        ease: 'none',
-        duration: 20,
-        repeat: -1,
-      });
-    });
+  const transformationLocations = [
+    { id: 1, city: 'Mumbai', state: 'Maharashtra', clients: 127, avgTransformation: '32 lbs', coordinates: { top: '65%', left: '20%' }, testimonial: 'Mumbai clients achieving incredible results with our elite system.' },
+    { id: 2, city: 'Delhi', state: 'Delhi', clients: 89, avgTransformation: '28 lbs', coordinates: { top: '35%', left: '25%' }, testimonial: 'Delhi transformations setting new standards across North India.' },
+    { id: 3, city: 'Bangalore', state: 'Karnataka', clients: 156, avgTransformation: '35 lbs', coordinates: { top: '75%', left: '25%' }, testimonial: 'Bangalore tech professionals leading the transformation revolution.' },
+    { id: 4, city: 'Chennai', state: 'Tamil Nadu', clients: 94, avgTransformation: '30 lbs', coordinates: { top: '80%', left: '30%' }, testimonial: 'Chennai dedication meets elite coaching excellence.' },
+    { id: 5, city: 'Hyderabad', state: 'Telangana', clients: 73, avgTransformation: '26 lbs', coordinates: { top: '70%', left: '28%' }, testimonial: 'Hyderabad professionals achieving premium transformations.' },
+    { id: 6, city: 'Pune', state: 'Maharashtra', clients: 112, avgTransformation: '29 lbs', coordinates: { top: '68%', left: '22%' }, testimonial: 'Pune fitness enthusiasts setting new transformation records.' },
+    { id: 7, city: 'Kolkata', state: 'West Bengal', clients: 67, avgTransformation: '27 lbs', coordinates: { top: '55%', left: '40%' }, testimonial: 'Kolkata culture meets modern fitness transformation.' },
+    { id: 8, city: 'Ahmedabad', state: 'Gujarat', clients: 85, avgTransformation: '31 lbs', coordinates: { top: '55%', left: '18%' }, testimonial: 'Gujarat entrepreneurial spirit driving fitness success.' }
+  ];
 
-    return () => ctx.revert();
-  }, []);
+  const statBoxes = [
+    { icon: Users, label: 'World-wide Clients', value: '803+', color: 'text-blue-400' },
+    { icon: Trophy, label: 'Success Rate', value: '98%', color: 'text-yellow-400' }
+  ];
 
   return (
-    <div className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
-      <motion.h2
-        className="text-3xl md:text-4xl font-extrabold text-white text-center mb-4"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        World Stats
-      </motion.h2>
-      <motion.p
-        className="text-white/70 text-center max-w-2xl mx-auto mb-10 text-sm md:text-base"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        Empowering Transformations Around the Globe. From different countries to massive physical results,
-        we bring change that speaks for itself.
-      </motion.p>
-
-      {/* World Stats */}
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        {[
-          { icon: Globe, label: 'Countries', value: '14+', color: 'text-green-400' },
-          { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-primary' }
-        ].map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            className="text-center p-6 bg-charcoal-light/50 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary/30 transition-colors"
-            whileHover={{ scale: 1.05, y: -5 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            <stat.icon className={`w-8 h-8 ${stat.color} mx-auto mb-4`} />
-            <div className="text-3xl font-black text-white mb-2">
-              {stat.value}
-            </div>
-            <div className="text-white/60 text-sm uppercase tracking-wider">
-              {stat.label}
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      {/* Live Transformation Updates */}
-      <motion.h2
-        className="text-3xl md:text-4xl font-extrabold text-white text-center mt-20 mb-4"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        Live Transformation Updates
-      </motion.h2>
-      <motion.p
-        className="text-white/70 text-center max-w-2xl mx-auto mb-10 text-sm md:text-base"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        Real people. Real results. Watch our community achieve the impossible—one transformation at a time.
-      </motion.p>
-
-      <div className="relative overflow-hidden w-full">
-        <div
-          ref={marqueeRef}
-          className="flex w-[200%] space-x-6 py-8"
+    <section
+      ref={sectionRef}
+      className="py-24 bg-gradient-to-b from-charcoal via-dark to-charcoal relative overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* World Stats */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
         >
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-48 h-48 rounded-xl bg-white/10 border border-white/10 overflow-hidden"
+          {statBoxes.map((stat) => (
+            <motion.div
+              key={stat.label}
+              className="text-center p-6 bg-charcoal-light/50 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary/30 transition-colors"
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ type: 'spring', stiffness: 300 }}
             >
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
+              <stat.icon className={`w-8 h-8 ${stat.color} mx-auto mb-4`} />
+              <div className="text-3xl font-black text-white mb-2">
+                {stat.value}
+              </div>
+              <div className="text-white/60 text-sm uppercase tracking-wider">
+                {stat.label}
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default StatsAndTransformations;
+export default GlobalResultsMap;
