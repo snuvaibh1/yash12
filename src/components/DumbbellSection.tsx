@@ -57,23 +57,23 @@ const DumbbellSection: React.FC = () => {
         <div className="relative flex items-center justify-center min-h-[600px]">
           {/* 3D Dumbbell (CSS-based) */}
           <motion.div
-            className="relative w-64 h-32 flex items-center justify-center"
+            className="relative w-32 h-16 md:w-64 md:h-32 flex items-center justify-center"
             style={{ rotateY, scale }}
           >
             {/* Dumbbell Handle */}
-            <div className="w-32 h-6 bg-gradient-to-r from-gray-400 via-gray-300 to-gray-400 rounded-full relative z-10 shadow-lg">
+            <div className="w-16 h-3 md:w-32 md:h-6 bg-gradient-to-r from-gray-400 via-gray-300 to-gray-400 rounded-full relative z-10 shadow-lg">
               <div className="absolute inset-y-0 left-0 w-1 bg-gray-600 rounded-l-full" />
               <div className="absolute inset-y-0 right-0 w-1 bg-gray-600 rounded-r-full" />
             </div>
             
             {/* Left Weight */}
             <div className="w-20 h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute left-0 shadow-2xl border-4 border-primary/20">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-transparent to-black/30" />
+              className="w-10 h-10 md:w-20 md:h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute left-0 shadow-2xl border-2 md:border-4 border-primary/20"
             </div>
             
             {/* Right Weight */}
             <div className="w-20 h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute right-0 shadow-2xl border-4 border-primary/20">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-transparent to-black/30" />
+              className="w-10 h-10 md:w-20 md:h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute right-0 shadow-2xl border-2 md:border-4 border-primary/20"
             </div>
 
             {/* Glow Effect */}
@@ -83,23 +83,23 @@ const DumbbellSection: React.FC = () => {
           {/* Surrounding Feature Cards */}
           {features.map((feature, index) => {
             const positions = {
-              'top-left': 'top-16 left-16',
-              'top-right': 'top-16 right-16',
-              'bottom-left': 'bottom-16 left-16',
-              'bottom-right': 'bottom-16 right-16'
+              'top-left': 'top-4 left-4 md:top-16 md:left-16',
+              'top-right': 'top-4 right-4 md:top-16 md:right-16',
+              'bottom-left': 'bottom-4 left-4 md:bottom-16 md:left-16',
+              'bottom-right': 'bottom-4 right-4 md:bottom-16 md:right-16'
             };
 
             return (
               <motion.div
                 key={feature.title}
-                className={`absolute ${positions[feature.position as keyof typeof positions]} max-w-xs`}
+                className={`absolute ${positions[feature.position as keyof typeof positions]} max-w-xs hidden md:block`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="bg-charcoal-light/80 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors">
+                <div className="bg-charcoal-light/80 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors">
                   <h3 className="text-xl font-bold text-white mb-3">
                     {feature.title}
                   </h3>
@@ -110,6 +110,28 @@ const DumbbellSection: React.FC = () => {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Mobile Feature Cards - Below Dumbbell */}
+        <div className="grid grid-cols-1 gap-6 mt-12 md:hidden">
+          {features.map((feature, index) => (
+            <motion.div
+              key={`mobile-${feature.title}`}
+              className="bg-charcoal-light/80 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <h3 className="text-xl font-bold text-white mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
         {/* Stats Row */}
