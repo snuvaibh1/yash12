@@ -179,7 +179,7 @@ const GlobalResultsMap: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-charcoal via-dark to-charcoal relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
@@ -203,7 +203,7 @@ const GlobalResultsMap: React.FC = () => {
         {/* Interactive World Map */}
         <div className="relative">
           <motion.div
-            className="relative bg-charcoal-light/50 backdrop-blur-sm rounded-3xl border border-white/10 overflow-hidden"
+            className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden"
             style={{ height: '600px' }}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -211,7 +211,7 @@ const GlobalResultsMap: React.FC = () => {
             viewport={{ once: true }}
           >
             {/* India Map Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-charcoal/50 to-dark/50">
+            <div className="absolute inset-0 bg-gradient-to-br from-bg-secondary/50 to-bg-primary/50">
               <svg
                 viewBox="0 0 1000 600"
                 className="w-full h-full opacity-30"
@@ -291,7 +291,7 @@ const GlobalResultsMap: React.FC = () => {
 
                 {/* Hover Card */}
                 <motion.div
-                  className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-64 bg-charcoal/95 backdrop-blur-sm rounded-2xl p-4 border border-primary/30 shadow-2xl"
+                  className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-64 bg-bg-secondary/95 backdrop-blur-sm rounded-2xl p-4 border border-primary/30 shadow-2xl"
                   initial={{ opacity: 0, y: 10, scale: 0.9 }}
                   animate={{
                     opacity: activeLocation === location.id ? 1 : 0,
@@ -302,7 +302,7 @@ const GlobalResultsMap: React.FC = () => {
                   style={{ pointerEvents: activeLocation === location.id ? 'auto' : 'none' }}
                 >
                   <div className="text-center">
-                    <h3 className="text-lg font-bold text-white mb-1">
+                    <h3 className="text-lg font-bold text-text-primary mb-1">
                       {location.city}, {location.state}
                     </h3>
                     <div className="grid grid-cols-2 gap-4 mb-3">
@@ -316,10 +316,10 @@ const GlobalResultsMap: React.FC = () => {
                         <div className="text-2xl font-black text-primary">
                           {location.avgTransformation}
                         </div>
-                        <div className="text-xs text-white/60">Avg Loss</div>
+                        <div className="text-xs text-text-muted">Avg Loss</div>
                       </div>
                     </div>
-                    <p className="text-sm text-white/80 leading-relaxed">
+                    <p className="text-sm text-text-body leading-relaxed">
                       {location.testimonial}
                     </p>
                   </div>
@@ -373,15 +373,15 @@ const GlobalResultsMap: React.FC = () => {
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="text-center p-6 bg-charcoal-light/50 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary/30 transition-colors"
+                className="text-center p-6 bg-bg-panel/50 backdrop-blur-sm rounded-2xl border border-border-secondary hover:border-primary/30 transition-colors"
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
                 <stat.icon className={`w-8 h-8 ${stat.color} mx-auto mb-4`} />
-                <div className="text-3xl font-black text-white mb-2">
+                <div className="text-3xl font-black text-text-primary mb-2">
                   {stat.value}
                 </div>
-                <div className="text-white/60 text-sm uppercase tracking-wider">
+                <div className="text-text-muted text-sm uppercase tracking-wider">
                   {stat.label}
                 </div>
               </motion.div>
@@ -391,13 +391,13 @@ const GlobalResultsMap: React.FC = () => {
 
         {/* Live Updates Feed */}
         <motion.div
-          className="mt-16 bg-charcoal-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+          className="mt-16 bg-bg-panel/30 backdrop-blur-sm rounded-2xl p-8 border border-border-secondary"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">
+          <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">
             Live Transformation Updates
           </h3>
           <div className="space-y-4">
@@ -411,7 +411,7 @@ const GlobalResultsMap: React.FC = () => {
             ].map((update, index) => (
               <motion.div
                 key={index}
-                className="flex items-center space-x-4 p-4 bg-dark/50 rounded-xl"
+                className="flex items-center space-x-4 p-4 bg-bg-primary/50 rounded-xl"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -423,11 +423,11 @@ const GlobalResultsMap: React.FC = () => {
                     <span className="text-primary font-semibold text-sm">
                       {update.location}
                     </span>
-                    <span className="text-white/40 text-xs">
+                    <span className="text-text-footnote text-xs">
                       {update.time}
                     </span>
                   </div>
-                  <p className="text-white/80 text-sm">
+                  <p className="text-text-body text-sm">
                     {update.update}
                   </p>
                 </div>
