@@ -154,7 +154,7 @@ const Navigation: React.FC = () => {
               </div>
             ))}
             <motion.button
-              className="bg-primary text-text-primary px-6 py-2 rounded-full font-semibold hover:bg-primary/90 transition-colors"
+              className="bg-accent-gold text-black px-6 py-2 rounded-full font-semibold hover:bg-accent-gold-dark transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
@@ -218,7 +218,7 @@ const Navigation: React.FC = () => {
             </div>
           ))}
           <button 
-            className="w-full bg-primary text-text-primary py-3 rounded-full font-semibold"
+            className="w-full bg-accent-gold text-black py-3 rounded-full font-semibold hover:bg-accent-gold-dark transition-colors"
             onClick={() => {
               setIsOpen(false);
               window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank');

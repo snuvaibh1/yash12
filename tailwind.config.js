@@ -5,19 +5,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark Theme Color System
-        primary: '#FF0040', // Keep existing primary red
+        // Luxurious Gold and Black Theme
+        primary: '#D4AF37', // Elegant gold
         
         // Background Colors
-        'bg-primary': '#0A0A0A',
-        'bg-secondary': '#1C1C1E',
+        'bg-primary': '#000000',
+        'bg-secondary': '#0A0A0A',
         'bg-tertiary': '#2A2A2A',
-        'bg-panel': '#1E1E1E',
+        'bg-panel': '#0A0A0A',
         'bg-card': '#2A2A2A',
         
         // Legacy support (mapped to new system)
-        dark: '#0A0A0A',
-        charcoal: '#1C1C1E',
+        dark: '#000000',
+        charcoal: '#0A0A0A',
         'charcoal-light': '#2A2A2A',
         
         // Typography Colors
@@ -28,9 +28,9 @@ export default {
         'text-footnote': '#999999',
         
         // Interactive Elements
-        'border-primary': '#2C2C2C',
+        'border-primary': '#404040',
         'border-secondary': 'rgba(255, 255, 255, 0.1)',
-        'hover-overlay': 'rgba(255, 255, 255, 0.15)',
+        'hover-overlay': 'rgba(212, 175, 55, 0.15)',
         'hover-subtle': 'rgba(255, 255, 255, 0.05)',
         
         // Accent Colors (Gold tones)
@@ -39,14 +39,14 @@ export default {
         'accent-gold-muted': '#DAA520',
         
         // Button Colors
-        'btn-primary-bg': '#1C1C1E',
+        'btn-primary-bg': '#D4AF37',
         'btn-primary-text': '#FFFFFF',
-        'btn-primary-hover': '#2E2E2E',
+        'btn-primary-hover': '#B8860B',
         'btn-secondary-bg': '#FFFFFF',
-        'btn-secondary-text': '#0A0A0A',
+        'btn-secondary-text': '#000000',
         
         // Utility Colors
-        'red-glow': '#FF004020',
+        'gold-glow': '#D4AF3720',
       },
       backgroundColor: {
         'gradient-dark': 'linear-gradient(135deg, #1C1C1E 0%, #2A2A2A 100%)',

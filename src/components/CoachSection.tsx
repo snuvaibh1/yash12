@@ -76,7 +76,7 @@ const CoachSection: React.FC = () => {
             >
               Meet Your
               <br />
-              <span className="text-primary">Coach Yash</span>
+              <span className="text-accent-gold">Coach Yash</span>
             </motion.h2>
 
             <motion.p
@@ -99,7 +99,7 @@ const CoachSection: React.FC = () => {
                   transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
                   whileHover={{ scale: 1.05, borderColor: 'rgba(255, 0, 64, 0.3)' }}
                 >
-                  <achievement.icon className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <achievement.icon className="w-6 h-6 md:w-8 md:h-8 text-accent-gold mx-auto mb-2 md:mb-3" />
                   <div className="text-xs md:text-sm text-white/60 font-medium mb-2">
                     {achievement.label}
                   </div>
@@ -121,7 +121,7 @@ const CoachSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 1.4 }}
             >
               <motion.button
-                className="bg-primary text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-primary/90 transition-colors w-full sm:w-auto"
+                className="bg-accent-gold text-black px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-accent-gold-dark transition-colors w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}

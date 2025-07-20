@@ -202,11 +202,11 @@ const CinematicHero: React.FC = () => {
             <motion.h1
               className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 md:mb-8 leading-none"
               style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #ff0040 50%, #ffffff 100%)',
+                background: 'linear-gradient(135deg, #ffffff 0%, #D4AF37 50%, #ffffff 100%)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                textShadow: '0 0 50px rgba(255, 0, 64, 0.3)'
+                textShadow: '0 0 50px rgba(212, 175, 55, 0.3)'
               }}
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
@@ -219,7 +219,7 @@ const CinematicHero: React.FC = () => {
             >
               CHAMPIONS LIFESTYLE
               <br />
-              <span className="text-primary"></span>
+              <span className="text-accent-gold"></span>
             </motion.h1>
 
             {/* Subtitle with Motion Blur Effect */}
@@ -246,11 +246,11 @@ const CinematicHero: React.FC = () => {
               transition={{ duration: 1, delay: 1 }}
             >
               <motion.button
-                className="group relative bg-primary text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
+                className="group relative bg-accent-gold text-black px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 style={{
-                  boxShadow: '0 0 50px rgba(255, 0, 64, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  boxShadow: '0 0 50px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                 }}
                 onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
               >
@@ -280,7 +280,7 @@ const CinematicHero: React.FC = () => {
                 <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors">
                   <Play className="w-6 h-6 md:w-8 md:h-8 ml-1" />
                   <motion.div
-                    className="absolute inset-0 rounded-full border-2 border-primary/50"
+                    className="absolute inset-0 rounded-full border-2 border-accent-gold/50"
                     animate={{
                       scale: [1, 1.2, 1],
                       opacity: [0.5, 0, 0.5]
