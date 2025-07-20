@@ -127,7 +127,7 @@ const BodyTypeQuiz: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-black mb-6">
             Find Your Perfect
             <br />
-            <span className="text-primary">Training Program</span>
+           <span className="text-accent-gold">Training Program</span>
           </h2>
           <p className="text-xl text-white/80">
             Take our 60-second assessment to discover which program will deliver your best results
@@ -157,7 +157,7 @@ const BodyTypeQuiz: React.FC = () => {
                   </div>
                   <div className="w-full bg-charcoal h-2 rounded-full">
                     <motion.div
-                      className="h-full bg-primary rounded-full"
+                      className="h-full bg-accent-gold rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
                       transition={{ duration: 0.5 }}
@@ -184,7 +184,7 @@ const BodyTypeQuiz: React.FC = () => {
                         <span className="text-white/90 group-hover:text-white">
                           {option}
                         </span>
-                        <ChevronRight className="w-5 h-5 text-white/50 group-hover:text-primary transition-colors" />
+                        <ChevronRight className="w-5 h-5 text-white/50 group-hover:text-accent-gold transition-colors" />
                       </div>
                     </motion.button>
                   ))}
@@ -217,12 +217,13 @@ const BodyTypeQuiz: React.FC = () => {
                   transition={{ delay: 0.2 }}
                 >
                   <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Target className="w-10 h-10 text-primary" />
+                    <Target className="w-10 h-10 text-accent-gold" />
                   </div>
                   <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
                     Your Recommended Program
                   </h3>
                   <div className="text-4xl md:text-5xl font-black text-primary mb-6">
+                  <div className="text-4xl md:text-5xl font-black text-accent-gold mb-6">
                     {result}
                   </div>
                 </motion.div>
@@ -249,7 +250,7 @@ const BodyTypeQuiz: React.FC = () => {
                   transition={{ delay: 0.6 }}
                 >
                   <motion.button
-                    className="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-colors flex items-center space-x-2"
+                    className="bg-accent-gold text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-gold-dark transition-colors flex items-center space-x-2"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleWhatsAppContact}

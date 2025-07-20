@@ -192,7 +192,7 @@ const GlobalResultsMap: React.FC = () => {
           <h2 className="text-4xl md:text-6xl font-black mb-6">
             World-Wide
             <br />
-            <span className="text-primary">Transformation Network</span>
+            <span className="text-accent-gold">Transformation Network</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Our elite coaching system delivers results across India. 
@@ -278,12 +278,12 @@ const GlobalResultsMap: React.FC = () => {
                 {/* Pulsing Marker */}
                 <div className="relative">
                   <motion.div
-                    className="w-6 h-6 bg-primary rounded-full border-2 border-white shadow-lg"
+                    className="w-6 h-6 bg-accent-gold rounded-full border-2 border-white shadow-lg"
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
                   <motion.div
-                    className="absolute inset-0 bg-primary rounded-full opacity-30"
+                    className="absolute inset-0 bg-accent-gold rounded-full opacity-30"
                     animate={{ scale: [1, 2, 1], opacity: [0.3, 0, 0.3] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
@@ -307,13 +307,13 @@ const GlobalResultsMap: React.FC = () => {
                     </h3>
                     <div className="grid grid-cols-2 gap-4 mb-3">
                       <div className="text-center">
-                        <div className="text-2xl font-black text-primary">
+                        <div className="text-2xl font-black text-accent-gold">
                           {location.clients}
                         </div>
                         <div className="text-xs text-white/60">Clients</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-black text-primary">
+                        <div className="text-2xl font-black text-accent-gold">
                           {location.avgTransformation}
                         </div>
                         <div className="text-xs text-text-muted">Avg Loss</div>
@@ -351,9 +351,9 @@ const GlobalResultsMap: React.FC = () => {
               })}
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#FF0040" stopOpacity="0" />
-                  <stop offset="50%" stopColor="#FF0040" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#FF0040" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#D4AF37" stopOpacity="0" />
+                  <stop offset="50%" stopColor="#D4AF37" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </svg>
@@ -368,8 +368,8 @@ const GlobalResultsMap: React.FC = () => {
             viewport={{ once: true }}
           >
             {[
-              { icon: Globe, label: 'Cities', value: '25+', color: 'text-green-400' },
-              { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-primary' }
+              { icon: Globe, label: 'Cities', value: '25+', color: 'text-accent-gold' },
+              { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-accent-gold' }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -417,10 +417,10 @@ const GlobalResultsMap: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                <div className="w-3 h-3 bg-accent-gold rounded-full animate-pulse" />
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-1">
-                    <span className="text-primary font-semibold text-sm">
+                    <span className="text-accent-gold font-semibold text-sm">
                       {update.location}
                     </span>
                     <span className="text-text-footnote text-xs">

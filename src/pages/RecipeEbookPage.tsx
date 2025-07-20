@@ -46,7 +46,7 @@ const RecipeEbookPage: React.FC = () => {
               <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
                 CHAMPIONS
                 <br />
-                <span className="text-primary">FUEL</span>
+                <span className="text-accent-gold">FUEL</span>
                 <br />
                 <span className="text-3xl md:text-4xl text-white/80">Recipe Ebook</span>
               </h1>
@@ -56,8 +56,8 @@ const RecipeEbookPage: React.FC = () => {
               </p>
 
               <motion.button
-                className="bg-primary text-white px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 hover:bg-primary/90 transition-all duration-300"
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255, 0, 64, 0.4)' }}
+                className="bg-accent-gold text-black px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 hover:bg-accent-gold-dark transition-all duration-300"
+                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(212, 175, 55, 0.4)' }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.open('https://calendly.com/championlifestyle-', '_blank')}
               >

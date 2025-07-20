@@ -80,7 +80,7 @@ const PricingSection: React.FC = () => {
           <h2 className="text-4xl md:text-6xl font-black mb-6">
             Choose Your
             <br />
-            <span className="text-primary">Transformation Path</span>
+           <span className="text-accent-gold">Transformation Path</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Three proven pathways to your best self. Each program is designed to 
@@ -102,7 +102,7 @@ const PricingSection: React.FC = () => {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <div className="bg-primary text-white px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-2">
+                  <div className="bg-accent-gold text-black px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-2">
                     <Star className="w-4 h-4" />
                     <span>Most Popular</span>
                   </div>
@@ -113,10 +113,10 @@ const PricingSection: React.FC = () => {
                 className={`
                   relative h-full rounded-3xl p-8 border transition-all duration-500
                   ${plan.popular 
-                    ? 'border-primary/50 bg-gradient-to-b from-primary/10 to-charcoal-light/50' 
+                    ? 'border-accent-gold/50 bg-gradient-to-b from-accent-gold/10 to-charcoal-light/50' 
                     : 'border-white/10 bg-charcoal-light/50'
                   }
-                  ${hoveredPlan === index ? 'transform scale-105 border-primary/50' : ''}
+                  ${hoveredPlan === index ? 'transform scale-105 border-accent-gold/50' : ''}
                 `}
                 style={{ backdropFilter: 'blur(10px)' }}
                 whileHover={{ y: -10 }}
@@ -153,7 +153,7 @@ const PricingSection: React.FC = () => {
                         viewport={{ once: true }}
                       >
                         <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                          <Check className="w-3 h-3 text-primary" />
+                          <Check className="w-3 h-3 text-accent-gold" />
                         </div>
                         <span className="text-white/80 text-sm">
                           {feature}
@@ -166,7 +166,7 @@ const PricingSection: React.FC = () => {
                     className={`
                       w-full py-4 rounded-full font-bold text-lg transition-all duration-300
                       ${plan.popular 
-                        ? 'bg-primary text-white hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25' 
+                        ? 'bg-accent-gold text-black hover:bg-accent-gold-dark hover:shadow-lg hover:shadow-accent-gold/25' 
                         : 'bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:border-white/40'
                       }
                     `}
@@ -200,7 +200,7 @@ const PricingSection: React.FC = () => {
               Let's have a quick chat to determine the best path for your goals.
             </p>
             <motion.button
-              className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors flex items-center space-x-2 mx-auto"
+              className="bg-accent-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-accent-gold-dark transition-colors flex items-center space-x-2 mx-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
