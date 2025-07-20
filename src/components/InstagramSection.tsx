@@ -21,8 +21,7 @@ const InstagramSection: React.FC = () => {
       caption: 'From couch to confident! Sarah\'s incredible 16-week journey 🔥 #TransformationTuesday',
       likes: 3921,
       comments: 203,
-      timeAgo: '5h',
-      location: 'Delhi, India'
+      timeAgo: '5h'
     },
     {
       id: 3,
