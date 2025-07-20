@@ -213,7 +213,7 @@ const GlobalResultsMap: React.FC = () => {
               <img
                 src="https://i.imgur.com/Wi2JVQK.jpeg"
                 alt="World Map"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-contain rounded-2xl"
               />
             </div>
 
