@@ -200,7 +200,6 @@ const GlobalResultsMap: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Interactive World Map */}
         <div className="relative">
           <motion.div
             className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden"
@@ -210,7 +209,6 @@ const GlobalResultsMap: React.FC = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            {/* India Map Background */}
             <div className="absolute inset-0">
               <img
                 src="https://i.imgur.com/Wi2JVQK.jpeg"
@@ -219,22 +217,16 @@ const GlobalResultsMap: React.FC = () => {
               />
             </div>
 
-            {/* Location Markers */}
             {transformationLocations.map((location, index) => (
               <div
                 key={location.id}
                 className="absolute cursor-pointer group"
                 style={location.coordinates}
-                onHoverStart={() => setActiveLocation(location.id)}
-                onHoverEnd={() => setActiveLocation(null)}
+                onMouseEnter={() => setActiveLocation(location.id)}
+                onMouseLeave={() => setActiveLocation(null)}
               >
-                {/* Pulsing Marker */}
-                <div className="relative">
-                  <div className="w-6 h-6 bg-white rounded-full border-2 border-gray-400 shadow-lg" />
-                  <div className="absolute inset-0 bg-white rounded-full opacity-30" />
-                </div>
+                {/* Marker removed */}
 
-                {/* Hover Card */}
                 <div
                   className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-64 bg-bg-secondary/95 backdrop-blur-sm rounded-2xl p-4 border border-primary/30 shadow-2xl"
                   style={{ 
@@ -268,7 +260,6 @@ const GlobalResultsMap: React.FC = () => {
               </div>
             ))}
 
-            {/* Animated Connection Lines */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none">
               {transformationLocations.map((location, index) => {
                 if (index === transformationLocations.length - 1) return null;
@@ -297,10 +288,7 @@ const GlobalResultsMap: React.FC = () => {
             </svg>
           </motion.div>
 
-          {/* World Stats */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {[
               { icon: Globe, label: 'Countries', value: '14+', color: 'text-white' },
               { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-white' }
@@ -321,10 +309,7 @@ const GlobalResultsMap: React.FC = () => {
           </div>
         </div>
 
-        {/* Live Updates Feed */}
-        <div
-          className="mt-16 bg-bg-panel/30 backdrop-blur-sm rounded-2xl p-8 border border-border-secondary"
-        >
+        <div className="mt-16 bg-bg-panel/30 backdrop-blur-sm rounded-2xl p-8 border border-border-secondary">
           <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">
             Live Transformation Updates
           </h3>
