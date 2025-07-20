@@ -67,14 +67,10 @@ const DumbbellSection: React.FC = () => {
             </div>
             
             {/* Left Weight */}
-            <div className="w-20 h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute left-0 shadow-2xl border-4 border-primary/20">
-              className="w-10 h-10 md:w-20 md:h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute left-0 shadow-2xl border-2 md:border-4 border-primary/20"
-            </div>
+            <div className="w-20 h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute left-0 shadow-2xl border-4 border-primary/20" />
             
             {/* Right Weight */}
-            <div className="w-20 h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute right-0 shadow-2xl border-4 border-primary/20">
-              className="w-10 h-10 md:w-20 md:h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute right-0 shadow-2xl border-2 md:border-4 border-primary/20"
-            </div>
+            <div className="w-20 h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute right-0 shadow-2xl border-4 border-primary/20" />
 
             {/* Glow Effect */}
             <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl scale-150 animate-pulse" />
