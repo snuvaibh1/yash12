@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-dark border-t border-charcoal">
+    <footer className="bg-bg-primary border-t border-border-primary">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
@@ -34,9 +34,9 @@ const Footer: React.FC = () => {
             >
               <div className="flex items-center space-x-3 mb-6">
                 <Dumbbell className="w-8 h-8 text-primary" />
-                <span className="text-2xl font-black text-white">CHAMPIONS LIFESTYLE</span>
+                <span className="text-2xl font-black text-text-primary">CHAMPIONS LIFESTYLE</span>
               </div>
-              <p className="text-white/70 text-lg leading-relaxed mb-6 max-w-md">
+              <p className="text-text-body text-lg leading-relaxed mb-6 max-w-md">
                 Transforming bodies and minds through elite coaching. Real results, 
                 proven methods, unwavering support.
               </p>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                   <motion.a
                     key={social.label}
                     href={social.href}
-                    className="w-12 h-12 bg-charcoal-light rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-primary transition-all duration-300"
+                    className="w-12 h-12 bg-bg-tertiary rounded-full flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-primary transition-all duration-300"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     target="_blank"
@@ -64,13 +64,13 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold text-white mb-6">Quick Links</h3>
+              <h3 className="text-xl font-bold text-text-primary mb-6">Quick Links</h3>
               <ul className="space-y-4">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-white/60 hover:text-primary transition-colors duration-300"
+                      className="text-text-muted hover:text-primary transition-colors duration-300"
                     >
                       {link.label}
                     </a>
@@ -86,17 +86,17 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold text-white mb-6">Get In Touch</h3>
+              <h3 className="text-xl font-bold text-text-primary mb-6">Get In Touch</h3>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3 text-white/60">
+                <div className="flex items-center space-x-3 text-text-muted">
                   <MessageCircle className="w-5 h-5 text-primary" />
                   <span>+91 91683 02369</span>
                 </div>
-                <div className="flex items-center space-x-3 text-white/60">
+                <div className="flex items-center space-x-3 text-text-muted">
                   <Mail className="w-5 h-5 text-primary" />
                   <span>championlifestyle.yash@gmail.com</span>
                 </div>
-                <div className="flex items-center space-x-3 text-white/60">
+                <div className="flex items-center space-x-3 text-text-muted">
                   <MapPin className="w-5 h-5 text-primary" />
                   <span>Global Online Coaching</span>
                 </div>
@@ -106,10 +106,10 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-charcoal py-8">
+        <div className="border-t border-border-primary py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <motion.div
-              className="text-white/60 text-sm mb-4 md:mb-0"
+              className="text-text-muted text-sm mb-4 md:mb-0"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
@@ -125,12 +125,13 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <a href="#" className="text-white/60 hover:text-primary transition-colors">
+              <a href="#" className="text-text-muted hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-white/60 hover:text-primary transition-colors">
+              <a href="#" className="text-text-muted hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-white/60 hover:text-primary transition-colors">
+              <a href="#" className="text-text-muted hover:text-primary transition-colors">
                 Cookie Policy
               </a>
             </motion.div>
@@ -149,7 +150,7 @@ const Footer: React.FC = () => {
           href="https://wa.me/919168302369?text=Hi! I'm interested in your elite coaching programs."
           target="_blank"
           rel="noopener noreferrer"
-          className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white shadow-2xl hover:bg-green-400 transition-colors"
+          className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-text-primary shadow-2xl hover:bg-green-400 transition-colors"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           animate={{ y: [0, -10, 0] }}

@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dark Theme CSS Custom Properties */
+:root {
+  /* Background Colors */
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #1C1C1E;
+  --bg-tertiary: #2A2A2A;
+  --bg-panel: #1E1E1E;
+  --bg-card: #2A2A2A;
+  
+  /* Typography Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --text-body: #B0B0B0;
+  --text-muted: #888888;
+  --text-footnote: #999999;
+  
+  /* Interactive Elements */
+  --border-primary: #2C2C2C;
+  --border-secondary: rgba(255, 255, 255, 0.1);
+  --hover-overlay: rgba(255, 255, 255, 0.15);
+  --hover-subtle: rgba(255, 255, 255, 0.05);
+  
+  /* Accent Colors */
+  --accent-gold: #FFD700;
+  --accent-gold-dark: #B8860B;
+  --accent-gold-muted: #DAA520;
+  
+  /* Button Colors */
+  --btn-primary-bg: #1C1C1E;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover: #2E2E2E;
+  --btn-secondary-bg: #FFFFFF;
+  --btn-secondary-text: #0A0A0A;
+  
+  /* Brand Colors (preserved) */
+  --primary: #FF0040;
+  --red-glow: rgba(255, 0, 64, 0.125);
+}
+
+/* Dark Theme Base Styles */
+.dark-theme {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
 /* Performance Optimizations */
 * {
   box-sizing: border-box;
@@ -9,6 +54,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg-primary);
 }
 
 body {
@@ -18,6 +64,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 /* GPU Acceleration for animations */

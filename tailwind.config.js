@@ -1,14 +1,56 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: '#FF0040',
+        // Dark Theme Color System
+        primary: '#FF0040', // Keep existing primary red
+        
+        // Background Colors
+        'bg-primary': '#0A0A0A',
+        'bg-secondary': '#1C1C1E',
+        'bg-tertiary': '#2A2A2A',
+        'bg-panel': '#1E1E1E',
+        'bg-card': '#2A2A2A',
+        
+        // Legacy support (mapped to new system)
         dark: '#0A0A0A',
-        charcoal: '#1A1A1A',
+        charcoal: '#1C1C1E',
         'charcoal-light': '#2A2A2A',
+        
+        // Typography Colors
+        'text-primary': '#FFFFFF',
+        'text-secondary': '#CCCCCC',
+        'text-body': '#B0B0B0',
+        'text-muted': '#888888',
+        'text-footnote': '#999999',
+        
+        // Interactive Elements
+        'border-primary': '#2C2C2C',
+        'border-secondary': 'rgba(255, 255, 255, 0.1)',
+        'hover-overlay': 'rgba(255, 255, 255, 0.15)',
+        'hover-subtle': 'rgba(255, 255, 255, 0.05)',
+        
+        // Accent Colors (Gold tones)
+        'accent-gold': '#FFD700',
+        'accent-gold-dark': '#B8860B',
+        'accent-gold-muted': '#DAA520',
+        
+        // Button Colors
+        'btn-primary-bg': '#1C1C1E',
+        'btn-primary-text': '#FFFFFF',
+        'btn-primary-hover': '#2E2E2E',
+        'btn-secondary-bg': '#FFFFFF',
+        'btn-secondary-text': '#0A0A0A',
+        
+        // Utility Colors
         'red-glow': '#FF004020',
+      },
+      backgroundColor: {
+        'gradient-dark': 'linear-gradient(135deg, #1C1C1E 0%, #2A2A2A 100%)',
+        'gradient-panel': 'linear-gradient(145deg, #1E1E1E 0%, #2A2A2A 100%)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

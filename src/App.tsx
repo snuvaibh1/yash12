@@ -21,7 +21,7 @@ function App() {
 
   return (
     <PerformanceOptimizer>
-      <div className="min-h-screen bg-dark text-white">
+      <div className="min-h-screen bg-bg-primary text-text-primary dark-theme">
         <Navigation />
         <main>
           <AnimatePresence mode="wait">

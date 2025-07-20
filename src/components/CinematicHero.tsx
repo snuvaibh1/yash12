@@ -48,7 +48,7 @@ const CinematicHero: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-dark"
+      className="relative min-h-screen overflow-hidden bg-bg-primary"
     >
       {/* Film Grain Overlay */}
       <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none">
@@ -66,7 +66,7 @@ const CinematicHero: React.FC = () => {
         className="absolute inset-0"
         style={{ y: backgroundY }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-dark via-charcoal/50 to-primary/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary/50 to-primary/10" />
         <motion.div
           className="absolute inset-0 bg-gradient-radial from-transparent via-primary/5 to-primary/20"
           animate={{
@@ -81,7 +81,7 @@ const CinematicHero: React.FC = () => {
         />
         
         {/* Cinematic Vignette */}
-        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-dark/80" />
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-bg-primary/80" />
       </motion.div>
 
       {/* Large-Scale 3D Objects */}
@@ -113,7 +113,7 @@ const CinematicHero: React.FC = () => {
             
             {/* Left Weight */}
             <motion.div 
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 md:w-16 md:h-16 bg-gradient-to-br from-charcoal via-gray-600 to-charcoal rounded-full shadow-2xl border-2 border-primary/30"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 md:w-16 md:h-16 bg-gradient-to-br from-bg-secondary via-gray-600 to-bg-tertiary rounded-full shadow-2xl border-2 border-primary/30"
               animate={{ rotateY: [0, 360] }}
               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             >
@@ -122,7 +122,7 @@ const CinematicHero: React.FC = () => {
             
             {/* Right Weight */}
             <motion.div 
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 md:w-16 md:h-16 bg-gradient-to-br from-charcoal via-gray-600 to-charcoal rounded-full shadow-2xl border-2 border-primary/30"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 md:w-16 md:h-16 bg-gradient-to-br from-bg-secondary via-gray-600 to-bg-tertiary rounded-full shadow-2xl border-2 border-primary/30"
               animate={{ rotateY: [0, -360] }}
               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             >

@@ -62,13 +62,13 @@ const Navigation: React.FC = () => {
   return (
     <motion.nav
       className={`fixed top-0 w-full z-40 transition-all duration-300 ${
-        scrolled ? 'bg-dark/95 backdrop-blur-md border-b border-charcoal' : 'bg-transparent'
+        scrolled ? 'bg-bg-primary/95 backdrop-blur-md border-b border-border-primary' : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 bg-bg-primary/50">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/">
@@ -87,7 +87,7 @@ const Navigation: React.FC = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 text-text-primary">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -97,7 +97,7 @@ const Navigation: React.FC = () => {
                 {item.dropdown ? (
                   <motion.button
                     onClick={() => setShowProgramsDropdown(!showProgramsDropdown)}
-                    className="text-white/80 hover:text-white transition-colors relative group flex items-center space-x-1"
+                    className="text-text-secondary hover:text-text-primary transition-colors relative group flex items-center space-x-1"
                     whileHover={{ y: -2 }}
                     transition={{ type: 'spring', stiffness: 400 }}
                   >
@@ -113,7 +113,7 @@ const Navigation: React.FC = () => {
                     {item.href.startsWith('/') ? (
                       <Link
                         to={item.href}
-                        className="text-white/80 hover:text-white transition-colors relative group"
+                        className="text-text-secondary hover:text-text-primary transition-colors relative group"
                       >
                         {item.label}
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -121,7 +121,7 @@ const Navigation: React.FC = () => {
                     ) : (
                       <button
                         onClick={() => handleNavClick(item.href)}
-                        className="text-white/80 hover:text-white transition-colors relative group"
+                        className="text-text-secondary hover:text-text-primary transition-colors relative group"
                       >
                         {item.label}
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -133,7 +133,7 @@ const Navigation: React.FC = () => {
                 {/* Dropdown Menu */}
                 {item.dropdown && showProgramsDropdown && (
                   <motion.div
-                    className="absolute top-full left-0 mt-2 w-48 bg-dark/95 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl"
+                    className="absolute top-full left-0 mt-2 w-48 bg-bg-secondary/95 backdrop-blur-md rounded-2xl border border-border-secondary shadow-2xl"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -143,7 +143,7 @@ const Navigation: React.FC = () => {
                       <Link
                         key={dropdownItem.label}
                         to={dropdownItem.href}
-                        className="block px-6 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors first:rounded-t-2xl last:rounded-b-2xl"
+                        className="block px-6 py-3 text-text-secondary hover:text-text-primary hover:bg-hover-subtle transition-colors first:rounded-t-2xl last:rounded-b-2xl"
                         onClick={() => setShowProgramsDropdown(false)}
                       >
                         {dropdownItem.label}
@@ -154,7 +154,7 @@ const Navigation: React.FC = () => {
               </div>
             ))}
             <motion.button
-              className="bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary/90 transition-colors"
+              className="bg-primary text-text-primary px-6 py-2 rounded-full font-semibold hover:bg-primary/90 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
@@ -165,7 +165,7 @@ const Navigation: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-text-primary"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -175,7 +175,7 @@ const Navigation: React.FC = () => {
 
       {/* Mobile Menu */}
       <motion.div
-        className={`md:hidden bg-dark/95 backdrop-blur-md ${isOpen ? 'block' : 'hidden'}`}
+        className={`md:hidden bg-bg-secondary/95 backdrop-blur-md ${isOpen ? 'block' : 'hidden'}`}
         initial={{ opacity: 0, height: 0 }}
         animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? 'auto' : 0 }}
         transition={{ duration: 0.3 }}
@@ -186,7 +186,7 @@ const Navigation: React.FC = () => {
               {item.href.startsWith('/') ? (
                 <Link
                   to={item.href}
-                  className="block text-white/80 hover:text-white transition-colors"
+                  className="block text-text-secondary hover:text-text-primary transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -194,7 +194,7 @@ const Navigation: React.FC = () => {
               ) : (
                 <button
                   onClick={() => handleNavClick(item.href)}
-                  className="block text-white/80 hover:text-white transition-colors w-full text-left"
+                  className="block text-text-secondary hover:text-text-primary transition-colors w-full text-left"
                 >
                   {item.label}
                 </button>
@@ -207,7 +207,7 @@ const Navigation: React.FC = () => {
                     <Link
                       key={dropdownItem.label}
                       to={dropdownItem.href}
-                      className="block text-white/60 hover:text-white transition-colors text-sm"
+                      className="block text-text-muted hover:text-text-primary transition-colors text-sm"
                       onClick={() => setIsOpen(false)}
                     >
                       {dropdownItem.label}
@@ -218,7 +218,7 @@ const Navigation: React.FC = () => {
             </div>
           ))}
           <button 
-            className="w-full bg-primary text-white py-3 rounded-full font-semibold"
+            className="w-full bg-primary text-text-primary py-3 rounded-full font-semibold"
             onClick={() => {
               setIsOpen(false);
               window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank');
