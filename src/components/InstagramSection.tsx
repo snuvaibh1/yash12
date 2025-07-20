@@ -12,8 +12,7 @@ const InstagramSection: React.FC = () => {
       caption: '12 weeks of dedication = 35 lbs transformation! 💪 #EliteTransformation #FitnessJourney',
       likes: 2847,
       comments: 156,
-      timeAgo: '2h',
-      location: 'Mumbai, India'
+      timeAgo: '2h'
     },
     {
       id: 2,
