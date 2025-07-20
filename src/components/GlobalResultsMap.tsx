@@ -359,12 +359,12 @@ const GlobalResultsMap: React.FC = () => {
           </h3>
           <div className="space-y-4">
             {[
-              {location: 'Mumbai', update: "Toushaar, lost 7kgs from the start. He started at 102, now he's 94.5 total time 24 weeks" },
-              { time: '7 min ago', location: 'Bangalore', update: 'Rahul K. hit new deadlift PR - 180 kg!' },
-              { time: '12 min ago', location: 'Delhi', update: 'Anita M. reached goal weight - 35 lb transformation!' },
-              { time: '18 min ago', location: 'Chennai', update: 'Vikram R. completed first month - incredible progress!' },
-              { time: '25 min ago', location: 'Pune', update: 'Sneha P. lost 15 lbs in 6 weeks - amazing dedication!' },
-              { time: '32 min ago', location: 'Hyderabad', update: 'Arjun T. gained 8 lbs of muscle - strength goals achieved!' }
+              {location: 'Canada', update: "Toushaar, lost 7kgs from the start. He started at 102, now he's 94.5 total time 24 weeks" },
+              {location: 'Australia', update: 'Prakhar, 93.4 kg → 88.25 kg Balancing work and life in a new country wasn’t easy, but staying consistent with my training and nutrition helped me drop over 5 kg.' },
+              {location: 'Delhi', update: 'Anita M. reached goal weight - 35 lb transformation!' },
+              {location: 'Chennai', update: 'Vikram R. completed first month - incredible progress!' },
+              {location: 'Pune', update: 'Sneha P. lost 15 lbs in 6 weeks - amazing dedication!' },
+              {location: 'Hyderabad', update: 'Arjun T. gained 8 lbs of muscle - strength goals achieved!' }
             ].map((update, index) => (
               <motion.div
                 key={index}
