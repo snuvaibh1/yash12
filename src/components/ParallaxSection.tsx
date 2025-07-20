@@ -136,24 +136,10 @@ const ParallaxSection: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div
-            className="text-center mb-12 md:mb-20"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 md:mb-8"
-              style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #ff0040 50%, #ffffff 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
             >
-              BEYOND
+              <span className="text-white">BEYOND</span>
               <br />
-              <span className="text-primary">ORDINARY</span>
+              <span className="text-accent-gold">ORDINARY</span>
             </motion.h2>
             <motion.p
               className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed px-4"

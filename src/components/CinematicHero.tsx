@@ -330,13 +330,13 @@ const CinematicHero: React.FC = () => {
         transition={{ duration: 2, repeat: Infinity }}
         style={{ opacity: useTransform(scrollYProgress, [0, 0.1], [1, 0]) }}
       >
-        <div className="w-6 h-10 md:w-8 md:h-14 border-2 border-white/40 rounded-full flex justify-center relative">
+        <div className="w-6 h-10 md:w-8 md:h-14 border-2 border-accent-gold/60 rounded-full flex justify-center relative">
           <motion.div
-            className="w-1.5 h-4 md:w-2 md:h-6 bg-primary rounded-full mt-2"
+            className="w-1.5 h-4 md:w-2 md:h-6 bg-accent-gold rounded-full mt-2"
             animate={{ y: [0, 20, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           />
-          <div className="absolute inset-0 bg-primary/20 blur-lg rounded-full animate-pulse" />
+          <div className="absolute inset-0 bg-accent-gold/20 blur-lg rounded-full animate-pulse" />
         </div>
       </motion.div>
     </section>

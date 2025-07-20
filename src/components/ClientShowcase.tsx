@@ -62,9 +62,9 @@ const CardStackShowcase: React.FC = () => {
         {/* Left Text */}
         <div className="md:w-1/2 text-center md:text-left">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Real Transformations.
+            <span className="text-accent-gold">Real Transformations.</span>
             <br />
-            <span className="text-red-500">Real Results.</span>
+            <span className="text-accent-gold">Real Results.</span>
           </h2>
           <p className="text-lg text-white/70">
             These transformations speak louder than any promise. See what's possible
