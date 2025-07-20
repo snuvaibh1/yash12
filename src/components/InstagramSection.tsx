@@ -89,11 +89,11 @@ const InstagramSection: React.FC = () => {
         </motion.div>
 
         {/* Instagram Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {instagramPosts.map((post, index) => (
             <motion.div
               key={post.id}
-              className="group relative bg-charcoal-light rounded-3xl overflow-hidden border border-white/10 hover:border-primary/30 transition-all duration-500"
+              className="group relative bg-charcoal-light rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 hover:border-primary/30 transition-all duration-500"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -125,11 +125,11 @@ const InstagramSection: React.FC = () => {
               </div>
 
               {/* Post Content */}
-              <div className="p-6">
+              <div className="p-3 md:p-6">
                 {/* Post Header */}
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-2 md:mb-4">
                   <div className="flex items-center space-x-3">
-<div className="w-10 h-10 rounded-full overflow-hidden">
+<div className="w-6 h-6 md:w-10 md:h-10 rounded-full overflow-hidden">
   <img
     src="https://i.imgur.com/FcxSkFm.png"
     alt="Logo"
@@ -137,45 +137,16 @@ const InstagramSection: React.FC = () => {
   />
 </div>
                     <div>
-                      <div className="font-bold text-white text-sm">campione.yash</div>
-                      <div className="text-white/60 text-xs">{post.location}</div>
+                      <div className="font-bold text-white text-xs md:text-sm">campione.yash</div>
                     </div>
                   </div>
-                  <div className="text-white/60 text-xs">{post.timeAgo}</div>
+                  <div className="text-white/60 text-xs hidden md:block">{post.timeAgo}</div>
                 </div>
 
-                {/* Caption */}
-                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                {/* Caption - Desktop only */}
+                <p className="text-white/80 text-sm leading-relaxed mb-4 hidden md:block">
                   {post.caption}
                 </p>
-
-                {/* Actions */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <motion.button
-                      className={`transition-colors ${likedPosts.has(post.id) ? 'text-red-500' : 'text-white/60 hover:text-white'}`}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => handleLike(post.id)}
-                    >
-                      <Heart className={`w-6 h-6 ${likedPosts.has(post.id) ? 'fill-current' : ''}`} />
-                    </motion.button>
-                    <button className="text-white/60 hover:text-white transition-colors">
-                      <MessageCircle className="w-6 h-6" />
-                    </button>
-                    <button className="text-white/60 hover:text-white transition-colors">
-                      <Share className="w-6 h-6" />
-                    </button>
-                  </div>
-                  <button className="text-white/60 hover:text-white transition-colors">
-                    <Bookmark className="w-6 h-6" />
-                  </button>
-                </div>
-
-                {/* Likes Count */}
-                <div className="mt-3 text-white font-semibold text-sm">
-                  {(post.likes + (likedPosts.has(post.id) ? 1 : 0)).toLocaleString()} likes
-                </div>
               </div>
             </motion.div>
           ))}
