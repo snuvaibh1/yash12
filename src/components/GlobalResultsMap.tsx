@@ -331,7 +331,7 @@ const GlobalResultsMap: React.FC = () => {
           <div className="space-y-4">
             {[
               {location: 'Canada', update: "Toushaar, lost 7kgs from the start. He started at 102, now he's 94.5 total time 24 weeks" },
-              {location: 'Australia', update: 'Prakhar, 93.4 kg → 88.25 kg Balancing work and life in a new country wasn't easy, but staying consistent with my training and nutrition helped me drop over 5 kg.' },
+              {location: 'Australia', update: "Prakhar, 93.4 kg → 88.25 kg Balancing work and life in a new country wasn't easy, but staying consistent with my training and nutrition helped me drop over 5 kg." },
               {location: 'Delhi', update: 'Anita M. reached goal weight - 35 lb transformation!' },
               {location: 'Chennai', update: 'Vikram R. completed first month - incredible progress!' },
               {location: 'Pune', update: 'Sneha P. lost 15 lbs in 6 weeks - amazing dedication!' },
