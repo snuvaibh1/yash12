@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const DumbbellSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start end', 'end start']
+    offset: ['start end', 'end start'],
   });
 
   const rotateY = useTransform(scrollYProgress, [0, 1], [0, 360]);
@@ -14,24 +14,28 @@ const DumbbellSection: React.FC = () => {
   const features = [
     {
       title: 'Personalized Programs',
-      description: 'Tailored training plans designed for your specific goals and body type.',
-      position: 'top-left'
+      description:
+        'Tailored training plans designed for your specific goals and body type.',
+      position: 'top-left',
     },
     {
       title: 'Nutrition Mastery',
-      description: 'Science-based nutrition protocols that fuel your transformation.',
-      position: 'top-right'
+      description:
+        'Science-based nutrition protocols that fuel your transformation.',
+      position: 'top-right',
     },
     {
       title: '24/7 Support',
-      description: 'Direct access to coaching support whenever you need it most.',
-      position: 'bottom-left'
+      description:
+        'Direct access to coaching support whenever you need it most.',
+      position: 'bottom-left',
     },
     {
       title: 'Proven Results',
-      description: 'Join hundreds of successful transformations with our system.',
-      position: 'bottom-right'
-    }
+      description:
+        'Join hundreds of successful transformations with our system.',
+      position: 'bottom-right',
+    },
   ];
 
   return (
@@ -54,35 +58,35 @@ const DumbbellSection: React.FC = () => {
           </motion.h2>
         </div>
 
-        <div className="relative flex items-center justify-center min-h-[600px]">
-          {/* 3D Dumbbell (CSS-based) */}
+        <div className="relative flex items-center justify-center min-h-[400px] md:min-h-[600px] w-full">
+          {/* Dumbbell */}
           <motion.div
-            className="relative w-32 h-16 md:w-64 md:h-32 flex items-center justify-center"
+            className="relative flex items-center justify-center gap-2 md:gap-6"
             style={{ rotateY, scale }}
           >
-            {/* Dumbbell Handle */}
-            <div className="w-16 h-3 md:w-32 md:h-6 bg-gradient-to-r from-gray-400 via-gray-300 to-gray-400 rounded-full relative z-10 shadow-lg">
+            {/* Left Weight */}
+            <div className="w-10 h-10 md:w-20 md:h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full shadow-2xl border-2 md:border-4 border-primary/20" />
+
+            {/* Handle */}
+            <div className="w-16 h-2.5 md:w-32 md:h-6 bg-gradient-to-r from-gray-400 via-gray-300 to-gray-400 rounded-full relative z-10 shadow-lg">
               <div className="absolute inset-y-0 left-0 w-1 bg-gray-600 rounded-l-full" />
               <div className="absolute inset-y-0 right-0 w-1 bg-gray-600 rounded-r-full" />
             </div>
-            
-            {/* Left Weight */}
-            <div className="w-20 h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute left-0 shadow-2xl border-4 border-primary/20" />
-            
-            {/* Right Weight */}
-            <div className="w-20 h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full absolute right-0 shadow-2xl border-4 border-primary/20" />
 
-            {/* Glow Effect */}
-            <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl scale-150 animate-pulse" />
+            {/* Right Weight */}
+            <div className="w-10 h-10 md:w-20 md:h-20 bg-gradient-to-br from-charcoal via-gray-700 to-charcoal-light rounded-full shadow-2xl border-2 md:border-4 border-primary/20" />
+
+            {/* Glow */}
+            <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl scale-150 animate-pulse pointer-events-none -z-10" />
           </motion.div>
 
-          {/* Surrounding Feature Cards */}
+          {/* Feature Cards Around Dumbbell (Desktop only) */}
           {features.map((feature, index) => {
             const positions = {
               'top-left': 'top-4 left-4 md:top-16 md:left-16',
               'top-right': 'top-4 right-4 md:top-16 md:right-16',
               'bottom-left': 'bottom-4 left-4 md:bottom-16 md:left-16',
-              'bottom-right': 'bottom-4 right-4 md:bottom-16 md:right-16'
+              'bottom-right': 'bottom-4 right-4 md:bottom-16 md:right-16',
             };
 
             return (
@@ -108,7 +112,7 @@ const DumbbellSection: React.FC = () => {
           })}
         </div>
 
-        {/* Mobile Feature Cards - Below Dumbbell */}
+        {/* Mobile Feature Cards */}
         <div className="grid grid-cols-1 gap-6 mt-12 md:hidden">
           {features.map((feature, index) => (
             <motion.div
@@ -130,7 +134,7 @@ const DumbbellSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Stats Row */}
+        {/* Stats Section */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -140,8 +144,8 @@ const DumbbellSection: React.FC = () => {
         >
           {[
             { number: '847+', label: 'Transformations' },
-            { number: '98%', label: 'Success Rate' }
-          ].map((stat, index) => (
+            { number: '98%', label: 'Success Rate' },
+          ].map((stat) => (
             <motion.div
               key={stat.label}
               className="p-6"
