@@ -230,8 +230,8 @@ const GlobalResultsMap: React.FC = () => {
               >
                 {/* Pulsing Marker */}
                 <div className="relative">
-                  <div className="w-6 h-6 bg-accent-gold rounded-full border-2 border-white shadow-lg" />
-                  <div className="absolute inset-0 bg-accent-gold rounded-full opacity-30" />
+                  <div className="w-6 h-6 bg-white rounded-full border-2 border-gray-400 shadow-lg" />
+                  <div className="absolute inset-0 bg-white rounded-full opacity-30" />
                 </div>
 
                 {/* Hover Card */}
@@ -248,13 +248,13 @@ const GlobalResultsMap: React.FC = () => {
                     </h3>
                     <div className="grid grid-cols-2 gap-4 mb-3">
                       <div className="text-center">
-                        <div className="text-2xl font-black text-accent-gold">
+                        <div className="text-2xl font-black text-white">
                           {location.clients}
                         </div>
                         <div className="text-xs text-white/60">Clients</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-black text-accent-gold">
+                        <div className="text-2xl font-black text-white">
                           {location.avgTransformation}
                         </div>
                         <div className="text-xs text-text-muted">Avg Loss</div>
@@ -302,8 +302,8 @@ const GlobalResultsMap: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12"
           >
             {[
-              { icon: Globe, label: 'Countries', value: '14+', color: 'text-accent-gold' },
-              { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-accent-gold' }
+              { icon: Globe, label: 'Countries', value: '14+', color: 'text-white' },
+              { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-white' }
             ].map((stat, index) => (
               <div
                 key={stat.label}
@@ -341,10 +341,10 @@ const GlobalResultsMap: React.FC = () => {
                 key={index}
                 className="flex items-center space-x-4 p-4 bg-bg-primary/50 rounded-xl"
               >
-                <div className="w-3 h-3 bg-accent-gold rounded-full animate-pulse" />
+                <div className="w-3 h-3 bg-white rounded-full animate-pulse" />
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-1">
-                    <span className="text-accent-gold font-semibold text-sm">
+                    <span className="text-white font-semibold text-sm">
                       {update.location}
                     </span>
                     <span className="text-text-footnote text-xs">
