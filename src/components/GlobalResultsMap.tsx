@@ -359,7 +359,7 @@ const GlobalResultsMap: React.FC = () => {
           </h3>
           <div className="space-y-4">
             {[
-              { time: '2 min ago', location: 'Mumbai', update: "Toushaar, lost 7kgs from the start. He started at 102, now he's 94.5 total time 24 weeks" },
+              {location: 'Mumbai', update: "Toushaar, lost 7kgs from the start. He started at 102, now he's 94.5 total time 24 weeks" },
               { time: '7 min ago', location: 'Bangalore', update: 'Rahul K. hit new deadlift PR - 180 kg!' },
               { time: '12 min ago', location: 'Delhi', update: 'Anita M. reached goal weight - 35 lb transformation!' },
               { time: '18 min ago', location: 'Chennai', update: 'Vikram R. completed first month - incredible progress!' },
