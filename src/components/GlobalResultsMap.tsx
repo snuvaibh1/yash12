@@ -326,7 +326,7 @@ const GlobalResultsMap: React.FC = () => {
                 key={index}
                 className="flex items-center space-x-4 p-4 bg-bg-primary/50 rounded-xl"
               >
-                <div className="w-3 h-3 bg-white rounded-full animate-pulse" />
+                <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse" />
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-1">
                     <span className="text-white font-semibold text-sm">
