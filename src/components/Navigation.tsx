@@ -78,11 +78,10 @@ const Navigation: React.FC = () => {
               transition={{ type: 'spring', stiffness: 400 }}
             >
               <img
-                src="https://i.imgur.com/FcxSkFm.png"
-                alt="Dumbbell Logo"
-                className="w-10 h-10 rounded-full object-cover"
+                src="https://i.imgur.com/cYNtlkq.png"
+                alt="Champions Lifestyle Logo"
+                className="h-10 object-contain"
               />
-              <span className="text-xl font-black text-white">CHAMPIONS LIFESTYLE</span>
             </motion.div>
           </Link>
 
