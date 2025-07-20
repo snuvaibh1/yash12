@@ -136,6 +136,18 @@ const ParallaxSection: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div
+            className="text-center mb-12 md:mb-16"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, type: "spring", stiffness: 50 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 md:mb-8 leading-none tracking-tight"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: true }}
             >
               <span className="text-white">BEYOND</span>
               <br />
