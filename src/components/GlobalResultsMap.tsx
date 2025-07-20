@@ -212,50 +212,7 @@ const GlobalResultsMap: React.FC = () => {
           >
             {/* India Map Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-bg-secondary/50 to-bg-primary/50">
-              <svg
-                viewBox="0 0 1000 600"
-                className="w-full h-full opacity-30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* World Map Continents */}
-                <g fill="currentColor" className="text-primary/20" stroke="currentColor" strokeWidth="1">
-                  {/* North America */}
-                  <path d="M50 80 Q80 60 120 70 Q160 65 200 80 Q220 90 240 120 Q250 150 230 180 Q200 200 170 190 Q140 185 110 175 Q80 160 60 140 Q40 110 50 80 Z" />
-                  <path d="M80 200 Q100 190 130 195 Q160 200 180 220 Q190 240 175 260 Q150 270 125 265 Q100 255 85 235 Q75 215 80 200 Z" />
-                  
-                  {/* South America */}
-                  <path d="M180 280 Q200 270 220 285 Q235 310 240 340 Q245 370 235 400 Q225 430 210 450 Q190 465 170 460 Q155 450 150 425 Q148 395 155 365 Q165 335 175 305 Q178 290 180 280 Z" />
-                  
-                  {/* Europe */}
-                  <path d="M380 80 Q420 75 450 85 Q480 95 500 115 Q510 135 495 150 Q475 160 450 155 Q425 150 400 140 Q380 125 375 105 Q375 90 380 80 Z" />
-                  
-                  {/* Africa */}
-                  <path d="M420 160 Q460 155 490 170 Q515 190 525 220 Q535 250 530 280 Q525 310 515 340 Q500 365 480 380 Q455 390 430 385 Q410 375 400 350 Q395 320 405 290 Q415 260 420 230 Q418 195 420 160 Z" />
-                  
-                  {/* Asia */}
-                  <path d="M520 70 Q580 65 640 75 Q700 85 750 105 Q780 125 790 155 Q795 185 785 215 Q770 240 745 255 Q715 265 685 260 Q655 250 625 235 Q595 215 570 190 Q545 165 530 135 Q520 105 520 70 Z" />
-                  
-                  {/* India Subcontinent */}
-                  <path d="M620 200 Q650 195 675 210 Q690 230 685 250 Q680 270 665 285 Q645 295 625 290 Q610 280 605 260 Q605 240 615 220 Q618 210 620 200 Z" />
-                  
-                  {/* Australia */}
-                  <path d="M720 350 Q760 345 790 360 Q810 375 815 395 Q810 415 795 430 Q775 440 755 435 Q735 425 725 405 Q720 385 720 365 Q720 355 720 350 Z" />
-                  
-                  {/* Additional Islands and Details */}
-                  <circle cx="780" cy="200" r="8" className="text-primary/15" />
-                  <circle cx="850" cy="380" r="6" className="text-primary/15" />
-                  <circle cx="120" cy="450" r="5" className="text-primary/15" />
-                </g>
-                
-                {/* Grid Overlay */}
-                <defs>
-                  <pattern id="worldGrid" width="50" height="50" patternUnits="userSpaceOnUse">
-                    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,0,64,0.1)" strokeWidth="0.5"/>
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#worldGrid)" opacity="0.3" />
-              </svg>
+              <spline-viewer url="https://prod.spline.design/j4Gidgm8Zo1oFd1s/scene.splinecode" className="w-full h-full"></spline-viewer>
             </div>
 
             {/* Floating 3D Objects */}
