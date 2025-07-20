@@ -211,52 +211,36 @@ const GlobalResultsMap: React.FC = () => {
             viewport={{ once: true }}
           >
             {/* India Map Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-bg-secondary/50 to-bg-primary/50">
-              <spline-viewer url="https://prod.spline.design/j4Gidgm8Zo1oFd1s/scene.splinecode" className="w-full h-full"></spline-viewer>
+            <div className="absolute inset-0">
+              <img
+                src="https://i.imgur.com/Wi2JVQK.jpeg"
+                alt="World Map"
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
-
-            {/* Floating 3D Objects */}
-            {floating3DObjects.map(renderFloating3DObject)}
 
             {/* Location Markers */}
             {transformationLocations.map((location, index) => (
-              <motion.div
+              <div
                 key={location.id}
                 className="absolute cursor-pointer group"
                 style={location.coordinates}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
                 onHoverStart={() => setActiveLocation(location.id)}
                 onHoverEnd={() => setActiveLocation(null)}
-                whileHover={{ scale: 1.2 }}
               >
                 {/* Pulsing Marker */}
                 <div className="relative">
-                  <motion.div
-                    className="w-6 h-6 bg-accent-gold rounded-full border-2 border-white shadow-lg"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-accent-gold rounded-full opacity-30"
-                    animate={{ scale: [1, 2, 1], opacity: [0.3, 0, 0.3] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
+                  <div className="w-6 h-6 bg-accent-gold rounded-full border-2 border-white shadow-lg" />
+                  <div className="absolute inset-0 bg-accent-gold rounded-full opacity-30" />
                 </div>
 
                 {/* Hover Card */}
-                <motion.div
+                <div
                   className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-64 bg-bg-secondary/95 backdrop-blur-sm rounded-2xl p-4 border border-primary/30 shadow-2xl"
-                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
-                  animate={{
+                  style={{ 
                     opacity: activeLocation === location.id ? 1 : 0,
-                    y: activeLocation === location.id ? 0 : 10,
-                    scale: activeLocation === location.id ? 1 : 0.9
+                    pointerEvents: activeLocation === location.id ? 'auto' : 'none'
                   }}
-                  transition={{ duration: 0.3 }}
-                  style={{ pointerEvents: activeLocation === location.id ? 'auto' : 'none' }}
                 >
                   <div className="text-center">
                     <h3 className="text-lg font-bold text-text-primary mb-1">
@@ -280,8 +264,8 @@ const GlobalResultsMap: React.FC = () => {
                       {location.testimonial}
                     </p>
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             ))}
 
             {/* Animated Connection Lines */}
@@ -290,7 +274,7 @@ const GlobalResultsMap: React.FC = () => {
                 if (index === transformationLocations.length - 1) return null;
                 const nextLocation = transformationLocations[index + 1];
                 return (
-                  <motion.line
+                  <line
                     key={`line-${index}`}
                     x1={`${parseFloat(location.coordinates.left)}%`}
                     y1={`${parseFloat(location.coordinates.top)}%`}
@@ -299,10 +283,7 @@ const GlobalResultsMap: React.FC = () => {
                     stroke="url(#gradient)"
                     strokeWidth="2"
                     strokeDasharray="5,5"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    whileInView={{ pathLength: 1, opacity: 0.5 }}
-                    transition={{ duration: 2, delay: index * 0.5 }}
-                    viewport={{ once: true }}
+                    opacity="0.5"
                   />
                 );
               })}
@@ -317,22 +298,16 @@ const GlobalResultsMap: React.FC = () => {
           </motion.div>
 
           {/* World Stats */}
-          <motion.div
+          <div
             className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
           >
             {[
               { icon: Globe, label: 'Countries', value: '14+', color: 'text-accent-gold' },
               { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-accent-gold' }
             ].map((stat, index) => (
-              <motion.div
+              <div
                 key={stat.label}
                 className="text-center p-6 bg-bg-panel/50 backdrop-blur-sm rounded-2xl border border-border-secondary hover:border-primary/30 transition-colors"
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
               >
                 <stat.icon className={`w-8 h-8 ${stat.color} mx-auto mb-4`} />
                 <div className="text-3xl font-black text-text-primary mb-2">
@@ -341,38 +316,30 @@ const GlobalResultsMap: React.FC = () => {
                 <div className="text-text-muted text-sm uppercase tracking-wider">
                   {stat.label}
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Live Updates Feed */}
-        <motion.div
+        <div
           className="mt-16 bg-bg-panel/30 backdrop-blur-sm rounded-2xl p-8 border border-border-secondary"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
         >
           <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">
             Live Transformation Updates
           </h3>
           <div className="space-y-4">
             {[
-              {location: 'Canada', update: "Toushaar, lost 7kgs from the start. He started at 102, now he's 94.5 total time 24 weeks" },
-              {location: 'Australia', update: 'Prakhar, 93.4 kg → 88.25 kg Balancing work and life in a new country wasn’t easy, but staying consistent with my training and nutrition helped me drop over 5 kg.' },
+              {location: 'Canada', update: "Toushaar, lost 7kgs from the start. He started at 102, now he's 94.5 total time 24 weeks" },
+              {location: 'Australia', update: 'Prakhar, 93.4 kg → 88.25 kg Balancing work and life in a new country wasn't easy, but staying consistent with my training and nutrition helped me drop over 5 kg.' },
               {location: 'Delhi', update: 'Anita M. reached goal weight - 35 lb transformation!' },
               {location: 'Chennai', update: 'Vikram R. completed first month - incredible progress!' },
               {location: 'Pune', update: 'Sneha P. lost 15 lbs in 6 weeks - amazing dedication!' },
               {location: 'Hyderabad', update: 'Arjun T. gained 8 lbs of muscle - strength goals achieved!' }
             ].map((update, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="flex items-center space-x-4 p-4 bg-bg-primary/50 rounded-xl"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="w-3 h-3 bg-accent-gold rounded-full animate-pulse" />
                 <div className="flex-1">
@@ -388,10 +355,10 @@ const GlobalResultsMap: React.FC = () => {
                     {update.update}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
