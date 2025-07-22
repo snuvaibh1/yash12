@@ -112,7 +112,7 @@ const ShredChallengePage: React.FC = () => {
             transition={{ duration: 1, delay: 0.6 }}
            whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(212, 175, 55, 0.4)' }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
+            onClick={() => window.open('https://rzp.io/rzp/iyo0cIL0', '_blank')}
           >
             <span>Join Now – ₹6,969</span>
             <ArrowRight className="w-6 h-6" />
