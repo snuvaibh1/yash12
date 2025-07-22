@@ -187,26 +187,185 @@ const GlobalResultsMap: React.FC = () => {
           <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">
             Live Transformation Updates
           </h3>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { location: 'Canada', update: "Toushaar, lost 7kgs from the start. He started at 102, now he's 94.5 total time 24 weeks" },
-              { location: 'Australia', update: "Prakhar, 93.4 kg → 88.25 kg Balancing work and life in a new country wasn't easy, but staying consistent with my training and nutrition helped me drop over 5 kg." },
-              { location: 'Delhi', update: 'Anita M. reached goal weight - 35 lb transformation!' },
-              { location: 'Chennai', update: 'Vikram R. completed first month - incredible progress!' },
-              { location: 'Pune', update: 'Sneha P. lost 15 lbs in 6 weeks - amazing dedication!' },
-              { location: 'Hyderabad', update: 'Arjun T. gained 8 lbs of muscle - strength goals achieved!' }
+              { 
+                location: 'Canada', 
+                name: 'Toushaar',
+                achievement: '7kg Lost',
+                timeframe: '24 weeks',
+                description: "Started at 102kg, now 94.5kg",
+                flag: '🇨🇦',
+                gradient: 'from-red-500/20 via-red-600/10 to-transparent'
+              },
+              { 
+                location: 'Australia', 
+                name: 'Prakhar',
+                achievement: '5kg Lost',
+                timeframe: '16 weeks',
+                description: "93.4kg → 88.25kg while balancing work abroad",
+                flag: '🇦🇺',
+                gradient: 'from-blue-500/20 via-blue-600/10 to-transparent'
+              },
+              { 
+                location: 'Delhi', 
+                name: 'Anita M.',
+                achievement: '35lb Lost',
+                timeframe: '20 weeks',
+                description: "Reached goal weight with dedication",
+                flag: '🇮🇳',
+                gradient: 'from-orange-500/20 via-orange-600/10 to-transparent'
+              },
+              { 
+                location: 'Chennai', 
+                name: 'Vikram R.',
+                achievement: 'Month 1',
+                timeframe: '4 weeks',
+                description: "Incredible progress in first month",
+                flag: '🇮🇳',
+                gradient: 'from-green-500/20 via-green-600/10 to-transparent'
+              },
+              { 
+                location: 'Pune', 
+                name: 'Sneha P.',
+                achievement: '15lb Lost',
+                timeframe: '6 weeks',
+                description: "Amazing dedication and consistency",
+                flag: '🇮🇳',
+                gradient: 'from-purple-500/20 via-purple-600/10 to-transparent'
+              },
+              { 
+                location: 'Hyderabad', 
+                name: 'Arjun T.',
+                achievement: '8lb Muscle',
+                timeframe: '12 weeks',
+                description: "Strength goals achieved successfully",
+                flag: '🇮🇳',
+                gradient: 'from-yellow-500/20 via-yellow-600/10 to-transparent'
+              }
             ].map((update, index) => (
-              <div key={index} className="flex items-center space-x-4 p-4 bg-bg-primary/50 rounded-xl">
-                <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse" />
-                <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-1">
-                    <span className="text-white font-semibold text-sm">
-                      {update.location}
-                    </span>
+              <motion.div
+                key={index}
+                className="group relative overflow-hidden"
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.05,
+                  y: -8,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+              >
+                {/* Card Container */}
+                <div className={`
+                  relative h-48 w-full rounded-2xl border border-white/10 
+                  bg-gradient-to-br ${update.gradient} backdrop-blur-xl
+                  shadow-lg group-hover:shadow-2xl group-hover:shadow-accent-gold/20
+                  transition-all duration-500 ease-out overflow-hidden
+                `}>
+                  {/* Animated Background Pattern */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
+                    <motion.div
+                      className="absolute -inset-10 bg-gradient-conic from-accent-gold/20 via-transparent to-accent-gold/20"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    />
                   </div>
-                  <p className="text-text-body text-sm">{update.update}</p>
+
+                  {/* Glow Effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-accent-gold/0 via-accent-gold/10 to-accent-gold/0 opacity-0 group-hover:opacity-100"
+                    initial={false}
+                    transition={{ duration: 0.5 }}
+                  />
+
+                  {/* Content */}
+                  <div className="relative z-10 p-6 h-full flex flex-col justify-between">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center space-x-3">
+                        <motion.div
+                          className="text-2xl"
+                          animate={{ rotate: [0, 10, -10, 0] }}
+                          transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
+                        >
+                          {update.flag}
+                        </motion.div>
+                        <div>
+                          <h4 className="text-white font-bold text-lg leading-tight">
+                            {update.location}
+                          </h4>
+                          <p className="text-white/60 text-sm">
+                            {update.name}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Live Indicator */}
+                      <motion.div
+                        className="flex items-center space-x-2"
+                        initial={{ opacity: 0.5 }}
+                        animate={{ opacity: [0.5, 1, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        <div className="w-2 h-2 bg-accent-gold rounded-full" />
+                        <span className="text-accent-gold text-xs font-semibold uppercase tracking-wider">
+                          Live
+                        </span>
+                      </motion.div>
+                    </div>
+
+                    {/* Achievement Badge */}
+                    <motion.div
+                      className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-3 self-start"
+                      whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <span className="text-accent-gold font-bold text-lg">
+                        {update.achievement}
+                      </span>
+                      <span className="text-white/60 text-sm ml-2">
+                        in {update.timeframe}
+                      </span>
+                    </motion.div>
+
+                    {/* Description */}
+                    <p className="text-white/80 text-sm leading-relaxed flex-1">
+                      {update.description}
+                    </p>
+
+                    {/* Bottom Accent Line */}
+                    <motion.div
+                      className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-accent-gold via-accent-gold-dark to-accent-gold"
+                      initial={{ width: "0%" }}
+                      whileInView={{ width: "100%" }}
+                      transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
+                      viewport={{ once: true }}
+                    />
+                  </div>
+
+                  {/* Cinematic Film Grain Overlay */}
+                  <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none">
+                    <motion.div 
+                      className="w-full h-full bg-gradient-to-br from-transparent via-white/5 to-transparent"
+                      animate={{ 
+                        backgroundPosition: ['0% 0%', '100% 100%', '0% 0%']
+                      }}
+                      transition={{ 
+                        duration: 3, 
+                        repeat: Infinity, 
+                        ease: "linear" 
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
