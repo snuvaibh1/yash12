@@ -281,7 +281,7 @@ const ShredChallengePage: React.FC = () => {
                 className="bg-primary text-white px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 hover:bg-primary/90 transition-all duration-300"
                 whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255, 0, 64, 0.4)' }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
+                onClick={() => window.open('https://rzp.io/rzp/iyo0cIL0', '_blank')}
               >
                 <span>Secure My Spot – ₹6,969</span>
                 <ArrowRight className="w-6 h-6" />
