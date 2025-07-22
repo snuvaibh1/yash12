@@ -291,7 +291,7 @@ const ShredChallengePage: React.FC = () => {
                 className="bg-charcoal-light text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-charcoal transition-all duration-300 flex items-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
+                onClick={() => window.open('https://rzp.io/rzp/iyo0cIL0', '_blank')}
               >
                 <span>Join now</span>
               </motion.button>
