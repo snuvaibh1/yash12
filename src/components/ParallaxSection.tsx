@@ -27,7 +27,7 @@ const ParallaxSection: React.FC = () => {
     {
       icon: Zap,
       title: 'Rapid Results',
-      description: 'See visible changes in just 2 weeks with our scientifically-proven methods.',
+      description: "within just 2 weeks, you'll start to look and feel better which will get you hooked to the process",
       color: 'from-yellow-400 to-orange-500'
     },
     {
