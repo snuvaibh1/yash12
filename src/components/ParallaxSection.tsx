@@ -161,7 +161,7 @@ const ParallaxSection: React.FC = () => {
               viewport={{ once: true }}
             >
               Experience transformation through cutting-edge science, 
-              personalized precision, and unwavering dedication to excellence.
+              personalized precision, and unwavering dedication to excellence. Both physical and mental
             </motion.p>
           </motion.div>
 
