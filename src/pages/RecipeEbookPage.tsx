@@ -223,7 +223,7 @@ const RecipeEbookPage: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               onClick={() => window.open('https://calendly.com/championlifestyle-', '_blank')}
             >
-              <span>Get My Copy – ₹499</span>
+              <span>PRE-ORDER NOW – ₹99</span>
               <ArrowRight className="w-6 h-6" />
             </motion.button>
 
