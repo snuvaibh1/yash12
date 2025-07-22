@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Award, Users } from 'lucide-react';
+import { Award } from 'lucide-react';
 
 const CoachSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -62,7 +62,7 @@ const CoachSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Content Section */}
+          {/* Text + Achievements Section */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -88,33 +88,26 @@ const CoachSection: React.FC = () => {
               Coach Yash is a NASM-CPT & CNC certified expert, specializing in men’s lifestyle, hormonal health, and body recomposition. He helps busy professionals build elite physiques without sacrificing work-life balance or energy. With diplomas in body transformation and hormonal mastery, Yash turns average routines into high-performance lifestyles.
             </motion.p>
 
-            {/* Achievements Grid */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-              {achievements.map((achievement, index) => (
-                <motion.div
-                  key={achievement.label}
-                  className="text-center p-3 md:p-4 rounded-2xl bg-charcoal-light/50 backdrop-blur-sm border border-white/5"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, borderColor: 'rgba(255, 0, 64, 0.3)' }}
-                >
-                  <achievement.icon className="w-6 h-6 md:w-8 md:h-8 text-accent-gold mx-auto mb-2 md:mb-3" />
-                  <div className="text-xs md:text-sm text-white/60 font-medium mb-2">
-                    {achievement.label}
-                  </div>
-                  {/* Bullet points only for Certified Trainer */}
-                  {achievement.subItems && (
-                    <ul className="text-left list-disc list-inside text-white/50 text-[10px] md:text-xs space-y-1 mt-2">
-                      {achievement.subItems.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
-                </motion.div>
-              ))}
-            </div>
+            {/* Achievements Box */}
+            <motion.div
+              className="bg-charcoal-light/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 mb-6 md:mb-8 w-full max-w-xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <Award className="w-7 h-7 text-accent-gold" />
+                <h3 className="text-white/80 text-lg font-semibold">Certified Trainer</h3>
+              </div>
+              <ul className="list-disc list-inside text-white/60 text-sm space-y-1 pl-2">
+                {achievements[0].subItems.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </motion.div>
 
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -124,7 +117,9 @@ const CoachSection: React.FC = () => {
                 className="bg-accent-gold text-black px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-accent-gold-dark transition-colors w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
+                onClick={() =>
+                  window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')
+                }
               >
                 Work With Me
               </motion.button>
