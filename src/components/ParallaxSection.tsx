@@ -39,7 +39,7 @@ const ParallaxSection: React.FC = () => {
     {
       icon: Trophy,
       title: 'Elite Standards',
-      description: 'Training protocols used by professional athletes and fitness models.',
+      description: 'Training protocols used by entrepreneurs, business owners and high stake working professionals',
       color: 'from-blue-400 to-purple-500'
     },
     {
