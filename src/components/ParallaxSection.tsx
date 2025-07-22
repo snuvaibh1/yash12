@@ -33,7 +33,7 @@ const ParallaxSection: React.FC = () => {
     {
       icon: Target,
       title: 'Precision Targeting',
-      description: 'Every workout, every meal, every decision optimized for your specific goals.',
+      description: 'Every workout, every meal, every decision optimized for your goals and lifestyle',
       color: 'from-primary to-pink-500'
     },
     {
