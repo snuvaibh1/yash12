@@ -57,16 +57,16 @@ const CardStackShowcase: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-[#0C0C15] py-24 px-6 text-white overflow-hidden relative z-10">
+    <section className="bg-[#0C0C15] py-16 md:py-24 px-6 text-white overflow-hidden relative z-10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
         {/* Left Text */}
-        <div className="md:w-1/2 text-center md:text-left">
+        <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0 relative z-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             <span className="text-accent-gold">Real Transformations.</span>
             <br />
             <span className="text-accent-gold">Real Results.</span>
           </h2>
-          <p className="text-lg text-white/70">
+          <p className="text-base md:text-lg text-white/70 max-w-md mx-auto md:mx-0">
             These transformations speak louder than any promise. See what's possible
             when elite coaching meets unwavering commitment.
           </p>
@@ -74,26 +74,26 @@ const CardStackShowcase: React.FC = () => {
 
         {/* Card Stack */}
         <div
-          className="relative w-[400px] h-[520px] md:w-[400px] md:h-[520px]"
+          className="relative w-[300px] h-[400px] md:w-[400px] md:h-[520px] flex-shrink-0"
           ref={containerRef}
         >
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="card-stack-item absolute top-0 left-0 w-full h-full bg-[#111827] border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+              className="card-stack-item absolute top-0 left-0 w-full h-full bg-[#111827] border border-white/10 rounded-2xl shadow-2xl overflow-hidden z-10"
               style={{ zIndex: testimonials.length - i }}
             >
               {/* Browser Bar */}
-              <div className="bg-[#1f2937] px-4 py-2 border-b border-white/10">
-                <span className="text-white/70 text-xl font-semibold">{t.name}</span>
+              <div className="bg-[#1f2937] px-3 md:px-4 py-2 border-b border-white/10">
+                <span className="text-white/70 text-lg md:text-xl font-semibold">{t.name}</span>
               </div>
 
               {/* Image */}
-              <div className="w-full h-full flex items-center justify-center p-3">
+              <div className="w-full h-full flex items-center justify-center p-2 md:p-3">
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="object-cover w-full h-full rounded-b-2xl"
+                  className="object-cover w-full h-full rounded-b-xl md:rounded-b-2xl"
                 />
               </div>
             </div>
