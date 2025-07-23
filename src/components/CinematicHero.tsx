@@ -13,7 +13,7 @@ const CinematicHero: React.FC = () => {
   });
 
   // Smooth spring animations for mouse tracking
-  const mouseX = useSpring(0, { stiffness: 100, damping: 30 });
+  const mouseX = useSpring(0, { stiffness: 100, damping: 30 }); 
   const mouseY = useSpring(0, { stiffness: 100, damping: 30 });
 
   // Parallax transforms
