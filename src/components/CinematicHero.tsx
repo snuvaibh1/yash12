@@ -222,7 +222,7 @@ const CinematicHero: React.FC = () => {
                 ease: "easeInOut"
               }}
             >
-              CHAMPIONS LIFESTYLE
+              
             </motion.h3>
           </motion.div>
         </motion.div>
