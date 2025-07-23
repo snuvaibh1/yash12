@@ -66,94 +66,6 @@ const CinematicHero: React.FC = () => {
         className="absolute inset-0"
         style={{ y: backgroundY }}
       >
-        {/* Premium Logo Background Integration */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Main Logo Background - Subtle and Integrated */}
-          <motion.div
-            className="absolute inset-0 opacity-5"
-            animate={{
-              scale: [1, 1.1, 1],
-              rotate: [0, 2, -2, 0],
-              opacity: [0.05, 0.08, 0.05]
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            <img
-              src="https://i.imgur.com/ydUt0ia.jpeg"
-              alt="Champions Lifestyle Logo"
-              className="w-full h-full object-contain filter blur-sm"
-              style={{
-                mixBlendMode: 'overlay',
-                transform: 'scale(1.5) translateY(-10%)'
-              }}
-            />
-          </motion.div>
-
-          {/* Secondary Logo Layer - More Prominent */}
-          <motion.div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px]"
-            animate={{
-              rotateY: [0, 360],
-              scale: [0.8, 1.2, 0.8],
-              opacity: [0.1, 0.2, 0.1]
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            <img
-              src="https://i.imgur.com/ydUt0ia.jpeg"
-              alt="Champions Lifestyle Logo"
-              className="w-full h-full object-contain"
-              style={{
-                filter: 'blur(3px) brightness(1.5) contrast(1.2)',
-                mixBlendMode: 'screen'
-              }}
-            />
-            {/* Logo Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-radial from-accent-gold/20 via-accent-gold/10 to-transparent blur-3xl scale-150" />
-          </motion.div>
-
-          {/* Floating Logo Particles */}
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={`logo-particle-${i}`}
-              className="absolute w-16 h-16 md:w-24 md:h-24 opacity-10"
-              style={{
-                top: `${20 + i * 15}%`,
-                left: `${10 + i * 12}%`,
-                transformOrigin: 'center'
-              }}
-              animate={{
-                y: [0, -50, 0],
-                x: [0, 30, -30, 0],
-                rotate: [0, 180, 360],
-                scale: [0.5, 1, 0.5],
-                opacity: [0.05, 0.15, 0.05]
-              }}
-              transition={{
-                duration: 15 + i * 3,
-                repeat: Infinity,
-                delay: i * 2,
-                ease: "easeInOut"
-              }}
-            >
-              <img
-                src="https://i.imgur.com/ydUt0ia.jpeg"
-                alt="Logo Particle"
-                className="w-full h-full object-contain filter blur-sm"
-                style={{ mixBlendMode: 'overlay' }}
-              />
-            </motion.div>
-          ))}
-        </div>
-
         <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary/50 to-primary/10" />
         <motion.div
           className="absolute inset-0 bg-gradient-radial from-transparent via-primary/5 to-primary/20"
@@ -170,33 +82,6 @@ const CinematicHero: React.FC = () => {
         
         {/* Cinematic Vignette */}
         <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-bg-primary/80" />
-        
-        {/* Premium Light Rays Effect */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={`light-ray-${i}`}
-              className="absolute w-1 bg-gradient-to-b from-transparent via-accent-gold/20 to-transparent"
-              style={{
-                height: '200%',
-                left: `${10 + i * 12}%`,
-                top: '-50%',
-                transformOrigin: 'center bottom'
-              }}
-              animate={{
-                rotate: [0, 5, -5, 0],
-                opacity: [0, 0.3, 0],
-                scaleY: [0.5, 1.5, 0.5]
-              }}
-              transition={{
-                duration: 8 + i * 2,
-                repeat: Infinity,
-                delay: i * 1.5,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
-        </div>
       </motion.div>
 
       {/* Large-Scale 3D Objects */}
@@ -224,18 +109,6 @@ const CinematicHero: React.FC = () => {
             {/* Dumbbell Handle with Metallic Effect */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-3 md:w-24 md:h-4 bg-gradient-to-r from-gray-300 via-white to-gray-300 rounded-full shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent rounded-full" />
-              {/* Premium Chrome Reflection */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-gold/30 to-transparent rounded-full"
-                animate={{
-                  x: ['-100%', '100%']
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
             </div>
             
             {/* Left Weight */}
@@ -245,8 +118,6 @@ const CinematicHero: React.FC = () => {
               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             >
               <div className="absolute inset-2 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
-              {/* Premium Weight Texture */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/20 via-transparent to-accent-gold/10 rounded-full" />
             </motion.div>
             
             {/* Right Weight */}
@@ -256,26 +127,11 @@ const CinematicHero: React.FC = () => {
               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             >
               <div className="absolute inset-2 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
-              {/* Premium Weight Texture */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/20 via-transparent to-accent-gold/10 rounded-full" />
             </motion.div>
 
             {/* Dynamic Lighting */}
             <div className="absolute inset-0 bg-primary/10 blur-3xl scale-150 animate-pulse" />
             <div className="absolute inset-0 bg-white/5 blur-2xl scale-125" />
-            {/* Premium Cinematic Glow */}
-            <motion.div
-              className="absolute inset-0 bg-accent-gold/20 blur-3xl scale-200"
-              animate={{
-                opacity: [0.2, 0.5, 0.2],
-                scale: [2, 2.5, 2]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
           </div>
         </motion.div>
 
@@ -326,47 +182,8 @@ const CinematicHero: React.FC = () => {
           >
             <div className="w-full h-full bg-primary rounded-full shadow-lg">
               <div className="absolute inset-0 bg-primary/50 blur-sm scale-150" />
-              {/* Premium Particle Trail */}
-              <motion.div
-                className="absolute inset-0 bg-accent-gold/60 rounded-full"
-                animate={{
-                  scale: [1, 2, 1],
-                  opacity: [0.6, 0, 0.6]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: i * 0.2
-                }}
-              />
             </div>
           </motion.div>
-        ))}
-
-        {/* Premium Depth of Field Bokeh Effects */}
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={`bokeh-${i}`}
-            className="absolute rounded-full bg-accent-gold/20"
-            style={{
-              width: `${20 + Math.random() * 40}px`,
-              height: `${20 + Math.random() * 40}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              filter: 'blur(2px)'
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 0.6, 0],
-              scale: [0.5, 1.5, 0.5]
-            }}
-            transition={{
-              duration: 6 + Math.random() * 8,
-              repeat: Infinity,
-              delay: Math.random() * 10,
-              ease: "easeInOut"
-            }}
-          />
         ))}
       </div>
 
@@ -437,18 +254,6 @@ const CinematicHero: React.FC = () => {
                 }}
                 onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
               >
-                {/* Premium Button Shimmer Effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                  animate={{
-                    x: ['-200%', '200%']
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                   animate={{
@@ -474,18 +279,6 @@ const CinematicHero: React.FC = () => {
               >
                 <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors">
                   <Play className="w-6 h-6 md:w-8 md:h-8 ml-1" />
-                  {/* Premium Play Button Glow */}
-                  <motion.div
-                    className="absolute inset-0 rounded-full bg-accent-gold/30"
-                    animate={{
-                      scale: [1, 1.3, 1],
-                      opacity: [0, 0.5, 0]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity
-                    }}
-                  />
                   <motion.div
                     className="absolute inset-0 rounded-full border-2 border-accent-gold/50"
                     animate={{
@@ -528,31 +321,6 @@ const CinematicHero: React.FC = () => {
             }}
           />
         ))}
-        
-        {/* Premium Cinematic Dust Particles */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={`dust-${i}`}
-            className="absolute w-0.5 h-0.5 bg-accent-gold/40 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              filter: 'blur(0.5px)'
-            }}
-            animate={{
-              x: [0, 50, -50, 0],
-              y: [0, -80, 0],
-              opacity: [0, 0.8, 0],
-              scale: [0, 1.5, 0]
-            }}
-            transition={{
-              duration: 8 + Math.random() * 6,
-              repeat: Infinity,
-              delay: Math.random() * 8,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
       </div>
 
       {/* Scroll Indicator with Cinematic Style */}
@@ -569,18 +337,6 @@ const CinematicHero: React.FC = () => {
             transition={{ duration: 2, repeat: Infinity }}
           />
           <div className="absolute inset-0 bg-accent-gold/20 blur-lg rounded-full animate-pulse" />
-          {/* Premium Scroll Indicator Glow */}
-          <motion.div
-            className="absolute inset-0 border-2 border-accent-gold/30 rounded-full"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0, 0.3]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity
-            }}
-          />
         </div>
       </motion.div>
     </section>
