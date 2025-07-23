@@ -114,7 +114,7 @@ const GlobalResultsMap: React.FC = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="https://i.imgur.com/Wi2JVQK.jpeg"
+                src="https://i.imgur.com/UU7sND0.png"
                 alt="World Map"
                 className="w-full h-full object-contain rounded-2xl"
               />
