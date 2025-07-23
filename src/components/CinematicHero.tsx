@@ -5,6 +5,7 @@ import { ArrowRight, Play } from 'lucide-react';
 const CinematicHero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [logoLoaded, setLogoLoaded] = useState(false);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -84,6 +85,148 @@ const CinematicHero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-bg-primary/80" />
       </motion.div>
 
+      {/* Premium Logo Animation Section */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, scale: 0.5, rotateY: -180 }}
+          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+          transition={{ 
+            duration: 2.5, 
+            delay: 0.5,
+            ease: [0.25, 0.46, 0.45, 0.94]
+          }}
+        >
+          {/* Logo Container with Premium Effects */}
+          <motion.div
+            className="relative"
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            {/* Glow Ring Animation */}
+            <motion.div
+              className="absolute inset-0 rounded-full"
+              style={{
+                background: 'conic-gradient(from 0deg, transparent, rgba(212, 175, 55, 0.4), transparent)',
+                filter: 'blur(20px)',
+                transform: 'scale(1.5)'
+              }}
+              animate={{
+                rotate: [0, 360]
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+            
+            {/* Premium Logo with Cinematic Effects */}
+            <motion.div
+              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden"
+              style={{
+                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
+                backdropFilter: 'blur(10px)',
+                border: '2px solid rgba(212, 175, 55, 0.3)',
+                boxShadow: '0 0 100px rgba(212, 175, 55, 0.3), inset 0 0 50px rgba(212, 175, 55, 0.1)'
+              }}
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: '0 0 150px rgba(212, 175, 55, 0.5), inset 0 0 80px rgba(212, 175, 55, 0.2)'
+              }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Logo Image */}
+              <motion.img
+                src="https://i.imgur.com/ydUt0ia.jpeg"
+                alt="Champions Lifestyle Logo"
+                className="w-full h-full object-cover"
+                onLoad={() => setLogoLoaded(true)}
+                initial={{ opacity: 0, scale: 1.2 }}
+                animate={{ 
+                  opacity: logoLoaded ? 1 : 0, 
+                  scale: logoLoaded ? 1 : 1.2 
+                }}
+                transition={{ duration: 1.5, delay: 1 }}
+              />
+              
+              {/* Overlay Gradient for Premium Look */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+              
+              {/* Animated Light Sweep */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{
+                  x: ['-100%', '100%']
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatDelay: 2,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.div>
+            
+            {/* Orbiting Particles */}
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 bg-primary rounded-full"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                  transformOrigin: `${120 + i * 15}px 0px`
+                }}
+                animate={{
+                  rotate: [0, 360]
+                }}
+                transition={{
+                  duration: 12 + i * 2,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              >
+                <div className="w-full h-full bg-primary rounded-full shadow-lg">
+                  <div className="absolute inset-0 bg-primary/50 blur-sm scale-150" />
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+          
+          {/* Premium Typography Animation */}
+          <motion.div
+            className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 2.5 }}
+          >
+            <motion.h3
+              className="text-2xl md:text-3xl font-bold text-white/90 tracking-wider"
+              animate={{
+                textShadow: [
+                  '0 0 10px rgba(212, 175, 55, 0.5)',
+                  '0 0 20px rgba(212, 175, 55, 0.8)',
+                  '0 0 10px rgba(212, 175, 55, 0.5)'
+                ]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              CHAMPIONS LIFESTYLE
+            </motion.h3>
+          </motion.div>
+        </motion.div>
+      </div>
       {/* Large-Scale 3D Objects */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating Dumbbell - Large Scale */}
@@ -188,7 +331,7 @@ const CinematicHero: React.FC = () => {
       </div>
 
       {/* Main Content with Cinematic Typography */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 md:px-6">
+      <div className="relative z-30 flex items-center justify-center min-h-screen px-4 md:px-6">
         <motion.div
           className="text-center max-w-6xl"
           style={{ y: textY }}
@@ -196,11 +339,11 @@ const CinematicHero: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 1.2, delay: 3, ease: "easeOut" }}
           >
             {/* Cinematic Title */}
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 md:mb-8 leading-none"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 md:mb-8 leading-none opacity-0"
               style={{
                 background: 'linear-gradient(135deg, #ffffff 0%, #D4AF37 50%, #ffffff 100%)',
                 backgroundClip: 'text',
@@ -209,10 +352,12 @@ const CinematicHero: React.FC = () => {
                 textShadow: '0 0 50px rgba(212, 175, 55, 0.3)'
               }}
               animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                opacity: [0, 1]
               }}
               transition={{
-                duration: 5,
+                duration: 5, 
+                delay: 4,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
@@ -227,7 +372,7 @@ const CinematicHero: React.FC = () => {
               className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed px-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 1, delay: 4.5 }}
               style={{
                 filter: 'blur(0px)',
                 textShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
@@ -243,7 +388,7 @@ const CinematicHero: React.FC = () => {
               className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1 }}
+              transition={{ duration: 1, delay: 5 }}
             >
               <motion.button
                 className="group relative bg-accent-gold text-black px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
@@ -329,6 +474,9 @@ const CinematicHero: React.FC = () => {
         animate={{ y: [0, 15, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         style={{ opacity: useTransform(scrollYProgress, [0, 0.1], [1, 0]) }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 6, duration: 1 }}
       >
         <div className="w-6 h-10 md:w-8 md:h-14 border-2 border-accent-gold/60 rounded-full flex justify-center relative">
           <motion.div
