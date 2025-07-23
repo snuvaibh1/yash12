@@ -362,9 +362,9 @@ const CinematicHero: React.FC = () => {
                 ease: "easeInOut"
               }}
             >
-              CHAMPIONS LIFESTYLE
+              FORGE YOUR
               <br />
-              <span className="text-accent-gold"></span>
+              <span className="text-accent-gold">CHAMPION LEGACY</span>
             </motion.h1>
 
             {/* Subtitle with Motion Blur Effect */}
