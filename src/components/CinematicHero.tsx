@@ -221,8 +221,6 @@ const CinematicHero: React.FC = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-            >
-              CHAMPIONS LIFESTYLE
             </motion.h3>
           </motion.div>
         </motion.div>
