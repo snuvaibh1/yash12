@@ -342,30 +342,35 @@ const CinematicHero: React.FC = () => {
             transition={{ duration: 1.2, delay: 3, ease: "easeOut" }}
           >
             {/* Cinematic Title */}
-            <motion.h1
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 md:mb-8 leading-none opacity-0"
-              style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #D4AF37 50%, #ffffff 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 0 50px rgba(212, 175, 55, 0.3)'
-              }}
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                opacity: [0, 1]
-              }}
-              transition={{
-                duration: 5, 
-                delay: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              FORGE YOUR
-              <br />
-              <span className="text-accent-gold">CHAMPION LEGACY</span>
-            </motion.h1>
+<div className="sticky top-24 z-20">
+  <motion.h1
+    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 md:mb-8 leading-none"
+    style={{
+      background: 'linear-gradient(135deg, #ffffff 0%, #D4AF37 50%, #ffffff 100%)',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      textShadow: '0 0 50px rgba(212, 175, 55, 0.3)',
+      backgroundSize: '200% auto'
+    }}
+    initial={{ opacity: 0 }}
+    animate={{
+      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+      opacity: 1
+    }}
+    transition={{
+      duration: 5,
+      delay: 4,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}
+  >
+    FORGE YOUR
+    <br />
+    <span className="text-accent-gold">CHAMPION LEGACY</span>
+  </motion.h1>
+</div>
+
 
             {/* Subtitle with Motion Blur Effect */}
             <motion.p
