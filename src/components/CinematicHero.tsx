@@ -361,7 +361,7 @@ const CinematicHero: React.FC = () => {
         backgroundPosition: { duration: 6, ease: "easeInOut", repeat: Infinity },
       }}
     >
-      FORGE YOUR
+      
       <br />
       <span className="text-accent-gold">CHAMPION LEGACY</span>
     </motion.h1>
