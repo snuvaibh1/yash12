@@ -363,7 +363,7 @@ const CinematicHero: React.FC = () => {
     >
       
       <br />
-      <span className="text-accent-gold"> </span>
+      <span className="text-accent-gold">CHAMPION LIFESTY</span>
     </motion.h1>
   </div>
 </div>
