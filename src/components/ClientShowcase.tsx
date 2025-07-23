@@ -59,23 +59,22 @@ const CardStackShowcase: React.FC = () => {
   return (
     <section className="bg-[#0C0C15] py-16 md:py-24 px-6 text-white overflow-hidden relative z-10">
       <div className="max-w-7xl mx-auto">
-        {/* Left Text */}
-        <div className="w-full text-center mb-16 relative z-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            <span className="text-accent-gold">Real Transformations.</span>
-            <br />
-            <span className="text-accent-gold">Real Results.</span>
+        {/* Heading */}
+        <div className="w-full text-center mb-16 relative z-30">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+            <span className="text-accent-gold block">Real Transformations.</span>
+            <span className="text-accent-gold block">Real Results.</span>
           </h2>
-          <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-            These transformations speak louder than any promise. See what's possible
-            when elite coaching meets unwavering commitment.
+          <p className="text-sm md:text-lg text-white/70 max-w-2xl mx-auto px-2">
+            These transformations speak louder than any promise. See what's possible when elite
+            coaching meets unwavering commitment.
           </p>
         </div>
 
         {/* Card Stack */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-12 md:mt-0 relative z-20">
           <div
-            className="relative w-[300px] h-[400px] md:w-[400px] md:h-[520px] flex-shrink-0"
+            className="relative w-[280px] h-[380px] md:w-[400px] md:h-[520px] flex-shrink-0"
             ref={containerRef}
           >
             {testimonials.map((t, i) => (
@@ -86,7 +85,7 @@ const CardStackShowcase: React.FC = () => {
               >
                 {/* Browser Bar */}
                 <div className="bg-[#1f2937] px-3 md:px-4 py-2 border-b border-white/10">
-                  <span className="text-white/70 text-lg md:text-xl font-semibold">{t.name}</span>
+                  <span className="text-white/70 text-sm md:text-xl font-semibold">{t.name}</span>
                 </div>
 
                 {/* Image */}
