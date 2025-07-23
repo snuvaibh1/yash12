@@ -342,7 +342,7 @@ const CinematicHero: React.FC = () => {
             transition={{ duration: 1.2, delay: 3, ease: "easeOut" }}
           >
             {/* Cinematic Title */}
-           <div className="relative h-[100vh] flex items-center justify-center">
+           <div className="relative flex items-center justify-center py-12 md:py-24">
   <div className="sticky top-[20vh] z-30">
     <motion.h1
       className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none text-center"
