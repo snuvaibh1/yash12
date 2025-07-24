@@ -27,7 +27,7 @@ const GlobalResultsMap: React.FC = () => {
   ];
 
   const liveUpdates = [
-    { flag: '🇲🇹', countryCode: ' ', city: 'Malta', name: 'Satheesh', result: '-15 lbs', timeframe: '6 weeks', summary: 'Busy executive transformed his lifestyle with our premium coaching system.' },
+    { flag: '🇲🇹', countryCode: ' ', city: 'Malta', name: 'Satheesh', result: '-15 lbs', timeframe: '6 weeks', summary: 'Managed work & life while staying consistent.' },
     { flag: '🇮🇳', countryCode: 'IN', city: 'Delhi', name: 'Priya S.', result: '-22 lbs', timeframe: '8 weeks', summary: 'Working mother achieved her dream body with our personalized approach.' },
     { flag: '🇮🇳', countryCode: 'IN', city: 'Bangalore', name: 'Arjun M.', result: '-18 lbs', timeframe: '7 weeks', summary: 'Tech professional broke through his plateau with elite coaching.' },
     { flag: '🇮🇳', countryCode: 'IN', city: 'Chennai', name: 'Lakshmi R.', result: '-25 lbs', timeframe: '10 weeks', summary: 'Incredible transformation journey with sustainable lifestyle changes.' },
