@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Trophy, Target, Globe } from 'lucide-react';
 
 const GlobalResultsMap: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -34,6 +35,26 @@ const GlobalResultsMap: React.FC = () => {
     { flag: '🇺🇸', countryCode: ' ', city: 'USA', name: 'Yash Patel', result: '8.4kg Lost', timeframe: ' ', summary: '99.1kg → 90.7kg in 3 months..' },
   ];
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://www.gstatic.com/external_hosted/leaflet/leaflet.js";
+    script.onload = () => {
+      const L = (window as any).L;
+      const map = L.map('map').setView([20.5937, 78.9629], 4); // India center
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+      }).addTo(map);
+
+      transformationLocations.forEach((location) => {
+        const marker = L.marker([
+          parseFloat(location.coordinates.top),
+          parseFloat(location.coordinates.left)
+        ]).addTo(map);
+        marker.bindPopup(`<b>${location.city}</b><br>${location.testimonial}`);
+      });
+    };
+    document.head.appendChild(script);
+  }, []);
 
   return (
     <section ref={sectionRef} className="py-16 relative bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary overflow-hidden">
@@ -57,30 +78,12 @@ const GlobalResultsMap: React.FC = () => {
         {/* Custom Map Section (Replaced iframe) */}
         <motion.div
           style={{ scale, opacity }}
-          className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden mb-6"
+          className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden"
         >
-          <iframe 
-            width="100%" 
-            height="400px" 
-            frameBorder="0" 
-            allowFullScreen 
-            allow="geolocation" 
-            src="//umap.openstreetmap.fr/en/map/untitled-map_1259305?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true"
-            className="w-full h-[400px] rounded-2xl"
-          />
+          <div className="relative w-full h-[500px] rounded-2xl">
+            <div id="map" className="absolute inset-0 w-full h-full rounded-2xl z-10" />
+          </div>
         </motion.div>
-
-        {/* Full Screen Link */}
-        <div className="text-center mb-12">
-          <a 
-            href="//umap.openstreetmap.fr/en/map/untitled-map_1259305?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-blue-400 underline hover:text-blue-300 transition-colors"
-          >
-            See full screen
-          </a>
-        </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
