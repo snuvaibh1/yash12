@@ -26,12 +26,72 @@ const GlobalResultsMap: React.FC = () => {
     { id: 8, city: 'Ahmedabad', state: 'Gujarat', clients: 85, avgTransformation: '31 lbs', coordinates: { top: '55%', left: '18%' }, testimonial: 'Gujarat entrepreneurial spirit driving fitness success.' },
   ];
 
-  const liveUpdates = [
-    { flag: '🇲🇹', countryCode: ' ', city: 'Malta', name: 'Satheesh', result: '-15 lbs', timeframe: '6 weeks', summary: 'Managed work & life while staying consistent.' },
-    { flag: '🇩🇪', countryCode: ' ', city: 'Germany', name: 'Vikram', result: '-22 lbs', timeframe: '8 weeks', summary: 'Now balanced & thriving after inconsistency.' },
-    { flag: '🇫🇷', countryCode: ' ', city: 'France', name: 'Shridhar', result: '-18 lbs', timeframe: '7 weeks', summary: 'Now pain-free and stronger than ever.' },
-    { flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', countryCode: ' ', city: 'Scotland', name: 'Pravin', result: '-25 lbs', timeframe: '10 weeks', summary: 'Feels more confident inside and out.' },
-    { flag: '🇮🇳', countryCode: ' ', city: 'Canada', name: 'Vikram T.', result: '-20 lbs', timeframe: '9 weeks', summary: 'Entrepreneur achieved peak performance with our premium system.' },
+ const liveUpdates = [
+  {
+    flag: '🇲🇹',
+    countryCode: 'MT',
+    city: 'Malta',
+    name: 'Satheesh',
+    result: '-15 lbs',
+    timeframe: '6 weeks',
+    summary: 'Managed work & life while staying consistent.',
+  },
+  {
+    flag: '🇩🇪',
+    countryCode: 'DE',
+    city: 'Germany',
+    name: 'Vikram',
+    result: '-22 lbs',
+    timeframe: '8 weeks',
+    summary: 'Now balanced & thriving after inconsistency.',
+  },
+  {
+    flag: '🇫🇷',
+    countryCode: 'FR',
+    city: 'France',
+    name: 'Shridhar',
+    result: '-18 lbs',
+    timeframe: '7 weeks',
+    summary: 'Now pain-free and stronger than ever.',
+  },
+  {
+    flag: '🏴',
+    countryCode: 'GB-SCT',
+    city: 'Scotland',
+    name: 'Pravin',
+    result: '-25 lbs',
+    timeframe: '10 weeks',
+    summary: 'Feels more confident inside and out.',
+  },
+  {
+    flag: '🇺🇸',
+    countryCode: 'US',
+    city: 'USA',
+    name: 'Yash Patel',
+    result: '-8.4 kg',
+    timeframe: '3 months',
+    summary: '99.1kg → 90.7kg. Consistency wins!',
+  },
+  {
+    flag: '🇨🇦',
+    countryCode: 'CA',
+    city: 'Canada',
+    name: 'Toushaar',
+    result: '-7 kg',
+    timeframe: '24 weeks',
+    summary: 'From 102kg to 94.5kg. Slow and steady.',
+  },
+  {
+    flag: '🇦🇺',
+    countryCode: 'AU',
+    city: 'Australia',
+    name: 'Prakhar',
+    result: '-5 kg',
+    timeframe: '16 weeks',
+    summary: 'Balanced job abroad and dropped fat.',
+  },
+];
+
   ];
 
   return (
