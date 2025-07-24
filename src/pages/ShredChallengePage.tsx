@@ -8,7 +8,7 @@ const ShredChallengePage: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const roadmapImages = [
-    'https://streamable.com/6kq255',
+
   ];
 
   const features = [
