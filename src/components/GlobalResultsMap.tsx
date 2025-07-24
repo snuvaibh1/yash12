@@ -26,32 +26,6 @@ const GlobalResultsMap: React.FC = () => {
     { id: 8, city: 'Ahmedabad', state: 'Gujarat', clients: 85, avgTransformation: '31 lbs', coordinates: { top: '55%', left: '18%' }, testimonial: 'Gujarat entrepreneurial spirit driving fitness success.' },
   ];
 
-  const updates = [
-    {
-      location: 'Canada', code: 'CA', name: 'Toushaar', achievement: '7kg Lost', timeframe: '24 weeks',
-      description: "Started at 102kg, now 94.5kg", gradient: 'from-red-500/20 via-red-600/10 to-transparent'
-    },
-    {
-      location: 'Australia', code: 'AU', name: 'Prakhar', achievement: '5kg Lost', timeframe: '16 weeks',
-      description: "93.4kg → 88.25kg while balancing work abroad", gradient: 'from-blue-500/20 via-blue-600/10 to-transparent'
-    },
-    {
-      location: 'Delhi', code: 'IN', name: 'Anita M.', achievement: '35lb Lost', timeframe: '20 weeks',
-      description: "Reached goal weight with dedication", gradient: 'from-orange-500/20 via-orange-600/10 to-transparent'
-    },
-    {
-      location: 'Chennai', code: 'IN', name: 'Vikram R.', achievement: 'Month 1', timeframe: '4 weeks',
-      description: "Incredible progress in first month", gradient: 'from-green-500/20 via-green-600/10 to-transparent'
-    },
-    {
-      location: 'Pune', code: 'IN', name: 'Sneha P.', achievement: '15lb Lost', timeframe: '6 weeks',
-      description: "Amazing dedication and consistency", gradient: 'from-purple-500/20 via-purple-600/10 to-transparent'
-    },
-    {
-      location: 'Hyderabad', code: 'IN', name: 'Arjun T.', achievement: '8lb Muscle', timeframe: '12 weeks',
-      description: "Strength goals achieved successfully", gradient: 'from-yellow-500/20 via-yellow-600/10 to-transparent'
-    },
-  ];
 
   return (
     <section ref={sectionRef} className="py-16 relative bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary overflow-hidden">
