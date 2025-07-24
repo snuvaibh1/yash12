@@ -190,7 +190,7 @@ const RecipeEbookPage: React.FC = () => {
             </motion.blockquote>
             
             <div className="text-white/60 text-lg">
-              - Priya S., Mumbai
+               
             </div>
             
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-8" />
