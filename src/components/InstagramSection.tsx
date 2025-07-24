@@ -41,7 +41,6 @@ const InstagramSection: React.FC = () => {
     {
       id: 6,
       image: 'https://i.imgur.com/VWfHxZA.jpeg',
-      caption: 'Another week, another breakthrough! 🚀 Consistency is everything #WeeklyWins',
       likes: 2743,
       comments: 178
     }
