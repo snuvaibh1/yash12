@@ -26,6 +26,13 @@ const GlobalResultsMap: React.FC = () => {
     { id: 8, city: 'Ahmedabad', state: 'Gujarat', clients: 85, avgTransformation: '31 lbs', coordinates: { top: '55%', left: '18%' }, testimonial: 'Gujarat entrepreneurial spirit driving fitness success.' },
   ];
 
+  const liveUpdates = [
+    { flag: '🇮🇳', countryCode: 'IN', city: 'Mumbai', name: 'Rajesh K.', result: '-15 lbs', timeframe: '6 weeks', summary: 'Busy executive transformed his lifestyle with our premium coaching system.' },
+    { flag: '🇮🇳', countryCode: 'IN', city: 'Delhi', name: 'Priya S.', result: '-22 lbs', timeframe: '8 weeks', summary: 'Working mother achieved her dream body with our personalized approach.' },
+    { flag: '🇮🇳', countryCode: 'IN', city: 'Bangalore', name: 'Arjun M.', result: '-18 lbs', timeframe: '7 weeks', summary: 'Tech professional broke through his plateau with elite coaching.' },
+    { flag: '🇮🇳', countryCode: 'IN', city: 'Chennai', name: 'Lakshmi R.', result: '-25 lbs', timeframe: '10 weeks', summary: 'Incredible transformation journey with sustainable lifestyle changes.' },
+    { flag: '🇮🇳', countryCode: 'IN', city: 'Hyderabad', name: 'Vikram T.', result: '-20 lbs', timeframe: '9 weeks', summary: 'Entrepreneur achieved peak performance with our premium system.' },
+  ];
 
   return (
     <section ref={sectionRef} className="py-16 relative bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary overflow-hidden">
@@ -166,6 +173,7 @@ const GlobalResultsMap: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 };
