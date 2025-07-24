@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Globe, Target } from 'lucide-react';
 
 const GlobalResultsMap: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
