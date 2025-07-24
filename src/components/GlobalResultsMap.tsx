@@ -80,15 +80,14 @@ const GlobalResultsMap: React.FC = () => {
           style={{ scale, opacity }}
           className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden mb-8"
         >
-          <div className="relative w-full rounded-2xl overflow-hidden">
+          <div className="relative w-full rounded-2xl overflow-hidden flex items-center justify-center">
             <img
               src="https://i.imgur.com/DaOn27P.png"
               alt="Global Transformation Network Map"
-              className="w-full h-auto object-cover rounded-2xl"
+              className="w-full h-auto object-contain rounded-2xl max-w-full"
               style={{ 
-                maxHeight: '500px',
-                minHeight: '300px',
-                objectFit: 'cover'
+                maxHeight: 'none',
+                minHeight: 'auto'
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark/20 via-transparent to-transparent rounded-2xl" />
