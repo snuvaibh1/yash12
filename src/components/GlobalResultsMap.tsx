@@ -40,7 +40,7 @@ const GlobalResultsMap: React.FC = () => {
     script.src = "https://www.gstatic.com/external_hosted/leaflet/leaflet.js";
     script.onload = () => {
       const L = (window as any).L;
-      const map = L.map('map').setView([20.5937, 78.9629], 4); // India center
+      const map = L.map('map').setView([20.5937, 78.9629], 4);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors',
       }).addTo(map);
@@ -75,7 +75,7 @@ const GlobalResultsMap: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Custom Map Section (Replaced iframe) */}
+        {/* Custom Map Section */}
         <motion.div
           style={{ scale, opacity }}
           className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden mb-8"
@@ -85,7 +85,7 @@ const GlobalResultsMap: React.FC = () => {
               src="https://i.imgur.com/DaOn27P.png"
               alt="Global Transformation Network Map"
               className="w-full h-auto object-contain rounded-2xl max-w-full"
-              style={{ 
+              style={{
                 maxHeight: 'none',
                 minHeight: 'auto'
               }}
@@ -93,23 +93,6 @@ const GlobalResultsMap: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-dark/20 via-transparent to-transparent rounded-2xl" />
           </div>
         </motion.div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          {[
-            { icon: Globe, label: 'Countries', value: '14+', color: 'text-white' },
-            { icon: Target, label: 'Avg Transformation', value: '29 lbs', color: 'text-white' },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="text-center p-6 bg-bg-panel/50 backdrop-blur-sm rounded-2xl border border-border-secondary hover:border-primary/30 transition-colors"
-            >
-              <stat.icon className={`w-8 h-8 ${stat.color} mx-auto mb-4`} />
-              <div className="text-3xl font-black text-text-primary mb-2">{stat.value}</div>
-              <div className="text-text-muted text-sm uppercase tracking-wider">{stat.label}</div>
-            </div>
-          ))}
-        </div>
 
         {/* Live Updates */}
         <div className="mt-16 bg-black rounded-2xl p-4 md:p-8 border border-accent-gold/20">
