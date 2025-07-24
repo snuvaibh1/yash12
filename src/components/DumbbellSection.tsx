@@ -151,6 +151,7 @@ const DumbbellSection: React.FC = () => {
           {[
             { number: '847+', label: 'Transformations' },
             { number: '98%', label: 'Success Rate' },
+          { number: '98%', label: 'Success Rate' },
           ].map((stat) => (
             <motion.div
               key={stat.label}
