@@ -60,7 +60,7 @@ const CardStackShowcase: React.FC = () => {
     <section className="bg-[#0C0C15] py-20 px-6 text-white relative z-10">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-16 relative z-30">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-accent-gold">
             Real Transformations.<br />
             Real Results.
@@ -72,29 +72,27 @@ const CardStackShowcase: React.FC = () => {
         </div>
 
         {/* Card Stack */}
-        <div className="flex justify-center relative z-20">
+        <div className="flex justify-center relative">
           <div
-            className="relative w-[280px] h-[380px] md:w-[400px] md:h-[520px] flex-shrink-0"
+            className="relative w-[280px] h-[380px] md:w-[400px] md:h-[520px]"
             ref={containerRef}
           >
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="card-stack-item absolute top-0 left-0 w-full h-full bg-[#1a1a2e] border border-white/10 rounded-3xl shadow-lg overflow-hidden transition-all duration-500"
+                className="card-stack-item absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-[#121212]"
                 style={{ zIndex: testimonials.length - i }}
               >
-                {/* Name */}
-                <div className="absolute top-0 left-0 w-full bg-black/50 py-3 px-4 z-10 text-white font-semibold text-base md:text-lg backdrop-blur-sm">
-                  {t.name}
-                </div>
-
                 {/* Image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <img
-                    src={t.image}
-                    alt={t.name}
-                    className="object-cover w-full h-full rounded-3xl"
-                  />
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  className="object-cover w-full h-full"
+                />
+
+                {/* Name Overlay */}
+                <div className="absolute bottom-0 left-0 w-full bg-black/60 px-4 py-3 text-white text-sm font-semibold backdrop-blur-sm">
+                  {t.name}
                 </div>
               </div>
             ))}
