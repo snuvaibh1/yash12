@@ -35,7 +35,6 @@ const InstagramSection: React.FC = () => {
     {
       id: 5,
       image: 'https://i.imgur.com/1ST7IF4.jpeg',
-      caption: 'Strength isn\'t just physical - it\'s mental! 🧠💪 #StrengthTraining #MentalToughness',
       likes: 1892,
       comments: 97
     },
