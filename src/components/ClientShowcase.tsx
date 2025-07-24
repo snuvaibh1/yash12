@@ -1,22 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const testimonials = [
-  {
-    week: 'Week 1',
-    image: '/images/transform-1.png', // replace with actual image path
-    quote: '“I struggled staying consistent and lacked discipline. A few good days were always followed by a bad weekend of letting go of everything.”',
-  },
-  {
-    week: 'Week 4',
-    image: '/images/transform-2.png',
-    quote: '“My eating habits are not very healthy. I am not always motivated for workouts, my eating habits and overall lifestyle is not very sorted.”',
-  },
-  {
-    week: 'Week 12',
-    image: '/images/transform-3.png',
-    quote: '“I lost only 7 kgs in 3 months, but gained muscle as well during the process.”',
-  },
+const transformationImages = [
+  'https://i.imgur.com/xdDHr1d.png',
+  'https://i.imgur.com/fZybstc.png',
+  'https://i.imgur.com/Z9BGSDc.png',
+  'https://i.imgur.com/4gsMTWZ.png',
+  'https://i.imgur.com/fcFnYkT.png',
+  'https://i.imgur.com/rPY5R0t.png',
+  'https://i.imgur.com/5UHjNx6.png',
+  'https://i.imgur.com/PzriAqH.png',
+  'https://i.imgur.com/vAoSDI1.png',
+  'https://i.imgur.com/m9THm2A.png',
 ];
 
 const tiltTransition = {
@@ -39,7 +34,7 @@ const TransformationsScroll: React.FC = () => {
 
       <div className="overflow-x-auto no-scrollbar">
         <div className="flex gap-6 px-4 md:px-0 w-max">
-          {testimonials.map((item, index) => (
+          {transformationImages.map((img, index) => (
             <motion.div
               key={index}
               whileHover={{ rotateY: 10, rotateX: -5 }}
@@ -47,14 +42,10 @@ const TransformationsScroll: React.FC = () => {
               className="bg-[#1c1c22] rounded-xl p-4 w-[260px] min-w-[260px] shadow-lg transform-style-preserve-3d"
             >
               <img
-                src={item.image}
+                src={img}
                 alt={`Transformation ${index + 1}`}
-                className="w-full h-64 object-cover rounded-lg mb-4"
+                className="w-full h-64 object-cover rounded-lg"
               />
-              <div className="bg-red-600 inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2">
-                {item.week}
-              </div>
-              <p className="text-sm text-gray-300">{item.quote}</p>
             </motion.div>
           ))}
         </div>
