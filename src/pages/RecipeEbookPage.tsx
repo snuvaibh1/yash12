@@ -152,7 +152,7 @@ const RecipeEbookPage: React.FC = () => {
                   <Check className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">
-                  ✅ {feature}
+                    {feature}
                 </h3>
               </motion.div>
             ))}
