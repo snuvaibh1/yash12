@@ -63,16 +63,10 @@ const GlobalResultsMap: React.FC = () => {
           className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden"
         >
           <div className="relative w-full h-0 pb-[56.25%]">
-           <iframe
-  src="https://www.google.com/maps/d/u/0/embed?mid=1vzGvNP0RILxFa4jWkwj2f2OHC3gwcN4&ehbc=2E312F&noprof=1"
-  width="100%"
-  height="100%"
-  className="absolute inset-0 w-full h-full rounded-2xl"
-  style={{ border: 0 }}
-  allowFullScreen=""
-  loading="lazy"
-></iframe>
-
+            <img
+              src="https://i.imgur.com/B1TA9Fz.png"
+              alt="World Map"
+              className="absolute inset-0 w-full h-full object-cover rounded-2xl"
             />
             {transformationLocations.map((location) => (
               <div
