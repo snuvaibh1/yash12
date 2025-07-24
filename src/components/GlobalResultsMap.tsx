@@ -82,7 +82,7 @@ const GlobalResultsMap: React.FC = () => {
         >
           <div className="relative w-full rounded-2xl overflow-hidden">
             <img
-              src="https://i.imgur.com/qiGtycO.png"
+              src="https://i.imgur.com/DaOn27P.png"
               alt="Global Transformation Network Map"
               className="w-full h-auto object-cover rounded-2xl"
               style={{ 
