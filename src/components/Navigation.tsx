@@ -34,7 +34,7 @@ const Navigation: React.FC = () => {
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/#about' },
-    { label: 'CHAMPIONS FUEL', href: '/recipe-ebook' },
+    { label: 'Recipe Ebook', href: '/recipe-ebook' },
     { label: 'Results', href: '/#results' },
     { label: 'Contact', href: '/#contact' },
   ];
