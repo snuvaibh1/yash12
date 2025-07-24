@@ -15,7 +15,7 @@ const DumbbellSection: React.FC = () => {
     {
       title: 'Personalized Programs',
       description:
-        'Tailored training plans designed for your specific goals and body type.',
+        'gym workouts, home workouts, Travel/hotel room exercises, 20 minute work day circuits, everything!',
       position: 'top-left',
     },
     {
