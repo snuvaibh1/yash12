@@ -98,7 +98,7 @@ const CoachSection: React.FC = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Award className="w-7 h-7 text-accent-gold" />
-                <h3 className="text-white/80 text-lg font-semibold">Certified Trainer</h3>
+                <h3 className="text-white/80 text-lg font-semibold">Accreditations</h3>
               </div>
               <ul className="list-disc list-inside text-white/60 text-sm space-y-1 pl-2">
                 {achievements[0].subItems.map((item, i) => (
