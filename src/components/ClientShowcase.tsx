@@ -1,109 +1,86 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    name: 'Akhil Jamwal',
-    image: 'https://i.imgur.com/3YhHECe.png',
+    week: 'Week 1',
+    image: 'https://i.imgur.com/uDHKp5Q.jpg',
+    quote:
+      '"I struggled staying consistent and lacked discipline. A few good days were always followed by a bad weekend of letting go of everything".',
   },
   {
-    name: 'Jeetu Naik',
-    image: 'https://i.imgur.com/g7n7IJi.jpeg',
+    week: 'Week 1',
+    image: 'https://i.imgur.com/W4Avvpp.jpg',
+    quote:
+      '"My eating habits are not very healthy. I am not always motivated for workouts, my eating habits and overall lifestyle is not very sorted."',
   },
   {
-    name: 'Joel',
-    image: 'https://i.imgur.com/gye7S1r.png',
-  },
-  {
-    name: 'Romell',
-    image: 'https://i.imgur.com/miPEVL9.jpeg',
+    week: 'Week 12',
+    image: 'https://i.imgur.com/qH2syg4.jpg',
+    quote:
+      '"I lost only 7 kgs in 3 months, but gained muscle as well during the process."',
   },
 ];
 
-const CardStackShowcase: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+const stackVariants = {
+  hidden: (index: number) => ({
+    opacity: 0,
+    y: 50 * (index + 1),
+    scale: 0.95,
+  }),
+  visible: (index: number) => ({
+    opacity: 1,
+    y: index * -50,
+    scale: 1,
+    transition: {
+      delay: index * 0.2,
+      duration: 0.6,
+      ease: 'easeOut',
+    },
+  }),
+};
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const cards = Array.from(container.querySelectorAll('.card-stack-item')) as HTMLElement[];
-    let cardOrder = [...cards];
-
-    const animate = () => {
-      const first = cardOrder[0];
-
-      gsap.to(first, {
-        y: 700,
-        opacity: 0,
-        duration: 1.2,
-        ease: 'power2.inOut',
-        onComplete: () => {
-          container.appendChild(first);
-          gsap.set(first, { y: -700, opacity: 0 });
-          gsap.to(first, { y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' });
-
-          cardOrder.push(cardOrder.shift()!);
-
-          cardOrder.forEach((card, i) => {
-            gsap.set(card, { zIndex: cards.length - i });
-          });
-        },
-      });
-    };
-
-    const interval = setInterval(animate, 3500);
-    return () => clearInterval(interval);
-  }, []);
-
+const TransformationStack: React.FC = () => {
   return (
-    <section className="bg-[#0C0C15] py-20 px-6 text-white relative z-10">
-      <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-accent-gold">
-            Real Transformations.<br />
-            Real Results.
-          </h2>
-          <p className="mt-4 text-sm md:text-lg text-white/70 max-w-xl mx-auto">
-            These transformations speak louder than any promise. See what's possible when elite
-            coaching meets unwavering commitment.
-          </p>
-        </div>
+    <section className="bg-[#070711] text-white py-20 px-4 md:px-0">
+      <div className="max-w-3xl mx-auto text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-yellow-400 leading-tight">
+          Real Transformations.<br />Real Results.
+        </h2>
+        <p className="text-gray-400 mt-4 text-base md:text-lg">
+          These transformations speak louder than any promise.
+          <br className="hidden md:block" />
+          See what's possible when elite coaching meets unwavering commitment.
+        </p>
+      </div>
 
-        {/* Card Stack */}
-        {/* Card Stack */}
-<div className="flex justify-center relative mt-32">
-  <div
-    className="relative w-[280px] h-[380px] md:w-[400px] md:h-[520px]"
-    ref={containerRef}
-    style={{ marginTop: '6rem' }} // fallback for strict positioning
-  >
-
-            {testimonials.map((t, i) => (
-              <div
-                key={i}
-                className="card-stack-item absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-[#121212]"
-                style={{ zIndex: testimonials.length - i }}
-              >
-                {/* Image */}
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="object-cover w-full h-full"
-                />
-
-                {/* Name Overlay */}
-                <div className="absolute bottom-0 left-0 w-full bg-black/60 px-4 py-3 text-white text-sm font-semibold backdrop-blur-sm">
-                  {t.name}
-                </div>
+      <div className="relative flex justify-center">
+        <div className="relative w-[300px] md:w-[400px] h-[600px] md:h-[700px]">
+          {testimonials.map((item, index) => (
+            <motion.div
+              key={index}
+              className="absolute top-0 left-0 w-full p-4 bg-[#1b1b1f] text-white rounded-xl shadow-lg"
+              custom={index}
+              variants={stackVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <img
+                src={item.image}
+                alt={`Transformation ${index + 1}`}
+                className="w-full h-64 object-cover rounded-md mb-4"
+              />
+              <div className="bg-red-600 text-white px-3 py-1 rounded-full inline-block text-sm font-semibold mb-2">
+                {item.week}
               </div>
-            ))}
-          </div>
+              <p className="text-sm text-gray-300">{item.quote}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default CardStackShowcase;
+export default TransformationStack;
