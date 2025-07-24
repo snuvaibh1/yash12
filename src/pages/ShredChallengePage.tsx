@@ -7,8 +7,7 @@ const ShredChallengePage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
-  const roadmapImages = [
-    'https://streamable.com/6kq255',
+
   ];
 
   const features = [
