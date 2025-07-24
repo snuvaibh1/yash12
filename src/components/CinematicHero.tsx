@@ -146,7 +146,7 @@ const CinematicHero: React.FC = () => {
                   }}
                 >
                   <br />
-                  <span className="text-accent-gold">CHAMPION LIFESTYLE</span>
+                  <span className="text-accent-gold"> </span>
                 </motion.h1>
               </div>
             </div>
@@ -162,9 +162,9 @@ const CinematicHero: React.FC = () => {
                 textShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
               }}
             >
-              Want to be a part of TeamCLC? Watch this...
+               
               <br className="hidden sm:block" />
-              Your transformation begins with a single decision.
+               
             </motion.p>
 
             {/* CTA Buttons */}
