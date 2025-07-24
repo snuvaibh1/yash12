@@ -157,65 +157,6 @@ const ShredChallengePage: React.FC = () => {
       </section>
 
       {/* 8W Roadmap Section */}
-      <section className="py-24 bg-gradient-to-b from-dark to-charcoal">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-6xl font-black mb-6">
-              The 8W
-              <br />
-              <span className="text-primary">Roadmap</span>
-            </h2>
-            <p className="text-xl text-white/80">Your Path to the Shores</p>
-          </motion.div>
-
-          <div className="relative">
-            <motion.div
-              className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src={roadmapImages[currentSlide]}
-                alt={`Week ${currentSlide + 1} Transformation`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">Week {currentSlide + 1}</h3>
-                <p className="text-white/80">Transformation Phase {currentSlide + 1}</p>
-              </div>
-            </motion.div>
-
-            {/* Navigation Dots */}
-            <div className="flex justify-center space-x-3 mt-8">
-              {roadmapImages.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index ? 'bg-primary scale-125' : 'bg-white/30 hover:bg-white/50'
-                  }`}
-                  onClick={() => setCurrentSlide(index)}
-                />
-              ))}
-            </div>
-
-            {/* Auto-advance slideshow */}
-            <div className="hidden">
-              {setTimeout(() => {
-                setCurrentSlide((prev) => (prev + 1) % roadmapImages.length);
-              }, 3000)}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Why It Works Section */}
       <section className="py-24 bg-gradient-to-b from-charcoal to-dark relative overflow-hidden">
