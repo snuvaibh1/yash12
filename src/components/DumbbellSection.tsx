@@ -40,16 +40,42 @@ const DumbbellSection: React.FC = () => {
       title: 'Proven Results',
       description:
         'The results speak for the program. You too will be an inspiration for someone else.',
-      position: 'center-top',
+      position: 'above-title',
     },
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="py-32 bg-charcoal relative overflow-hidden"
+      className="pt-32 pb-24 bg-charcoal relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Proven Results Above Title */}
+        {features.map((feature, index) => {
+          if (feature.position !== 'above-title') return null;
+
+          return (
+            <motion.div
+              key={feature.title}
+              className="hidden md:block absolute -top-20 left-1/2 transform -translate-x-1/2 max-w-lg z-20"
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="bg-charcoal-light/80 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </motion.div>
+          );
+        })}
+
         <div className="text-center mb-16">
           <motion.h2
             className="text-4xl md:text-6xl font-black mb-6"
@@ -79,14 +105,15 @@ const DumbbellSection: React.FC = () => {
             <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl scale-150 animate-pulse pointer-events-none -z-10" />
           </motion.div>
 
-          {/* Feature Cards (Desktop only) */}
+          {/* Feature Cards - Desktop only */}
           {features.map((feature, index) => {
+            if (feature.position === 'above-title') return null;
+
             const positions = {
               'top-left': 'top-4 left-4 md:top-16 md:left-16',
               'top-right': 'top-4 right-4 md:top-16 md:right-16',
               'bottom-left': 'bottom-4 left-4 md:bottom-16 md:left-16',
               'bottom-right': 'bottom-4 right-4 md:bottom-16 md:right-16',
-              'center-top': 'top-0 left-1/2 transform -translate-x-1/2 md:top-6',
             };
 
             return (
@@ -112,7 +139,7 @@ const DumbbellSection: React.FC = () => {
           })}
         </div>
 
-        {/* Mobile Feature Cards */}
+        {/* Mobile View - All Cards */}
         <div className="grid grid-cols-1 gap-6 mt-12 md:hidden">
           {features.map((feature, index) => (
             <motion.div
