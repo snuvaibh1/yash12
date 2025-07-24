@@ -10,7 +10,7 @@ const CoachSection: React.FC = () => {
   const achievements = [
     {
       icon: Award,
-      label: 'Certified Trainer',
+      label: 'Accreditations',
       subItems: [
         'NASM-CPT (Certified Personal Trainer)',
         'NASM-CNC (Certified Nutrition Coach)',
