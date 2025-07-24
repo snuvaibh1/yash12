@@ -78,10 +78,20 @@ const GlobalResultsMap: React.FC = () => {
         {/* Custom Map Section (Replaced iframe) */}
         <motion.div
           style={{ scale, opacity }}
-          className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden"
+          className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden mb-8"
         >
-          <div className="relative w-full h-[500px] rounded-2xl">
-            <div id="map" className="absolute inset-0 w-full h-full rounded-2xl z-10" />
+          <div className="relative w-full rounded-2xl overflow-hidden">
+            <img
+              src="https://i.imgur.com/qiGtycO.png"
+              alt="Global Transformation Network Map"
+              className="w-full h-auto object-cover rounded-2xl"
+              style={{ 
+                maxHeight: '500px',
+                minHeight: '300px',
+                objectFit: 'cover'
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/20 via-transparent to-transparent rounded-2xl" />
           </div>
         </motion.div>
 
