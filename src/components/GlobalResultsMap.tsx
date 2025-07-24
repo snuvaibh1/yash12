@@ -27,7 +27,7 @@ const GlobalResultsMap: React.FC = () => {
   ];
 
   const liveUpdates = [
-    { flag: '🇲🇹', countryCode: ' ', city: 'Malta', name: 'Satheesh', result: '-15 lbs', timeframe: '6 weeks', summary: 'Managed work & life while staying consistent.' },
+    { flag: '🇲🇹', countryCode: ' ', city: 'Malta', name: 'Satheesh', result: 'Disciplined', timeframe: '6 weeks', summary: 'Managed work & life while staying consistent.' },
     { flag: '🇩🇪', countryCode: ' ', city: 'Germany', name: 'Vikram', result: '-22 lbs', timeframe: '8 weeks', summary: 'Now balanced & thriving after inconsistency.' },
     { flag: '🇫🇷', countryCode: ' ', city: 'France', name: 'Shridhar', result: '-18 lbs', timeframe: '7 weeks', summary: 'Now pain-free and stronger than ever.' },
     { flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', countryCode: ' ', city: 'Scotland', name: 'Pravin', result: '-25 lbs', timeframe: '10 weeks', summary: 'Feels more confident inside and out.' },
