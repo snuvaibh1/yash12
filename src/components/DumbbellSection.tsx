@@ -40,7 +40,7 @@ const DumbbellSection: React.FC = () => {
       title: 'Proven Results',
       description:
         'The results speak for the program. You too will be an inspiration for someone else.',
-      position: 'center-bottom',
+      position: 'center-top',
     },
   ];
 
@@ -79,14 +79,14 @@ const DumbbellSection: React.FC = () => {
             <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl scale-150 animate-pulse pointer-events-none -z-10" />
           </motion.div>
 
-          {/* Feature Cards - Desktop Only */}
+          {/* Feature Cards (Desktop only) */}
           {features.map((feature, index) => {
             const positions = {
               'top-left': 'top-4 left-4 md:top-16 md:left-16',
               'top-right': 'top-4 right-4 md:top-16 md:right-16',
               'bottom-left': 'bottom-4 left-4 md:bottom-16 md:left-16',
               'bottom-right': 'bottom-4 right-4 md:bottom-16 md:right-16',
-              'center-bottom': 'bottom-4 left-1/2 transform -translate-x-1/2 md:bottom-8',
+              'center-top': 'top-0 left-1/2 transform -translate-x-1/2 md:top-6',
             };
 
             return (
@@ -112,7 +112,7 @@ const DumbbellSection: React.FC = () => {
           })}
         </div>
 
-        {/* Mobile Cards */}
+        {/* Mobile Feature Cards */}
         <div className="grid grid-cols-1 gap-6 mt-12 md:hidden">
           {features.map((feature, index) => (
             <motion.div
