@@ -166,7 +166,7 @@ const CinematicHero: React.FC = () => {
             </motion.p>
 
             {/* CTA Buttons */}
-            <div className="mt-64 md:mt-56">
+            <div className="mt-72 md:mt-56">
               <motion.div
                 className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center"
                 initial={{ opacity: 0, y: 50 }}
