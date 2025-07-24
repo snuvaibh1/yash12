@@ -9,7 +9,6 @@ const GlobalResultsMap: React.FC = () => {
     offset: ['start end', 'end start'],
   });
 
-  // Scroll-based animation values
   const scale = useTransform(scrollYProgress, [0, 1], [1.15, 1]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
@@ -30,11 +29,10 @@ const GlobalResultsMap: React.FC = () => {
     { flag: '🇲🇹', countryCode: ' ', city: 'Malta', name: 'Satheesh', result: 'Disciplined', timeframe: ' ', summary: 'Managed work & life while staying consistent.' },
     { flag: '🇩🇪', countryCode: ' ', city: 'Germany', name: 'Vikram', result: 'In Control', timeframe: ' ', summary: 'Now balanced & thriving after inconsistency.' },
     { flag: '🇫🇷', countryCode: ' ', city: 'France', name: 'Shridhar', result: 'Pain-Free', timeframe: ' ', summary: 'Now pain-free and stronger than ever.' },
-    { flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', countryCode: ' ', city: 'Scotland', name: 'Pravin', result: 'More Confident', timeframe: ' ', summary: 'Feels more confident inside and out.' },
+    { flag: '🏴', countryCode: ' ', city: 'Scotland', name: 'Pravin', result: 'More Confident', timeframe: ' ', summary: 'Feels more confident inside and out.' },
     { flag: '🇨🇦', countryCode: ' ', city: 'Canada', name: 'Toushaar', result: '7kg Lost', timeframe: ' ', summary: '102kg → 94.5kg with steady progress.' },
-        { flag: '🇦🇺', countryCode: ' ', city: 'Australia', name: 'Prakhar', result: '5kg Lost', timeframe: ' ', summary: 'Balanced job & lost 5kg abroad.' },
-        { flag: '🇺🇸', countryCode: ' ', city: 'USA', name: 'Yash Patel', result: '8.4kg Lost', timeframe: ' ', summary: '99.1kg → 90.7kg in 3 months..' },
-    
+    { flag: '🇦🇺', countryCode: ' ', city: 'Australia', name: 'Prakhar', result: '5kg Lost', timeframe: ' ', summary: 'Balanced job & lost 5kg abroad.' },
+    { flag: '🇺🇸', countryCode: ' ', city: 'USA', name: 'Yash Patel', result: '8.4kg Lost', timeframe: ' ', summary: '99.1kg → 90.7kg in 3 months..' },
   ];
 
   return (
@@ -63,11 +61,14 @@ const GlobalResultsMap: React.FC = () => {
           className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden"
         >
           <div className="relative w-full h-0 pb-[56.25%]">
-            <img
-              src="https://i.imgur.com/B1TA9Fz.png"
-              alt="World Map"
-              className="absolute inset-0 w-full h-full object-cover rounded-2xl"
-            />
+            <iframe
+              src="https://www.google.com/maps/d/u/0/embed?mid=1vzGvNP0RILxFa4jWkwj2f2OHC3gwcN4&ehbc=2E312F&noprof=1"
+              className="absolute inset-0 w-full h-full rounded-2xl"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+
             {transformationLocations.map((location) => (
               <div
                 key={location.id}
@@ -123,8 +124,7 @@ const GlobalResultsMap: React.FC = () => {
           <h3 className="text-xl md:text-2xl font-bold text-white mb-6 text-center sticky top-0 bg-black/90 backdrop-blur-sm py-2 rounded-lg">
             Live Transformation Updates
           </h3>
-          
-          {/* Mobile-first horizontal scroll container */}
+
           <div className="overflow-x-auto scrollbar-hide">
             <div className="flex gap-4 pb-4 snap-x snap-mandatory" style={{ width: 'max-content' }}>
               {liveUpdates.map((update, index) => (
@@ -137,9 +137,8 @@ const GlobalResultsMap: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   <div className="h-full p-4 bg-black/80 backdrop-blur-xl rounded-2xl border border-accent-gold/30 shadow-2xl relative overflow-hidden group hover:border-accent-gold/50 transition-all duration-300">
-                    {/* LIVE Badge */}
                     <div className="absolute top-3 right-3 flex items-center space-x-1">
-                      <motion.div 
+                      <motion.div
                         className="w-2 h-2 bg-accent-gold rounded-full"
                         animate={{ opacity: [0.5, 1, 0.5] }}
                         transition={{ duration: 2, repeat: Infinity }}
@@ -147,7 +146,6 @@ const GlobalResultsMap: React.FC = () => {
                       <span className="text-xs text-accent-gold font-bold">LIVE</span>
                     </div>
 
-                    {/* Country Flag & City */}
                     <div className="mb-3">
                       <div className="flex items-center space-x-2 mb-1">
                         <span className="text-lg">{update.flag}</span>
@@ -157,7 +155,6 @@ const GlobalResultsMap: React.FC = () => {
                       <p className="text-white/60 text-sm">{update.name}</p>
                     </div>
 
-                    {/* Result Badge */}
                     <div className="mb-3">
                       <div className="inline-flex items-center px-3 py-1.5 bg-accent-gold/20 backdrop-blur-sm rounded-full border border-accent-gold/40">
                         <span className="text-accent-gold font-bold text-sm">{update.result}</span>
@@ -165,10 +162,8 @@ const GlobalResultsMap: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Transformation Summary */}
                     <p className="text-white/80 text-xs leading-relaxed">{update.summary}</p>
 
-                    {/* Subtle glow effect on hover */}
                     <div className="absolute inset-0 bg-accent-gold/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </div>
                 </motion.div>
