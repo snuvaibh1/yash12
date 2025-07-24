@@ -73,12 +73,13 @@ const CardStackShowcase: React.FC = () => {
 
         {/* Card Stack */}
         {/* Card Stack */}
-<div className="flex justify-center relative mt-16 md:mt-24">
+<div className="flex justify-center relative mt-32">
+  <div
+    className="relative w-[280px] h-[380px] md:w-[400px] md:h-[520px]"
+    ref={containerRef}
+    style={{ marginTop: '6rem' }} // fallback for strict positioning
+  >
 
-          <div
-            className="relative w-[280px] h-[380px] md:w-[400px] md:h-[520px]"
-            ref={containerRef}
-          >
             {testimonials.map((t, i) => (
               <div
                 key={i}
