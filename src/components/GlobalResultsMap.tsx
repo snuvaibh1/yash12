@@ -31,7 +31,7 @@ const GlobalResultsMap: React.FC = () => {
     { flag: '🇩🇪', countryCode: ' ', city: 'Germany', name: 'Vikram', result: '-22 lbs', timeframe: '8 weeks', summary: 'Now balanced & thriving after inconsistency.' },
     { flag: '🇫🇷', countryCode: ' ', city: 'France', name: 'Shridhar', result: '-18 lbs', timeframe: '7 weeks', summary: 'Now pain-free and stronger than ever.' },
     { flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', countryCode: ' ', city: 'Scotland', name: 'Pravin', result: '-25 lbs', timeframe: '10 weeks', summary: 'Feels more confident inside and out.' },
-    { flag: '🇮🇳', countryCode: ' ', city: 'Canada', name: 'Vikram T.', result: '-20 lbs', timeframe: '9 weeks', summary: 'Entrepreneur achieved peak performance with our premium system.' },
+    { flag: '🇨🇦', countryCode: ' ', city: 'Canada', name: 'Toushaar', result: '-20 lbs', timeframe: '9 weeks', summary: '102kg → 94.5kg with steady progress.' },
   ];
 
   return (
