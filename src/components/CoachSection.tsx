@@ -39,7 +39,7 @@ const CoachSection: React.FC = () => {
           >
             <div className="relative overflow-hidden rounded-3xl">
               <img
-                src="https://i.imgur.com/GXjL89U.jpeg"
+                src="https://i.imgur.com/UNqheNs.jpeg"
                 alt="Coach Yash"
                 className="w-full h-full object-cover rounded-3xl aspect-[4/5]"
                 onLoad={() => setImageLoaded(true)}
