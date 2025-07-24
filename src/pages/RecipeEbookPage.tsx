@@ -78,8 +78,8 @@ const RecipeEbookPage: React.FC = () => {
                 <div className="relative bg-gradient-to-br from-primary/20 to-charcoal-light rounded-3xl p-8 border border-primary/30 shadow-2xl">
                   <div className="bg-white rounded-2xl p-6 text-center">
                     <div className="text-dark mb-4">
-                      <h3 className="text-2xl font-black mb-2">CHAMPIONS FUEL</h3>
-                      <p className="text-sm font-semibold">Recipe Ebook</p>
+                      <h3 className="text-2xl font-black mb-2">Protein Centered</h3>
+                      <p className="text-sm font-semibold">Recipe</p>
                     </div>
                     
                     {/* Food Image */}
