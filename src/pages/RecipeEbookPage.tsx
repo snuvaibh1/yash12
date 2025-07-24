@@ -93,7 +93,7 @@ const RecipeEbookPage: React.FC = () => {
                     
                     <div className="text-dark text-xs">
                       <p className="font-semibold">25+ High-Protein Recipes</p>
-                      <p>Protein Centered Recipes</p>
+                      <p>By Champions Lifestyle Coaching</p>
                     </div>
                   </div>
                 </div>
