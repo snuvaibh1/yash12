@@ -9,6 +9,10 @@ const GlobalResultsMap: React.FC = () => {
     offset: ['start end', 'end start'],
   });
 
+  // Scroll-based animation values
+  const scale = useTransform(scrollYProgress, [0, 1], [1.15, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
   const [activeLocation, setActiveLocation] = useState<number | null>(null);
 
   const transformationLocations = [
@@ -50,8 +54,9 @@ const GlobalResultsMap: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary relative overflow-hidden">
+    <section ref={sectionRef} className="py-16 relative bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
         {/* Heading */}
         <motion.div
           className="text-center mb-12"
@@ -68,13 +73,10 @@ const GlobalResultsMap: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* World Map */}
+        {/* Scroll-animated World Map */}
         <motion.div
+          style={{ scale, opacity }}
           className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
         >
           <div className="relative w-full h-0 pb-[56.25%]">
             <img
@@ -132,12 +134,11 @@ const GlobalResultsMap: React.FC = () => {
           ))}
         </div>
 
-        {/* Live Transformation Updates */}
+        {/* Live Updates */}
         <div className="mt-16 bg-bg-panel/30 backdrop-blur-sm rounded-2xl p-8 border border-border-secondary">
           <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">
             Live Transformation Updates
           </h3>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {updates.map((update, index) => (
               <motion.div
