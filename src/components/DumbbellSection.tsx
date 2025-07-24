@@ -54,7 +54,7 @@ const DumbbellSection: React.FC = () => {
           >
             CHAMPIONS LIFESTYLE
             <br />
-            <span className="text-primary">Training System</span>
+            <span className="text-primary">Coaching system</span>
           </motion.h2>
         </div>
 
