@@ -46,7 +46,7 @@ const HeroSection = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Optional dark overlay */}
+      {/* Optional dark overlay for contrast */}
       <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Content */}
@@ -57,6 +57,7 @@ const HeroSection = () => {
         >
           CHAMPION <br /> LIFESTYLE
         </h1>
+
         <p
           ref={subtextRef}
           className="mt-4 text-lg md:text-xl text-white max-w-2xl mx-auto"
@@ -69,14 +70,21 @@ const HeroSection = () => {
           ref={buttonGroupRef}
           className="mt-8 flex flex-col md:flex-row items-center justify-center gap-4"
         >
+          {/* Calendly Link */}
           <a
-            href="#start"
+            href="https://calendly.com/championlifestyle-yash/30min?month=2025-07"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition"
           >
             Begin Transformation →
           </a>
+
+          {/* YouTube Video Link */}
           <a
-            href="#transform"
+            href="https://youtu.be/zoLP2Q0k6dE?si=ynVrRWElYFoa8aHU"
+            target="_blank"
+            rel="noopener noreferrer"
             className="border border-white px-6 py-3 rounded-full font-semibold text-white hover:bg-white hover:text-black transition"
           >
             ▶ Watch Transformations
