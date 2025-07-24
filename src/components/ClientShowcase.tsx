@@ -72,7 +72,9 @@ const CardStackShowcase: React.FC = () => {
         </div>
 
         {/* Card Stack */}
-        <div className="flex justify-center relative">
+        {/* Card Stack */}
+<div className="flex justify-center relative mt-16 md:mt-24">
+
           <div
             className="relative w-[280px] h-[380px] md:w-[400px] md:h-[520px]"
             ref={containerRef}
