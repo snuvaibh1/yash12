@@ -8,7 +8,7 @@ const InstagramSection: React.FC = () => {
   const instagramPosts = [
     {
       id: 1,
-      image: 'https://i.imgur.com/OoeJNor.jpeg ',
+      image: 'https://i.imgur.com/OoeJNor.jpeg',
       caption: '12 weeks of dedication = 35 lbs transformation! 💪 #EliteTransformation #FitnessJourney',
       likes: 2847,
       comments: 156,
@@ -16,7 +16,7 @@ const InstagramSection: React.FC = () => {
     },
     {
       id: 2,
-      image: 'https://i.imgur.com/w9wWycg.jpeg',
+      image: 'https://i.imgur.com/DGelDKN.jpeg',
       caption: 'From couch to confident! Sarah\'s incredible 16-week journey 🔥 #TransformationTuesday',
       likes: 3921,
       comments: 203,
@@ -24,28 +24,28 @@ const InstagramSection: React.FC = () => {
     },
     {
       id: 3,
-      image: 'https://i.imgur.com/dzniUxo.jpeg',
+      image: 'https://i.imgur.com/484XFnZ.jpeg',
       caption: 'Elite coaching delivers elite results! 💯 Another success story in the books 📚',
       likes: 1654,
       comments: 89
     },
     {
       id: 4,
-      image: 'https://i.imgur.com/iT2Tx8F.jpeg',
+      image: 'https://i.imgur.com/6dcpHtp.jpeg',
       caption: 'Mind + Body transformation = Life transformation ✨ #MindsetMatters #EliteCoaching',
       likes: 2156,
       comments: 134
     },
     {
       id: 5,
-      image: 'https://i.imgur.com/kzZKnkt.jpeg',
+      image: 'https://i.imgur.com/1ST7IF4.jpeg',
       caption: 'Strength isn\'t just physical - it\'s mental! 🧠💪 #StrengthTraining #MentalToughness',
       likes: 1892,
       comments: 97
     },
     {
       id: 6,
-      image: 'https://i.imgur.com/d5ov7wJ.jpeg',
+      image: 'https://i.imgur.com/VWfHxZA.jpeg',
       caption: 'Another week, another breakthrough! 🚀 Consistency is everything #WeeklyWins',
       likes: 2743,
       comments: 178
