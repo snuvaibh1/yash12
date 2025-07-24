@@ -131,7 +131,7 @@ const InstagramSection: React.FC = () => {
                   <div className="flex items-center space-x-3">
 <div className="w-6 h-6 md:w-10 md:h-10 rounded-full overflow-hidden">
   <img
-    src="https://i.imgur.com/6jd9BMB.png"
+    src="https://i.imgur.com/2oHlhBf.png"
     alt="Logo"
     className="w-full h-full object-cover"
   />
