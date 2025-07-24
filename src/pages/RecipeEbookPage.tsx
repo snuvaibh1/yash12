@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 const RecipeEbookPage: React.FC = () => {
   const features = [
-    'Easy-to-cook Meals',
-    'Nutrition Breakdown for each recipe',
-    'Designed for muscle gain & fat loss'
+    'India-Friendly Eating-Out Choices',
+    'Calorie & Protein Breakdown',
+    'Tips to Eat Out Without Falling Off Track'
   ];
 
   const handleWhatsAppContact = () => {
