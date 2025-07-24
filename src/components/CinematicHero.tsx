@@ -162,59 +162,59 @@ const CinematicHero: React.FC = () => {
                 textShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
               }}
             >
-               
               <br className="hidden sm:block" />
-               
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div
-              className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center mt-20 md:mt-32"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 5 }}
-            >
-              <motion.button
-                className="group relative bg-accent-gold text-black px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{
-                  boxShadow: '0 0 50px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
-                }}
-                onClick={() =>
-                  window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')
-                }
+            <div className="mt-40 md:mt-56">
+              <motion.div
+                className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 5 }}
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  animate={{ x: ['-100%', '100%'] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                />
-                <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
-                  <span>Begin Transformation</span>
-                  <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
-                </span>
-              </motion.button>
-
-              <motion.button
-                className="group flex items-center space-x-3 md:space-x-4 text-white/90 hover:text-white transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() =>
-                  window.open('https://youtu.be/zoLP2Q0k6dE?si=ynVrRWElYFoa8aHU', '_blank')
-                }
-              >
-                <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors">
-                  <Play className="w-6 h-6 md:w-8 md:h-8 ml-1" />
+                <motion.button
+                  className="group relative bg-accent-gold text-black px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    boxShadow: '0 0 50px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  }}
+                  onClick={() =>
+                    window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')
+                  }
+                >
                   <motion.div
-                    className="absolute inset-0 rounded-full border-2 border-accent-gold/50"
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    animate={{ x: ['-100%', '100%'] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                   />
-                </div>
-                <span className="font-semibold text-lg md:text-xl">Watch Transformations</span>
-              </motion.button>
-            </motion.div>
+                  <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
+                    <span>Begin Transformation</span>
+                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
+                  </span>
+                </motion.button>
+
+                <motion.button
+                  className="group flex items-center space-x-3 md:space-x-4 text-white/90 hover:text-white transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() =>
+                    window.open('https://youtu.be/zoLP2Q0k6dE?si=ynVrRWElYFoa8aHU', '_blank')
+                  }
+                >
+                  <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors">
+                    <Play className="w-6 h-6 md:w-8 md:h-8 ml-1" />
+                    <motion.div
+                      className="absolute inset-0 rounded-full border-2 border-accent-gold/50"
+                      animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                  </div>
+                  <span className="font-semibold text-lg md:text-xl">Watch Transformations</span>
+                </motion.button>
+              </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       </div>
