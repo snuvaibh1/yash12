@@ -169,7 +169,7 @@ const CinematicHero: React.FC = () => {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center mt-24"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 5 }}
