@@ -29,7 +29,7 @@ const GlobalResultsMap: React.FC = () => {
   const liveUpdates = [
     { flag: '🇲🇹', countryCode: ' ', city: 'Malta', name: 'Satheesh', result: '-15 lbs', timeframe: '6 weeks', summary: 'Managed work & life while staying consistent.' },
     { flag: '🇩🇪', countryCode: ' ', city: 'Germany', name: 'Vikram', result: '-22 lbs', timeframe: '8 weeks', summary: 'Now balanced & thriving after inconsistency.' },
-    { flag: '🇮🇳', countryCode: ' ', city: 'Bangalore', name: 'Arjun M.', result: '-18 lbs', timeframe: '7 weeks', summary: 'Tech professional broke through his plateau with elite coaching.' },
+    { flag: '🇫🇷', countryCode: ' ', city: 'France', name: 'Shridhar', result: '-18 lbs', timeframe: '7 weeks', summary: 'Now pain-free and stronger than ever.' },
     { flag: '🇮🇳', countryCode: ' ', city: 'Chennai', name: 'Lakshmi R.', result: '-25 lbs', timeframe: '10 weeks', summary: 'Incredible transformation journey with sustainable lifestyle changes.' },
     { flag: '🇮🇳', countryCode: ' ', city: 'Hyderabad', name: 'Vikram T.', result: '-20 lbs', timeframe: '9 weeks', summary: 'Entrepreneur achieved peak performance with our premium system.' },
   ];
