@@ -34,14 +34,7 @@ const Navigation: React.FC = () => {
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/#about' },
-    {
-      label: 'Programs',
-      href: '/#programs',
-      dropdown: [
-        { label: '8W Shred Challenge', href: '/8w-shred-challenge' },
-        { label: 'Recipe Ebook', href: '/recipe-ebook' }
-      ]
-    },
+    { label: 'CHAMPIONS FUEL', href: '/recipe-ebook' },
     { label: 'Results', href: '/#results' },
     { label: 'Contact', href: '/#contact' },
   ];
@@ -91,76 +84,24 @@ const Navigation: React.FC = () => {
               <div
                 key={item.label}
                 className="relative group"
-                ref={item.label === 'Programs' ? dropdownRef : undefined}
               >
-                {item.dropdown ? (
-                  <motion.button
-                    onClick={() => setShowProgramsDropdown(!showProgramsDropdown)}
-                    className="text-text-secondary hover:text-text-primary transition-colors relative group flex items-center space-x-1"
-                    whileHover={{ y: -2 }}
-                    transition={{ type: 'spring', stiffness: 400 }}
-                  >
-                    <span>{item.label}</span>
-                    <ChevronDown className="w-4 h-4" />
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                  </motion.button>
-                ) : (
-                  <motion.div
-                    whileHover={{ y: -2 }}
-                    transition={{ type: 'spring', stiffness: 400 }}
-                  >
-                    {item.href.startsWith('/') ? (
-                      <Link
-                        to={item.href}
-                        className="text-text-secondary hover:text-text-primary transition-colors relative group"
-                      >
-                        {item.label}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                      </Link>
-                    ) : (
-                      <button
-                        onClick={() => handleNavClick(item.href)}
-                        className="text-text-secondary hover:text-text-primary transition-colors relative group"
-                      >
-                        {item.label}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                      </button>
-                    )}
-                  </motion.div>
-                )}
-
-                {/* Dropdown Menu */}
-                {item.dropdown && showProgramsDropdown && (
-                  <motion.div
-                    className="absolute top-full left-0 mt-2 w-48 bg-bg-secondary/95 backdrop-blur-md rounded-2xl border border-border-secondary shadow-2xl"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {item.dropdown.map((dropdownItem) => (
-                      <Link
-                        key={dropdownItem.label}
-                        to={dropdownItem.href}
-                        className="block px-6 py-3 text-text-secondary hover:text-text-primary hover:bg-hover-subtle transition-colors first:rounded-t-2xl last:rounded-b-2xl"
-                        onClick={() => setShowProgramsDropdown(false)}
-                      >
-                        {dropdownItem.label}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </div>
-            ))}
-            <motion.button
-              className="bg-accent-gold text-black px-6 py-2 rounded-full font-semibold hover:bg-accent-gold-dark transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
-            >
-              Get Started
-            </motion.button>
-          </div>
+                <motion.div
+                  whileHover={{ y: -2 }}
+                  transition={{ type: 'spring', stiffness: 400 }}
+                >
+                  {item.href.startsWith('/') ? (
+                    <Link
+                      to={item.href}
+                      className="text-text-secondary hover:text-text-primary transition-colors relative group"
+                    >
+                      {item.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleNavClick(item.href)}
+                      className="text-text-secondary hover:text-text-primary transition-colors relative group"
+                    >
 
           {/* Mobile Menu Button */}
           <button
