@@ -16,7 +16,6 @@ const InstagramSection: React.FC = () => {
     {
       id: 2,
       image: 'https://i.imgur.com/DGelDKN.jpeg',
-      caption: 'From couch to confident! Sarah\'s incredible 16-week journey 🔥 #TransformationTuesday',
       likes: 3921,
       comments: 203,
       timeAgo: '5h'
