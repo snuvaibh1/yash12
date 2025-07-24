@@ -44,7 +44,7 @@ const RecipeEbookPage: React.FC = () => {
               transition={{ duration: 1, delay: 0.2 }}
             >
               <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-                CHAMPIONS
+                Protein Centered
                 <br />
                 <span className="text-accent-gold">FUEL</span>
                 <br />
