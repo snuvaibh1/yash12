@@ -167,12 +167,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff0040;
+  background: #ffffff;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff0040cc;
+  background: #ffffffcc;
 }
 
 /* Loading Animations */
