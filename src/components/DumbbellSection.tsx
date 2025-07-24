@@ -31,9 +31,15 @@ const DumbbellSection: React.FC = () => {
       position: 'bottom-left',
     },
     {
+      title: 'Progress tracking',
+      description:
+        'Progress pictures, weight trackers, check-in sheets, weekly goal setting and multiple other approaches to keep you accountable and on-track.',
+      position: 'bottom-right',
+    },
+    {
       title: 'Proven Results',
       description:
-        'Join hundreds of successful transformations with our system.',
+        'The results speak for the program. You too will be an inspiration for someone else.',
       position: 'bottom-right',
     },
   ];
