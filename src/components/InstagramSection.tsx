@@ -29,7 +29,6 @@ const InstagramSection: React.FC = () => {
     {
       id: 4,
       image: 'https://i.imgur.com/6dcpHtp.jpeg',
-      caption: 'Mind + Body transformation = Life transformation ✨ #MindsetMatters #EliteCoaching',
       likes: 2156,
       comments: 134
     },
