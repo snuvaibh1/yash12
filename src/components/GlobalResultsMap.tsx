@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Trophy, Target, Globe } from 'lucide-react';
 
@@ -35,10 +35,30 @@ const GlobalResultsMap: React.FC = () => {
     { flag: '🇺🇸', countryCode: ' ', city: 'USA', name: 'Yash Patel', result: '8.4kg Lost', timeframe: ' ', summary: '99.1kg → 90.7kg in 3 months..' },
   ];
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://www.gstatic.com/external_hosted/leaflet/leaflet.js";
+    script.onload = () => {
+      const L = (window as any).L;
+      const map = L.map('map').setView([20.5937, 78.9629], 4); // India center
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+      }).addTo(map);
+
+      transformationLocations.forEach((location) => {
+        const marker = L.marker([
+          parseFloat(location.coordinates.top),
+          parseFloat(location.coordinates.left)
+        ]).addTo(map);
+        marker.bindPopup(`<b>${location.city}</b><br>${location.testimonial}`);
+      });
+    };
+    document.head.appendChild(script);
+  }, []);
+
   return (
     <section ref={sectionRef} className="py-16 relative bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
         {/* Heading */}
         <motion.div
           className="text-center mb-12"
@@ -55,50 +75,13 @@ const GlobalResultsMap: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Scroll-animated World Map */}
+        {/* Custom Map Section (Replaced iframe) */}
         <motion.div
           style={{ scale, opacity }}
           className="relative bg-bg-panel/50 backdrop-blur-sm rounded-3xl border border-border-secondary overflow-hidden"
         >
-          <div className="relative w-full h-0 pb-[56.25%]">
-            <iframe
-              src="https://www.google.com/maps/d/u/0/embed?mid=1vzGvNP0RILxFa4jWkwj2f2OHC3gwcN4&ehbc=2E312F&noprof=1"
-              className="absolute inset-0 w-full h-full rounded-2xl"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-
-            {transformationLocations.map((location) => (
-              <div
-                key={location.id}
-                className="absolute cursor-pointer group"
-                style={location.coordinates}
-                onMouseEnter={() => setActiveLocation(location.id)}
-                onMouseLeave={() => setActiveLocation(null)}
-              >
-                <div
-                  className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-64 bg-bg-secondary/95 backdrop-blur-sm rounded-2xl p-4 border border-primary/30 shadow-2xl"
-                  style={{
-                    opacity: activeLocation === location.id ? 1 : 0,
-                    pointerEvents: activeLocation === location.id ? 'auto' : 'none',
-                  }}
-                >
-                  <div className="text-center">
-                    <h3 className="text-lg font-bold text-text-primary mb-1">
-                      {location.city}, {location.state}
-                    </h3>
-                    <div className="grid grid-cols-2 gap-4 mb-3">
-                      <div className="text-2xl font-black text-white">{location.clients}</div>
-                      <div className="text-xs text-white/60">Clients</div>
-                      <div className="text-2xl font-black text-white">{location.avgTransformation}</div>
-                      <div className="text-xs text-text-muted">Avg Loss</div>
-                    </div>
-                    <p className="text-sm text-text-body">{location.testimonial}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="relative w-full h-[500px] rounded-2xl">
+            <div id="map" className="absolute inset-0 w-full h-full rounded-2xl z-10" />
           </div>
         </motion.div>
 
