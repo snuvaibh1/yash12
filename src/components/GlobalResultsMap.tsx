@@ -33,6 +33,7 @@ const GlobalResultsMap: React.FC = () => {
     { flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', countryCode: ' ', city: 'Scotland', name: 'Pravin', result: 'More Confident', timeframe: '10 weeks', summary: 'Feels more confident inside and out.' },
     { flag: '🇨🇦', countryCode: ' ', city: 'Canada', name: 'Toushaar', result: '-8.4kg Lost', timeframe: '9 weeks', summary: '102kg → 94.5kg with steady progress.' },
         { flag: '🇦🇺', countryCode: ' ', city: 'Australia', name: 'Prakhar', result: '7kg Lost', timeframe: '9 weeks', summary: 'Balanced job & lost 5kg abroad.' },
+        { flag: '🇺🇸', countryCode: ' ', city: 'USA', name: 'Yash Patel', result: '8.4kg Lost', timeframe: '9 weeks', summary: '99.1kg → 90.7kg in 3 months..' },
     
   ];
 
