@@ -186,7 +186,7 @@ const RecipeEbookPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              "The recipes made clean eating effortless. I finally look forward to meals!"
+               
             </motion.blockquote>
             
             <div className="text-white/60 text-lg">
