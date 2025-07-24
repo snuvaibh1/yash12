@@ -102,6 +102,20 @@ const Navigation: React.FC = () => {
                       onClick={() => handleNavClick(item.href)}
                       className="text-text-secondary hover:text-text-primary transition-colors relative group"
                     >
+                      {item.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                    </button>
+                  )}
+                </motion.div>
+              </div>
+            ))}
+            <button 
+              className="bg-accent-gold text-black px-6 py-2 rounded-full font-semibold hover:bg-accent-gold-dark transition-colors"
+              onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
+            >
+              Get Started
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
