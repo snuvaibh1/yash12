@@ -166,37 +166,6 @@ const GlobalResultsMap: React.FC = () => {
             </div>
           </div>
         </div>
-              <motion.div
-                key={index}
-                className="relative rounded-2xl border border-white/10 overflow-hidden shadow-md group"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true }}
-              >
-                <div className={`h-full p-6 bg-gradient-to-br ${update.gradient} backdrop-blur-xl flex flex-col justify-between`}>
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <p className="text-sm text-white/60 font-semibold">{update.code}</p>
-                      <h4 className="text-white font-bold text-lg">{update.location}</h4>
-                      <p className="text-white/50 text-sm">{update.name}</p>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-accent-gold rounded-full" />
-                      <span className="text-xs text-accent-gold font-semibold">LIVE</span>
-                    </div>
-                  </div>
-                  <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-3 self-start">
-                    <span className="text-accent-gold font-bold text-lg">{update.achievement}</span>
-                    <span className="text-white/60 text-sm ml-2">in {update.timeframe}</span>
-                  </div>
-                  <p className="text-white/80 text-sm">{update.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
