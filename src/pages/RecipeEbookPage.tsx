@@ -46,9 +46,9 @@ const RecipeEbookPage: React.FC = () => {
               <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
                 Protein Centered
                 <br />
-                <span className="text-accent-gold">FUEL</span>
+                <span className="text-accent-gold">Recipe</span>
                 <br />
-                <span className="text-3xl md:text-4xl text-white/80">Recipe Ebook</span>
+                <span className="text-3xl md:text-4xl text-white/80">Ebook</span>
               </h1>
 
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
