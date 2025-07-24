@@ -135,12 +135,63 @@ const GlobalResultsMap: React.FC = () => {
         </div>
 
         {/* Live Updates */}
-        <div className="mt-16 bg-bg-panel/30 backdrop-blur-sm rounded-2xl p-8 border border-border-secondary">
-          <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">
+        <div className="mt-16 bg-black rounded-2xl p-4 md:p-8 border border-accent-gold/20">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-6 text-center sticky top-0 bg-black/90 backdrop-blur-sm py-2 rounded-lg">
             Live Transformation Updates
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {updates.map((update, index) => (
+          
+          {/* Mobile-first horizontal scroll container */}
+          <div className="overflow-x-auto scrollbar-hide">
+            <div className="flex gap-4 pb-4 snap-x snap-mandatory" style={{ width: 'max-content' }}>
+              {liveUpdates.map((update, index) => (
+                <motion.div
+                  key={index}
+                  className="relative w-[280px] flex-shrink-0 snap-start"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                >
+                  <div className="h-full p-4 bg-black/80 backdrop-blur-xl rounded-2xl border border-accent-gold/30 shadow-2xl relative overflow-hidden group hover:border-accent-gold/50 transition-all duration-300">
+                    {/* LIVE Badge */}
+                    <div className="absolute top-3 right-3 flex items-center space-x-1">
+                      <motion.div 
+                        className="w-2 h-2 bg-accent-gold rounded-full"
+                        animate={{ opacity: [0.5, 1, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                      <span className="text-xs text-accent-gold font-bold">LIVE</span>
+                    </div>
+
+                    {/* Country Flag & City */}
+                    <div className="mb-3">
+                      <div className="flex items-center space-x-2 mb-1">
+                        <span className="text-lg">{update.flag}</span>
+                        <span className="text-xs text-white/60 font-semibold">{update.countryCode}</span>
+                      </div>
+                      <h4 className="text-white font-bold text-lg leading-tight">{update.city}</h4>
+                      <p className="text-white/60 text-sm">{update.name}</p>
+                    </div>
+
+                    {/* Result Badge */}
+                    <div className="mb-3">
+                      <div className="inline-flex items-center px-3 py-1.5 bg-accent-gold/20 backdrop-blur-sm rounded-full border border-accent-gold/40">
+                        <span className="text-accent-gold font-bold text-sm">{update.result}</span>
+                        <span className="text-white/60 text-xs ml-2">in {update.timeframe}</span>
+                      </div>
+                    </div>
+
+                    {/* Transformation Summary */}
+                    <p className="text-white/80 text-xs leading-relaxed">{update.summary}</p>
+
+                    {/* Subtle glow effect on hover */}
+                    <div className="absolute inset-0 bg-accent-gold/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
               <motion.div
                 key={index}
                 className="relative rounded-2xl border border-white/10 overflow-hidden shadow-md group"
