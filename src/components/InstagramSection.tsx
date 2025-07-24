@@ -24,7 +24,7 @@ const InstagramSection: React.FC = () => {
     },
     {
       id: 3,
-      image: 'https://i.imgur.com/484XFnZ.jpeg',
+      image: 'https://i.imgur.com/hKrbkGI.jpeg',
       caption: 'Elite coaching delivers elite results! 💯 Another success story in the books 📚',
       likes: 1654,
       comments: 89
