@@ -57,22 +57,22 @@ const CardStackShowcase: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-[#0C0C15] py-16 md:py-24 px-6 text-white overflow-hidden relative z-10">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-[#0C0C15] py-20 px-6 text-white relative z-10">
+      <div className="max-w-6xl mx-auto">
         {/* Heading */}
-        <div className="w-full text-center mb-16 relative z-30">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-            <span className="text-accent-gold block">Real Transformations.</span>
-            <span className="text-accent-gold block">Real Results.</span>
+        <div className="text-center mb-16 relative z-30">
+          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-accent-gold">
+            Real Transformations.<br />
+            Real Results.
           </h2>
-          <p className="text-sm md:text-lg text-white/70 max-w-2xl mx-auto px-2">
+          <p className="mt-4 text-sm md:text-lg text-white/70 max-w-xl mx-auto">
             These transformations speak louder than any promise. See what's possible when elite
             coaching meets unwavering commitment.
           </p>
         </div>
 
         {/* Card Stack */}
-        <div className="flex justify-center mt-12 md:mt-0 relative z-20">
+        <div className="flex justify-center relative z-20">
           <div
             className="relative w-[280px] h-[380px] md:w-[400px] md:h-[520px] flex-shrink-0"
             ref={containerRef}
@@ -80,20 +80,20 @@ const CardStackShowcase: React.FC = () => {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="card-stack-item absolute top-0 left-0 w-full h-full bg-[#111827] border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+                className="card-stack-item absolute top-0 left-0 w-full h-full bg-[#1a1a2e] border border-white/10 rounded-3xl shadow-lg overflow-hidden transition-all duration-500"
                 style={{ zIndex: testimonials.length - i }}
               >
-                {/* Browser Bar */}
-                <div className="bg-[#1f2937] px-3 md:px-4 py-2 border-b border-white/10">
-                  <span className="text-white/70 text-sm md:text-xl font-semibold">{t.name}</span>
+                {/* Name */}
+                <div className="absolute top-0 left-0 w-full bg-black/50 py-3 px-4 z-10 text-white font-semibold text-base md:text-lg backdrop-blur-sm">
+                  {t.name}
                 </div>
 
                 {/* Image */}
-                <div className="w-full h-full flex items-center justify-center p-2 md:p-3">
+                <div className="w-full h-full flex items-center justify-center">
                   <img
                     src={t.image}
                     alt={t.name}
-                    className="object-cover w-full h-full rounded-b-xl md:rounded-b-2xl"
+                    className="object-cover w-full h-full rounded-3xl"
                   />
                 </div>
               </div>
