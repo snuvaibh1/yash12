@@ -27,7 +27,7 @@ const DumbbellSection: React.FC = () => {
     {
       title: '24/7 Support',
       description:
-        'Direct access to coaching support whenever you need it most.',
+        'If you are a premium member, feel free to call anytime. If you are a standard member than 24/7 whatsApp support. I am always one message away.',
       position: 'bottom-left',
     },
     {
