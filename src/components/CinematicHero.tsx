@@ -87,7 +87,7 @@ const CinematicHero: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <motion.img
-                src="https://i.imgur.com/Dq4ZynY.png"
+                src="https://imgur.com/2oHlhBf"
                 alt="Champions Lifestyle Logo"
                 className="w-full h-full object-cover"
                 onLoad={() => setLogoLoaded(true)}
