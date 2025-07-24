@@ -21,7 +21,7 @@ const DumbbellSection: React.FC = () => {
     {
       title: 'Nutrition Mastery',
       description:
-        'Science-based nutrition protocols that fuel your transformation.',
+        'Designed as per your eating habits, ethnicity, avaibility of ingredients, in-tolerances, cravings patterns, etc.',
       position: 'top-right',
     },
     {
