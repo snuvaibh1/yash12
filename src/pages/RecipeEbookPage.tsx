@@ -21,7 +21,7 @@ const RecipeEbookPage: React.FC = () => {
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-            alt="https://i.imgur.com/8SMuYqv.png"
+            alt="Healthy Food Background"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark/90" />
