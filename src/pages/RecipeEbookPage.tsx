@@ -232,7 +232,7 @@ const RecipeEbookPage: React.FC = () => {
               to="/"
               className="inline-flex items-center space-x-3 bg-charcoal-light text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-charcoal transition-all duration-300"
             >
-              <ArrowLeft className="w-5 h-5" />
+              
               <span> </span>
             </Link>
           </motion.div>
