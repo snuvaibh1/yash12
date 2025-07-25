@@ -72,7 +72,7 @@ const RecipeEbookPage: React.FC = () => {
                       <img
                         src="https://i.imgur.com/8SMuYqv.png"
                         alt="Healthy Meal"
-                        className="w-full h-full object-cover rounded-xl"
+                        className="w-full h-full object-contain rounded-xl"
                       />
                     </div>
                     <div className="text-dark text-xs">
