@@ -101,7 +101,114 @@ const RecipeEbookPage: React.FC = () => {
         </div>
       </section>
 
-      {/* No change made beyond this point — your original code continues */}
+      <section className="py-24 bg-gradient-to-b from-charcoal to-dark">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-black mb-6">
+              What's
+              <br />
+              <span className="text-primary">Inside</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature}
+                className="text-center p-8 bg-charcoal-light/50 backdrop-blur-sm rounded-3xl border border-white/10 hover:border-primary/30 transition-all duration-500"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -10 }}
+              >
+                <div className="w-16 h-16 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+                  <Check className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">{feature}</h3>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="text-center p-8 bg-charcoal-light/50 backdrop-blur-sm rounded-3xl border border-white/10 hover:border-primary/30 transition-all duration-500 max-w-md mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: features.length * 0.2 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.05, y: -10 }}
+          >
+            <div className="w-16 h-16 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+              <Check className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-4">Cook your own meals</h3>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gradient-to-b from-dark to-charcoal relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="mb-8">
+              <div className="flex justify-center mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-8 h-8 text-yellow-400 fill-current" />
+                ))}
+              </div>
+            </div>
+            <motion.blockquote
+              className="text-2xl md:text-4xl font-bold text-white/90 leading-relaxed mb-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            />
+            <div className="text-white/60 text-lg" />
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-8" />
+          </motion.div>
+        </div>
+      </section>
+
+      <footer className="bg-black text-white py-12 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-sm">
+          <div>
+            <h4 className="text-white font-bold mb-4">Champions Lifestyle</h4>
+            <p className="text-white/70">
+              Empowering transformations around the globe. From different countries to massive physical results,
+              we bring change that speaks for itself.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-white font-bold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-white/70 hover:text-white">Home</a></li>
+              <li><a href="#" className="text-white/70 hover:text-white">Programs</a></li>
+              <li><a href="#" className="text-white/70 hover:text-white">Results</a></li>
+              <li><a href="#" className="text-white/70 hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-bold mb-4">Contact</h4>
+            <p className="text-white/70">championlifestyle.yash@gmail.com</p>
+            <p className="text-white/70">+91 91683 02369</p>
+          </div>
+        </div>
+        <div className="text-center text-white/50 text-xs mt-12">
+          © 2024 Champions Lifestyle. All rights reserved.
+        </div>
+      </footer>
     </motion.div>
   );
 };
