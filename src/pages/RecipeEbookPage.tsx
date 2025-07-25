@@ -34,13 +34,13 @@ const RecipeEbookPage: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <h1 className="text-5xl md:text-7xl font-black font-montserrat mb-6 leading-tight">
-                Protein Centered
-                <br />
-                <span className="text-accent-gold">Recipe</span>
-                <br />
-                <span className="text-3xl md:text-4xl text-white/80">Ebook</span>
-              </h1>
+              <h1 className="text-[2.25rem] sm:text-5xl md:text-7xl font-black font-montserrat mb-6 leading-tight">
+  Protein Centered
+  <br />
+  <span className="text-accent-gold">Recipe</span>
+  <br />
+  <span className="text-xl sm:text-2xl md:text-4xl text-white/80">Ebook</span>
+</h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
                 Pre-order now and get the eBook worth ₹349 for just ₹99! Limited-time offer for early buyers only.
               </p>
