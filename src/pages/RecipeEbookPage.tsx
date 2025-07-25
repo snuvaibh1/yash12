@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, Star, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Check, Star } from 'lucide-react';
 
 const RecipeEbookPage: React.FC = () => {
   const features = [
@@ -9,12 +8,6 @@ const RecipeEbookPage: React.FC = () => {
     'Calorie & Protein Breakdown',
     'Tips to Eat Out Without Falling Off Track'
   ];
-
-  const handleWhatsAppContact = () => {
-    const message = "Hi! I'm interested in purchasing the Champions Fuel Recipe Ebook. Can you tell me more?";
-    const whatsappUrl = `https://wa.me/919168302369?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
 
   return (
     <motion.div
@@ -74,15 +67,12 @@ const RecipeEbookPage: React.FC = () => {
               transition={{ duration: 1, delay: 0.4 }}
             >
               <div className="relative max-w-md mx-auto">
-                {/* Ebook Cover Image */}
                 <div className="relative bg-gradient-to-br from-primary/20 to-charcoal-light rounded-3xl p-8 border border-primary/30 shadow-2xl">
                   <div className="bg-white rounded-2xl p-6 text-center">
                     <div className="text-dark mb-4">
                       <h3 className="text-2xl font-black mb-2">Protein Centered</h3>
                       <p className="text-sm font-semibold">Recipe</p>
                     </div>
-                    
-                    {/* Food Image */}
                     <div className="w-full h-48 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl mb-4 flex items-center justify-center">
                       <img
                         src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400"
@@ -90,15 +80,12 @@ const RecipeEbookPage: React.FC = () => {
                         className="w-full h-full object-cover rounded-xl"
                       />
                     </div>
-                    
                     <div className="text-dark text-xs">
                       <p className="font-semibold">High-Protein Recipes and meal improvisation </p>
                       <p>By Champions Lifestyle Coaching</p>
                     </div>
                   </div>
                 </div>
-
-                {/* Floating Elements */}
                 <motion.div
                   className="absolute -top-4 -right-4 w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center"
                   animate={{ y: [0, -10, 0] }}
@@ -106,7 +93,6 @@ const RecipeEbookPage: React.FC = () => {
                 >
                   <Star className="w-8 h-8 text-primary" />
                 </motion.div>
-
                 <motion.div
                   className="absolute -bottom-4 -left-4 w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center"
                   animate={{ y: [0, 10, 0] }}
@@ -152,7 +138,7 @@ const RecipeEbookPage: React.FC = () => {
                   <Check className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">
-                    {feature}
+                  {feature}
                 </h3>
               </motion.div>
             ))}
@@ -163,7 +149,6 @@ const RecipeEbookPage: React.FC = () => {
       {/* Testimonial Section */}
       <section className="py-24 bg-gradient-to-b from-dark to-charcoal relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
-        
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -178,21 +163,14 @@ const RecipeEbookPage: React.FC = () => {
                 ))}
               </div>
             </div>
-            
             <motion.blockquote
               className="text-2xl md:text-4xl font-bold text-white/90 leading-relaxed mb-8"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-            >
-               
-            </motion.blockquote>
-            
-            <div className="text-white/60 text-lg">
-               
-            </div>
-            
+            />
+            <div className="text-white/60 text-lg" />
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-8" />
           </motion.div>
         </div>
@@ -212,11 +190,11 @@ const RecipeEbookPage: React.FC = () => {
               <br />
               <span className="text-primary">Champion</span>
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
               Transform your nutrition, transform your results.
             </p>
-            
+
             <motion.button
               className="bg-primary text-white px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 mx-auto hover:bg-primary/90 transition-all duration-300 mb-8"
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255, 0, 64, 0.4)' }}
@@ -226,15 +204,6 @@ const RecipeEbookPage: React.FC = () => {
               <span>PRE-ORDER NOW – ₹99</span>
               <ArrowRight className="w-6 h-6" />
             </motion.button>
-
-            {/* Back to Home Link */}
-            <Link
-              to="/"
-              className="inline-flex items-center space-x-3 bg-charcoal-light text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-charcoal transition-all duration-300"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              <span>Back to Champion Coaching</span>
-            </Link>
           </motion.div>
         </div>
       </section>
