@@ -72,20 +72,18 @@ const CinematicHero: React.FC = () => {
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <motion.div
-              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden"
-              style={{
-                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
-                backdropFilter: 'blur(10px)',
-                border: '2px solid rgba(212, 175, 55, 0.3)',
-                boxShadow: '0 0 100px rgba(212, 175, 55, 0.3), inset 0 0 50px rgba(212, 175, 55, 0.1)'
-              }}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: '0 0 150px rgba(212, 175, 55, 0.5), inset 0 0 80px rgba(212, 175, 55, 0.2)'
-              }}
-              transition={{ duration: 0.6 }}
-            >
+<motion.div
+  className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem]"
+  style={{
+    boxShadow: '0 0 100px rgba(212, 175, 55, 0.3)' // golden outer glow
+  }}
+  whileHover={{
+    scale: 1.05,
+    boxShadow: '0 0 150px rgba(212, 175, 55, 0.5)' // stronger glow on hover
+  }}
+  transition={{ duration: 0.6 }}
+>
+
               <motion.img
                 src="https://i.imgur.com/RXWtz5S.png"
                 alt="Champions Lifestyle Logo"
