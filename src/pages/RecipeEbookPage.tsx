@@ -110,7 +110,7 @@ const RecipeEbookPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-black mb-6">
+            <h2 className="text-4xl md:text-6xl font-black font-montserrat mb-6">
               What's
               <br />
               <span className="text-primary">Inside</span>
