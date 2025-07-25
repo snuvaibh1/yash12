@@ -20,7 +20,7 @@ const RecipeEbookPage: React.FC = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark via-charcoal to-primary/10">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+            src="https://i.imgur.com/6a9kFpv.png"
             alt="Healthy Food Background"
             className="w-full h-full object-cover opacity-20"
           />
