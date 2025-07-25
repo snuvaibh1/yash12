@@ -89,12 +89,6 @@ const CinematicHero: React.FC = () => {
                 }}
                 transition={{ duration: 1.5, delay: 1 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }}
-              />
             </motion.div>
           </motion.div>
         </motion.div>
