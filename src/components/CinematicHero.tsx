@@ -73,36 +73,75 @@ const CinematicHero: React.FC = () => {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
             <motion.div
-              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden"
-              style={{
-                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
-                backdropFilter: 'blur(10px)',
-                border: '2px solid rgba(212, 175, 55, 0.3)',
-                boxShadow: '0 0 100px rgba(212, 175, 55, 0.3), inset 0 0 50px rgba(212, 175, 55, 0.1)'
-              }}
+              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex items-center justify-center"
               whileHover={{
                 scale: 1.05,
-                boxShadow: '0 0 150px rgba(212, 175, 55, 0.5), inset 0 0 80px rgba(212, 175, 55, 0.2)'
+                filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))'
               }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <motion.img
                 src="https://i.imgur.com/RXWtz5S.png"
                 alt="Champions Lifestyle Logo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain filter drop-shadow-2xl"
                 onLoad={() => setLogoLoaded(true)}
-                initial={{ opacity: 0, scale: 1.2 }}
+                initial={{ opacity: 0, scale: 1.2, filter: 'blur(10px)' }}
                 animate={{
                   opacity: logoLoaded ? 1 : 0,
-                  scale: logoLoaded ? 1 : 1.2
+                  scale: logoLoaded ? 1 : 1.2,
+                  filter: logoLoaded ? 'blur(0px) drop-shadow(0 0 30px rgba(212, 175, 55, 0.3))' : 'blur(10px)'
                 }}
-                transition={{ duration: 1.5, delay: 1 }}
+                transition={{ 
+                  duration: 1.5, 
+                  delay: 1,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                style={{
+                  willChange: 'transform, filter, opacity',
+                  backfaceVisibility: 'hidden',
+                  perspective: '1000px'
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+              
+              {/* Premium shimmer effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent pointer-events-none"
                 animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity, 
+                  repeatDelay: 4, 
+                  ease: "easeInOut" 
+                }}
+                style={{
+                  maskImage: 'url(https://i.imgur.com/RXWtz5S.png)',
+                  maskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  maskPosition: 'center',
+                  WebkitMaskImage: 'url(https://i.imgur.com/RXWtz5S.png)',
+                  WebkitMaskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center'
+                }}
+              />
+              
+              {/* Subtle glow enhancement */}
+              <motion.div
+                className="absolute inset-0 pointer-events-none"
+                animate={{ 
+                  opacity: [0.3, 0.6, 0.3],
+                  scale: [1, 1.02, 1]
+                }}
+                transition={{ 
+                  duration: 4, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
+                style={{
+                  background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
+                  filter: 'blur(20px)',
+                  zIndex: -1
+                }}
               />
             </motion.div>
           </motion.div>
