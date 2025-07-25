@@ -148,7 +148,7 @@ const RecipeEbookPage: React.FC = () => {
             <div className="w-16 h-16 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
               <Check className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">Cook your own meals</h3>
+            <h3 className="text-xl font-bold text-white mb-4">Design your own meal plan</h3>
           </motion.div>
         </div>
       </section>
