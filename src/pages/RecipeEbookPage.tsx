@@ -6,7 +6,7 @@ const RecipeEbookPage: React.FC = () => {
   const features = [
     'India-Friendly Eating-Out Choices',
     'Calorie & Protein Breakdown',
-    'Tips to Eat Out Without Falling Off Track'
+    'Tips to Eat Out Without Falling Off Track',
   ];
 
   return (
@@ -17,7 +17,6 @@ const RecipeEbookPage: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="pt-20"
     >
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark via-charcoal to-primary/10">
         <div className="absolute inset-0">
           <img
@@ -30,7 +29,6 @@ const RecipeEbookPage: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -43,11 +41,9 @@ const RecipeEbookPage: React.FC = () => {
                 <br />
                 <span className="text-3xl md:text-4xl text-white/80">Ebook</span>
               </h1>
-
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
                 Pre-order now and get the eBook worth ₹349 for just ₹99! Limited-time offer for early buyers only.
               </p>
-
               <motion.button
                 className="bg-accent-gold text-black px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 hover:bg-accent-gold-dark transition-all duration-300"
                 whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(212, 175, 55, 0.4)' }}
@@ -59,7 +55,6 @@ const RecipeEbookPage: React.FC = () => {
               </motion.button>
             </motion.div>
 
-            {/* Ebook Cover */}
             <motion.div
               className="relative"
               initial={{ opacity: 0, x: 50 }}
@@ -106,7 +101,6 @@ const RecipeEbookPage: React.FC = () => {
         </div>
       </section>
 
-      {/* What's Inside Section */}
       <section className="py-24 bg-gradient-to-b from-charcoal to-dark">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
@@ -137,16 +131,13 @@ const RecipeEbookPage: React.FC = () => {
                 <div className="w-16 h-16 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
                   <Check className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  {feature}
-                </h3>
+                <h3 className="text-xl font-bold text-white mb-4">{feature}</h3>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonial Section */}
       <section className="py-24 bg-gradient-to-b from-dark to-charcoal relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
@@ -176,7 +167,6 @@ const RecipeEbookPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
       <section className="py-24 bg-gradient-to-b from-charcoal to-dark">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <motion.div
@@ -190,11 +180,9 @@ const RecipeEbookPage: React.FC = () => {
               <br />
               <span className="text-primary">Champion</span>
             </h2>
-
             <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
               Transform your nutrition, transform your results.
             </p>
-
             <motion.button
               className="bg-primary text-white px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 mx-auto hover:bg-primary/90 transition-all duration-300 mb-8"
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255, 0, 64, 0.4)' }}
