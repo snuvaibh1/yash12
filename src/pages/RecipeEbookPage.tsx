@@ -190,7 +190,7 @@ const RecipeEbookPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-black mb-8">
+            <h2 className="text-4xl md:text-6xl font-black font-montserrat mb-8">
               Start Eating Like A
               <br />
               <span className="text-primary">Champion</span>
