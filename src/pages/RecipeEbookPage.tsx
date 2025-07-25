@@ -92,7 +92,7 @@ const RecipeEbookPage: React.FC = () => {
                     </div>
                     
                     <div className="text-dark text-xs">
-                      <p className="font-semibold">High-Protein Recipes and meal improvisation</p>
+                      <p className="font-semibold">High-Protein Recipes and meal improvisation </p>
                       <p>By Champions Lifestyle Coaching</p>
                     </div>
                   </div>
@@ -232,14 +232,7 @@ const RecipeEbookPage: React.FC = () => {
               to="/"
               className="inline-flex items-center space-x-3 bg-charcoal-light text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-charcoal transition-all duration-300"
             >
-              
-              <span> </span>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-    </motion.div>
-  );
+
 };
 
 export default RecipeEbookPage;
