@@ -60,20 +60,20 @@ const CinematicHero: React.FC = () => {
         <motion.div
           className="relative"
           initial={{ opacity: 0, scale: 0.5, rotateY: -180 }}
-          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1, 
+            rotateY: 0,
+            rotateZ: 360
+          }}
           transition={{
-            duration: 2.5,
+            duration: 3.5,
             delay: 0.5,
             ease: [0.25, 0.46, 0.45, 0.94]
           }}
         >
-          <motion.div
-            className="relative"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          >
             <motion.div
-              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex items-center justify-center"
+              className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] lg:w-[40rem] lg:h-[40rem] xl:w-[48rem] xl:h-[48rem] flex items-center justify-center"
               whileHover={{
                 scale: 1.05,
                 filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))'
@@ -144,7 +144,6 @@ const CinematicHero: React.FC = () => {
                 }}
               />
             </motion.div>
-          </motion.div>
         </motion.div>
       </div>
 
