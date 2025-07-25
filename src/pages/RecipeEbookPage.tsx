@@ -52,7 +52,7 @@ const RecipeEbookPage: React.FC = () => {
               </h1>
 
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-                Pre-order now and get the eBook worth ₹149 for just ₹99! Limited-time offer for early buyers only.
+                Pre-order now and get the eBook worth ₹349 for just ₹99! Limited-time offer for early buyers only.
               </p>
 
               <motion.button
