@@ -44,13 +44,8 @@ const CinematicHero: React.FC = () => {
   return (
     <section ref={containerRef} className="relative min-h-screen overflow-hidden bg-black">
       {/* Static Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://i.imgur.com/JNHqgCV.png"
-          alt="Cinematic Background"
-          className="w-full h-full object-cover"
-        />
-      </div>
+     {/* Clean dark background or gradient */}
+<div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-zinc-900 to-black" />
 
       {/* Optional dark overlay */}
       <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
