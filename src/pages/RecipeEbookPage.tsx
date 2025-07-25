@@ -196,7 +196,7 @@ const RecipeEbookPage: React.FC = () => {
               <span className="text-primary">Champion</span>
             </h2>
             <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
-              Transform your nutrition, transform your results.
+              You will receive your Recipe eBook on the launch day via email.
             </p>
             <motion.button
               className="bg-primary text-white px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 mx-auto hover:bg-primary/90 transition-all duration-300 mb-8"
