@@ -117,7 +117,7 @@ const RecipeEbookPage: React.FC = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature}
@@ -135,6 +135,21 @@ const RecipeEbookPage: React.FC = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* 4th centered box */}
+          <motion.div
+            className="text-center p-8 bg-charcoal-light/50 backdrop-blur-sm rounded-3xl border border-white/10 hover:border-primary/30 transition-all duration-500 max-w-md mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: features.length * 0.2 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.05, y: -10 }}
+          >
+            <div className="w-16 h-16 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+              <Check className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-4">Cook your own meals</h3>
+          </motion.div>
         </div>
       </section>
 
