@@ -70,7 +70,7 @@ const RecipeEbookPage: React.FC = () => {
                     </div>
                     <div className="w-full h-48 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl mb-4 flex items-center justify-center">
                       <img
-                        src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        src="https://i.imgur.com/8SMuYqv.png"
                         alt="Healthy Meal"
                         className="w-full h-full object-cover rounded-xl"
                       />
