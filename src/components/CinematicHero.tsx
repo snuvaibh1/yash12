@@ -104,26 +104,7 @@ const CinematicHero: React.FC = () => {
               />
               
               {/* Premium shimmer effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent pointer-events-none"
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity, 
-                  repeatDelay: 4, 
-                  ease: "easeInOut" 
-                }}
-                style={{
-                  maskImage: ' ',
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  WebkitMaskImage: 'url(https://i.imgur.com/RXWtz5S.png)',
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center'
-                }}
-              />
+
               
               {/* Subtle glow enhancement */}
               <motion.div
