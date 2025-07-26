@@ -73,7 +73,7 @@ const CinematicHero: React.FC = () => {
           }}
         >
             <motion.div
-              className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] lg:w-[40rem] lg:h-[40rem] xl:w-[48rem] xl:h-[48rem] flex items-center justify-center"
+              className="relative w-[26rem] h-[26rem] sm:w-96 sm:h-96 md:w-[32rem] md:h-[32rem] lg:w-[40rem] lg:h-[40rem] xl:w-[48rem] xl:h-[48rem] flex items-center justify-center"
               whileHover={{
                 scale: 1.05,
                 filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))'
