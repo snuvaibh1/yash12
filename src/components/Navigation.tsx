@@ -70,11 +70,9 @@ const Navigation: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 400 }}
             >
-              <img
-                src="https://i.imgur.com/cYNtlkq.png"
-                alt="Champions Lifestyle Logo"
-                className="h-10 object-contain"
-              />
+<div className="text-xl font-bold text-accent-gold">
+  Champions Lifestyle
+</div>
             </motion.div>
           </Link>
 
