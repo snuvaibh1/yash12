@@ -89,7 +89,7 @@ const CinematicHero: React.FC = () => {
                 animate={{
                   opacity: logoLoaded ? 1 : 0,
                   scale: logoLoaded ? 1 : 1.2,
-                  filter: logoLoaded ? 'blur(0px) drop-shadow(0 0 30px rgba(212, 175, 55, 0.3))' : 'blur(10px)'
+                  filter: logoLoaded ? 'blur(0px) drop-shadow(0 0 80px rgba(212, 175, 55, 0.5))' : 'blur(10px)'
                 }}
                 transition={{ 
                   duration: 1.5, 
