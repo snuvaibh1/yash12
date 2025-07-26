@@ -46,7 +46,7 @@ const CinematicHero: React.FC = () => {
       {/* Static Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://i.imgur.com/RwUqlyl.jpeg"
+          src="https://i.imgur.com/JNHqgCV.png"
           alt="Cinematic Background"
           className="w-full h-full object-cover"
         />
@@ -261,3 +261,4 @@ const CinematicHero: React.FC = () => {
 };
 
 export default CinematicHero;
+ 
