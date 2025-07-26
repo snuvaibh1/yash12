@@ -58,92 +58,85 @@ const CinematicHero: React.FC = () => {
       {/* Logo and Centerpiece */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
         <motion.div
-          className="relative"
-          initial={{ opacity: 0, scale: 0.5, rotateY: -180 }}
+          className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] lg:w-[40rem] lg:h-[40rem] xl:w-[48rem] xl:h-[48rem] flex items-center justify-center"
+          initial={{ opacity: 0, scale: 0.5 }}
           animate={{ 
             opacity: 1, 
-            scale: 1, 
-            rotateY: 0,
-            rotateZ: 360
+            scale: 1
           }}
           transition={{
-            duration: 3.5,
+            duration: 2,
             delay: 0.5,
             ease: [0.25, 0.46, 0.45, 0.94]
           }}
+          whileHover={{
+            scale: 1.05,
+            filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))'
+          }}
         >
-            <motion.div
-              className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] lg:w-[40rem] lg:h-[40rem] xl:w-[48rem] xl:h-[48rem] flex items-center justify-center"
-              whileHover={{
-                scale: 1.05,
-                filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))'
-              }}
-              transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
-              <motion.img
-                src="https://i.imgur.com/RXWtz5S.png"
-                alt="Champions Lifestyle Logo"
-                className="w-full h-full object-contain filter drop-shadow-2xl"
-                onLoad={() => setLogoLoaded(true)}
-                initial={{ opacity: 0, scale: 1.2, filter: 'blur(10px)' }}
-                animate={{
-                  opacity: logoLoaded ? 1 : 0,
-                  scale: logoLoaded ? 1 : 1.2,
-                  filter: logoLoaded ? 'blur(0px) drop-shadow(0 0 30px rgba(212, 175, 55, 0.3))' : 'blur(10px)'
-                }}
-                transition={{ 
-                  duration: 1.5, 
-                  delay: 1,
-                  ease: [0.25, 0.46, 0.45, 0.94]
-                }}
-                style={{
-                  willChange: 'transform, filter, opacity',
-                  backfaceVisibility: 'hidden',
-                  perspective: '1000px'
-                }}
-              />
-              
-              {/* Premium shimmer effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent pointer-events-none"
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity, 
-                  repeatDelay: 4, 
-                  ease: "easeInOut" 
-                }}
-                style={{
-                  maskImage: 'url(https://i.imgur.com/RXWtz5S.png)',
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  WebkitMaskImage: 'url(https://i.imgur.com/RXWtz5S.png)',
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center'
-                }}
-              />
-              
-              {/* Subtle glow enhancement */}
-              <motion.div
-                className="absolute inset-0 pointer-events-none"
-                animate={{ 
-                  opacity: [0.3, 0.6, 0.3],
-                  scale: [1, 1.02, 1]
-                }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-                style={{
-                  background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
-                  filter: 'blur(20px)',
-                  zIndex: -1
-                }}
-              />
-            </motion.div>
+          <motion.img
+            src="https://i.imgur.com/RXWtz5S.png"
+            alt="Champions Lifestyle Logo"
+            className="w-full h-full object-contain filter drop-shadow-2xl"
+            onLoad={() => setLogoLoaded(true)}
+            initial={{ opacity: 0, scale: 1.2, filter: 'blur(10px)' }}
+            animate={{
+              opacity: logoLoaded ? 1 : 0,
+              scale: logoLoaded ? 1 : 1.2,
+              filter: logoLoaded ? 'blur(0px) drop-shadow(0 0 30px rgba(212, 175, 55, 0.3))' : 'blur(10px)'
+            }}
+            transition={{ 
+              duration: 1.5, 
+              delay: 1,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+            style={{
+              willChange: 'transform, filter, opacity',
+              backfaceVisibility: 'hidden',
+              perspective: '1000px'
+            }}
+          />
+          
+          {/* Premium shimmer effect */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent pointer-events-none"
+            animate={{ x: ['-100%', '100%'] }}
+            transition={{ 
+              duration: 3, 
+              repeat: Infinity, 
+              repeatDelay: 4, 
+              ease: "easeInOut" 
+            }}
+            style={{
+              maskImage: 'url(https://i.imgur.com/RXWtz5S.png)',
+              maskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              maskPosition: 'center',
+              WebkitMaskImage: 'url(https://i.imgur.com/RXWtz5S.png)',
+              WebkitMaskSize: 'contain',
+              WebkitMaskRepeat: 'no-repeat',
+              WebkitMaskPosition: 'center'
+            }}
+          />
+          
+          {/* Subtle glow enhancement */}
+          <motion.div
+            className="absolute inset-0 pointer-events-none"
+            animate={{ 
+              opacity: [0.3, 0.6, 0.3],
+              scale: [1, 1.02, 1]
+            }}
+            transition={{ 
+              duration: 4, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            style={{
+              background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
+              filter: 'blur(20px)',
+              zIndex: -1
+            }}
+          />
         </motion.div>
       </div>
 
@@ -153,7 +146,7 @@ const CinematicHero: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 3, ease: "easeOut" }}
+            transition={{ duration: 1.2, delay: 2.5, ease: "easeOut" }}
           >
             {/* Cinematic Title */}
             <div className="relative flex items-center justify-center py-12 md:py-24">
@@ -194,7 +187,7 @@ const CinematicHero: React.FC = () => {
               className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed px-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 4.5 }}
+              transition={{ duration: 1, delay: 4 }}
               style={{
                 filter: 'blur(0px)',
                 textShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
@@ -209,7 +202,7 @@ const CinematicHero: React.FC = () => {
                 className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 5 }}
+                transition={{ duration: 1, delay: 4.5 }}
               >
                 <motion.button
                   className="group relative bg-accent-gold text-black px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
@@ -251,7 +244,7 @@ const CinematicHero: React.FC = () => {
                   </div>
                   <span className="font-semibold text-lg md:text-xl">Watch Transformations</span>
                 </motion.button>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
