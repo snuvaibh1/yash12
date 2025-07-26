@@ -114,7 +114,7 @@ const CinematicHero: React.FC = () => {
                   ease: "easeInOut" 
                 }}
                 style={{
-                  maskImage: 'url(https://i.imgur.com/RXWtz5S.png)',
+                  maskImage: ' ',
                   maskSize: 'contain',
                   maskRepeat: 'no-repeat',
                   maskPosition: 'center',
