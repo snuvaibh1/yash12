@@ -44,18 +44,13 @@ const CinematicHero: React.FC = () => {
   return (
     <section ref={containerRef} className="relative min-h-screen overflow-hidden bg-black">
       {/* Static Background Image */}
-{/* Static Background Image with mask to hide ghost logo */}
-<div className="absolute inset-0 z-0">
-  <img
-    src="https://i.imgur.com/JNHqgCV.png"
-    alt="Cinematic Background"
-    className="w-full h-full object-cover"
-  />
-</div>
-
-{/* Solid black block over left side to hide duplicate */}
-<div className="absolute top-0 left-0 w-[33%] h-full z-20 pointer-events-none bg-black" />
-
+      <div className="absolute inset-0 z-0">
+        <img
+          src=" "
+          alt="Cinematic Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       {/* Optional dark overlay */}
       <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
