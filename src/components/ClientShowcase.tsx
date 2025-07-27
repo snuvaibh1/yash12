@@ -23,7 +23,7 @@ const TransformationsScroll: React.FC = () => {
       </div>
 
       {/* Scrollable Slider */}
-      <div className="overflow-x-auto no-scrollbar mb-12">
+      <div className="overflow-x-auto no-scrollbar mb-0">
         <div className="flex gap-6 px-6 md:px-20 w-max">
           {slides.map((slide, idx) => (
             <div key={idx} className="flex-shrink-0 w-64">
