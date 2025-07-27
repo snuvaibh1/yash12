@@ -34,8 +34,6 @@ const TransformationsScroll: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Optional label below each image */}
-              {/* <p className="text-center text-sm mt-2 text-white">{slide.label}</p> */}
             </div>
           ))}
         </div>
