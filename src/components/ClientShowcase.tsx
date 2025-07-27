@@ -2,11 +2,12 @@ import React from 'react';
 
 const TransformationsScroll: React.FC = () => {
   const slides = [
-    { url: 'https://i.imgur.com/Hs5pe8f.jpeg', label: 'New York' },
-    { url: 'https://i.imgur.com/2z3NjwB.jpeg', label: 'Good Boy' },
-    { url: 'https://i.imgur.com/tVPLnb3.jpeg', label: 'Coastline' },
-    { url: 'https://i.imgur.com/WMPbmml.jpeg', label: 'Palm Trees' },
-    { url: 'https://i.imgur.com/PG8o7AP.jpeg', label: 'City Lights' },
+    { url: 'https://i.imgur.com/ejGkRPD.png', label: 'Week 1' },
+    { url: 'https://i.imgur.com/YqEw9Ly.png', label: 'Week 4' },
+    { url: 'https://i.imgur.com/Fco7af5.png', label: 'Week 8' },
+    { url: 'https://i.imgur.com/z6wu93c.png', label: 'Week 10' },
+    { url: 'https://i.imgur.com/WfdjwtB.png', label: 'Week 12' },
+    { url: 'https://i.imgur.com/ImXGds7.png', label: 'Week 16' },
   ];
 
   return (
@@ -22,29 +23,30 @@ const TransformationsScroll: React.FC = () => {
       </div>
 
       {/* Scrollable Slider */}
-      <div className="overflow-x-auto scrollbar-hide mb-12">
+      <div className="overflow-x-auto no-scrollbar mb-12">
         <div className="flex gap-6 px-6 md:px-20 w-max">
           {slides.map((slide, idx) => (
             <div key={idx} className="flex-shrink-0 w-64">
-              <div className="rounded-2xl overflow-hidden bg-[#1c1c22] shadow-xl w-full h-48">
+              <div className="rounded-2xl overflow-hidden bg-[#1c1c22] shadow-xl w-full h-72">
                 <img
                   src={slide.url}
                   alt={slide.label}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="text-center text-sm mt-2 text-white">{slide.label}</p>
+              {/* Optional label below each image */}
+              {/* <p className="text-center text-sm mt-2 text-white">{slide.label}</p> */}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Static Grid */}
+      {/* Static Testimonial Grid */}
       <div className="flex justify-center">
         <div className="bg-[#1c1c22] rounded-xl p-4 shadow-lg max-w-3xl w-full">
           <img
             src="https://i.imgur.com/PG8o7AP.jpeg"
-            alt="Transformation Grid"
+            alt="Testimonial Collage"
             className="w-full h-auto object-cover rounded-lg"
           />
         </div>
