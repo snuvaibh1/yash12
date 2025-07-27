@@ -24,9 +24,9 @@ const HomePage: React.FC = () => {
       <DumbbellSection />
       <ClientShowcase />
       <GlobalResultsMap />
-      <InstagramSection />
       <BodyTypeQuiz />
       <PricingSection />
+      <InstagramSection />
     </motion.div>
   );
 };
