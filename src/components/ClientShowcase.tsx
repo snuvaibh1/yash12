@@ -10,8 +10,8 @@ const TransformationsScroll: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#070711] py-20 px-6 md:px-10 text-white">
-      {/* Heading (Green Box Area) */}
+    <section className="bg-[#0a0a0a] py-20 px-6 md:px-10 text-white">
+      {/* Heading */}
       <div className="max-w-4xl mx-auto text-center mb-14">
         <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-400">Real Results.</h2>
         <p className="text-gray-400 text-base md:text-lg mt-3">
@@ -21,7 +21,7 @@ const TransformationsScroll: React.FC = () => {
         </p>
       </div>
 
-      {/* ➜ Slideshow (White Line Area) */}
+      {/* Scrollable Slider */}
       <div className="overflow-x-auto scrollbar-hide mb-12">
         <div className="flex gap-6 px-6 md:px-20 w-max">
           {slides.map((slide, idx) => (
@@ -39,7 +39,7 @@ const TransformationsScroll: React.FC = () => {
         </div>
       </div>
 
-      {/* Static Grid (Red Box Area) */}
+      {/* Static Grid */}
       <div className="flex justify-center">
         <div className="bg-[#1c1c22] rounded-xl p-4 shadow-lg max-w-3xl w-full">
           <img
