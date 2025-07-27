@@ -23,8 +23,19 @@ const TransformationsScroll: React.FC = () => {
       </div>
 
       {/* Scrollable Slider */}
-      <div className="overflow-x-auto no-scrollbar mb-12">
-        <div className="flex gap-6 px-6 md:px-20 w-max">
+      <div
+        className="overflow-x-auto mb-12"
+        style={{
+          scrollbarWidth: 'none',         // Firefox
+          msOverflowStyle: 'none',        // IE 10+
+        }}
+      >
+        <div
+          className="flex gap-6 px-6 md:px-20 w-max"
+          style={{
+            overflow: 'hidden',
+          }}
+        >
           {slides.map((slide, idx) => (
             <div key={idx} className="flex-shrink-0 w-64">
               <div className="rounded-2xl overflow-hidden bg-[#1c1c22] shadow-xl w-full h-72">
@@ -37,6 +48,12 @@ const TransformationsScroll: React.FC = () => {
             </div>
           ))}
         </div>
+        {/* Hide scrollbar for Webkit (Chrome, Safari) */}
+        <style>{`
+          div::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
       </div>
 
       {/* Static Testimonial Grid */}
