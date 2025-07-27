@@ -21,31 +21,39 @@ const TransformationsScroll: React.FC = () => {
         </p>
       </div>
 
-      {/* Scroll Snap Carousel */}
-      <div className="overflow-x-auto scrollbar-hide pb-6 -mx-4 md:mx-0">
-        <div className="flex snap-x snap-mandatory gap-8 px-4 md:px-0 w-max">
-          {slides.map((slide, idx) => (
-            <div
-              key={idx}
-              className="flex-shrink-0 snap-center w-64 md:w-72 transform hover:scale-105 transition-transform duration-300"
-              style={{
-                rotate: `${(idx - 2) * 3}deg`,
-              }}
-            >
-              <div className="rounded-2xl overflow-hidden bg-[#1c1c22] shadow-lg">
-                <img
-                  src={slide.url}
-                  alt={slide.label}
-                  className="w-full h-48 object-cover"
-                />
+      {/* Curved Carousel */}
+      <div className="relative overflow-x-auto scrollbar-hide pb-8">
+        <div className="flex items-center justify-start gap-6 px-10 md:px-32 w-max">
+          {slides.map((slide, idx) => {
+            const centerIndex = Math.floor(slides.length / 2);
+            const offset = idx - centerIndex;
+            const rotateY = offset * 20; // degrees
+            const scale = 1 - Math.abs(offset) * 0.1;
+            const translateX = offset * 20; // shift for 3D spacing
+
+            return (
+              <div
+                key={idx}
+                className="flex-shrink-0 transition-transform duration-500"
+                style={{
+                  transform: `perspective(1000px) rotateY(${rotateY}deg) translateX(${translateX}px) scale(${scale})`,
+                }}
+              >
+                <div className="rounded-2xl overflow-hidden bg-[#1c1c22] shadow-xl w-64 h-48">
+                  <img
+                    src={slide.url}
+                    alt={slide.label}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-center text-sm mt-2 text-white">{slide.label}</p>
               </div>
-              <p className="text-center text-sm mt-2 text-white">{slide.label}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
-      {/* Transformation Grid */}
+      {/* Transformation Grid (Red Box Area) */}
       <div className="flex justify-center mt-10">
         <div className="bg-[#1c1c22] rounded-xl p-4 shadow-lg max-w-3xl w-full">
           <img
