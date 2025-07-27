@@ -1,17 +1,19 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+const transformationImages = [
+  { src: 'https://i.imgur.com/ejGkRPD.png', alt: 'Transformation 1' },
+  { src: 'https://i.imgur.com/YqEw9Ly.png', alt: 'Transformation 2' },
+  { src: 'https://i.imgur.com/Fco7af5.png', alt: 'Transformation 3' },
+  { src: 'https://i.imgur.com/z6wu93c.png', alt: 'Transformation 4' },
+  { src: 'https://i.imgur.com/WfdjwtB.png', alt: 'Transformation 5' },
+  { src: 'https://i.imgur.com/ImXGds7.png', alt: 'Transformation 6' },
+];
 
 const TransformationsScroll: React.FC = () => {
-  const slides = [
-    { url: 'https://i.imgur.com/Hs5pe8f.jpeg', label: 'New York' },
-    { url: 'https://i.imgur.com/2z3NjwB.jpeg', label: 'Good Boy' },
-    { url: 'https://i.imgur.com/tVPLnb3.jpeg', label: 'Coastline' },
-    { url: 'https://i.imgur.com/WMPbmml.jpeg', label: 'Palm Trees' },
-    { url: 'https://i.imgur.com/PG8o7AP.jpeg', label: 'City Lights' },
-  ];
-
   return (
     <section className="bg-[#0a0a0a] py-20 px-6 md:px-10 text-white">
-      {/* Heading */}
+      {/* Section Heading */}
       <div className="max-w-4xl mx-auto text-center mb-14">
         <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-400">Real Results.</h2>
         <p className="text-gray-400 text-base md:text-lg mt-3">
@@ -21,30 +23,37 @@ const TransformationsScroll: React.FC = () => {
         </p>
       </div>
 
-      {/* Scrollable Slider */}
-      <div className="overflow-x-auto scrollbar-hide mb-12">
-        <div className="flex gap-6 px-6 md:px-20 w-max">
-          {slides.map((slide, idx) => (
-            <div key={idx} className="flex-shrink-0 w-64">
-              <div className="rounded-2xl overflow-hidden bg-[#1c1c22] shadow-xl w-full h-48">
-                <img
-                  src={slide.url}
-                  alt={slide.label}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-center text-sm mt-2 text-white">{slide.label}</p>
-            </div>
+      {/* Carousel */}
+      <div className="overflow-x-auto no-scrollbar">
+        <div className="flex gap-6 px-2 md:px-8">
+          {transformationImages.map((img, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex-shrink-0 w-60 md:w-72"
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="rounded-2xl w-full h-auto object-cover shadow-lg"
+              />
+            </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Static Grid */}
+      {/* Spacer */}
+      <div className="my-14" />
+
+      {/* Testimonial Collage */}
       <div className="flex justify-center">
         <div className="bg-[#1c1c22] rounded-xl p-4 shadow-lg max-w-3xl w-full">
           <img
             src="https://i.imgur.com/PG8o7AP.jpeg"
-            alt="Transformation Grid"
+            alt="Transformation Collage"
             className="w-full h-auto object-cover rounded-lg"
           />
         </div>
