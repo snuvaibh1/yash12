@@ -1,5 +1,7 @@
 import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import CinematicHero from '../components/CinematicHero';
 import ParallaxSection from '../components/ParallaxSection';
 import CoachSection from '../components/CoachSection';
@@ -11,6 +13,21 @@ import BodyTypeQuiz from '../components/BodyTypeQuiz';
 import PricingSection from '../components/PricingSection';
 
 const HomePage: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.substring(1); // Remove '#'
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Small delay to ensure the page has rendered
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

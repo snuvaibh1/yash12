@@ -42,7 +42,7 @@ const CinematicHero: React.FC = () => {
   }, [mouseX, mouseY]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen overflow-hidden bg-black">
+    <section id="home" ref={containerRef} className="relative min-h-screen overflow-hidden bg-black">
       {/* Static Background Image */}
       <div className="absolute inset-0 z-0">
         <img

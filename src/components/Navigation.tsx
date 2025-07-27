@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Dumbbell, ChevronDown } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showProgramsDropdown, setShowProgramsDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -32,40 +33,16 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/#coach' },
+    { label: 'Home', href: '/#home' },
+    { label: 'About', href: '/#about' },
     { label: 'Recipe Ebook', href: '/recipe-ebook' },
     { label: 'Results', href: '/#results' },
-    { label: 'Contact', href: '/#footer' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
   const handleNavClick = (href: string) => {
     if (href.startsWith('/#')) {
-      if (location.pathname !== '/') {
-        window.location.href = href;
-      } else {
-        const sectionId = href.substring(2); // Remove '/#'
-        let element;
-        
-        if (sectionId === 'coach') {
-          element = document.querySelector('#about');
-        } else if (sectionId === 'results') {
-          element = document.querySelector('#results');
-        } else if (sectionId === 'footer') {
-          element = document.querySelector('footer');
-        } else {
-          element = document.querySelector(`#${sectionId}`);
-        }
-        
-        element?.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else if (href === '/') {
-      // For home, scroll to top or CinematicHero section
-      if (location.pathname === '/') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        window.location.href = '/';
-      }
+      navigate(href);
     }
     setIsOpen(false);
     setShowProgramsDropdown(false);
@@ -83,7 +60,7 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 bg-bg-primary/50">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/">
+          <button onClick={() => handleNavClick('/#home')}>
             <motion.div
               className="flex items-center space-x-2"
               whileHover={{ scale: 1.05 }}
@@ -95,7 +72,7 @@ const Navigation: React.FC = () => {
                 className="h-10 object-contain"
               />
             </motion.div>
-          </Link>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 text-text-primary">
@@ -108,7 +85,7 @@ const Navigation: React.FC = () => {
                   whileHover={{ y: -2 }}
                   transition={{ type: 'spring', stiffness: 400 }}
                 >
-                  {item.href.startsWith('/') ? (
+                  {item.href.startsWith('/recipe-ebook') ? (
                     <Link
                       to={item.href}
                       className="text-text-secondary hover:text-text-primary transition-colors relative group"
@@ -156,7 +133,7 @@ const Navigation: React.FC = () => {
         <div className="px-6 py-4 space-y-4">
           {navItems.map((item) => (
             <div key={item.label}>
-              {item.href.startsWith('/') ? (
+              {item.href.startsWith('/recipe-ebook') ? (
                 <Link
                   to={item.href}
                   className="block text-text-secondary hover:text-text-primary transition-colors"
