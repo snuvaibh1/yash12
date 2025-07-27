@@ -11,7 +11,7 @@ const TransformationsScroll: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#0a0a0a] py-20 px-6 md:px-10 text-white">
+    <section id="results" className="bg-[#0a0a0a] py-20 px-6 md:px-10 text-white">
       {/* Heading */}
       <div className="max-w-4xl mx-auto text-center mb-14">
         <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-400">Real Results.</h2>

@@ -33,10 +33,10 @@ const Navigation: React.FC = () => {
 
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/#about' },
+    { label: 'About', href: '/#coach' },
     { label: 'Recipe Ebook', href: '/recipe-ebook' },
     { label: 'Results', href: '/#results' },
-    { label: 'Contact', href: '/#contact' },
+    { label: 'Contact', href: '/#footer' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -44,8 +44,27 @@ const Navigation: React.FC = () => {
       if (location.pathname !== '/') {
         window.location.href = href;
       } else {
-        const element = document.querySelector(href.substring(1));
+        const sectionId = href.substring(2); // Remove '/#'
+        let element;
+        
+        if (sectionId === 'coach') {
+          element = document.querySelector('#about');
+        } else if (sectionId === 'results') {
+          element = document.querySelector('#results');
+        } else if (sectionId === 'footer') {
+          element = document.querySelector('footer');
+        } else {
+          element = document.querySelector(`#${sectionId}`);
+        }
+        
         element?.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (href === '/') {
+      // For home, scroll to top or CinematicHero section
+      if (location.pathname === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.location.href = '/';
       }
     }
     setIsOpen(false);
