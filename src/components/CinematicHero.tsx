@@ -193,7 +193,7 @@ const CinematicHero: React.FC = () => {
                 transition={{ duration: 1, delay: 5 }}
               >
                 <motion.button
-                  className="group relative bg-[#E6C34C] text-black px-8 md:px-12 py-4 md:py-5 rounded-xl font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
+                  className="group relative bg-[#C8A766] text-black px-8 md:px-12 py-4 md:py-5 rounded-xl font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   style={{
