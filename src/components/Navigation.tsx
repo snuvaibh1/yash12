@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Dumbbell, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
@@ -32,7 +32,7 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '/' },
+    { label: 'Home', href: '/#home' },
     { label: 'About', href: '/#about' },
     { label: 'Recipe Ebook', href: '/recipe-ebook' },
     { label: 'Results', href: '/#results' },
@@ -41,13 +41,20 @@ const Navigation: React.FC = () => {
 
   const handleNavClick = (href: string) => {
     if (href.startsWith('/#')) {
+      const sectionId = href.replace('/#', '');
+
       if (location.pathname !== '/') {
-        window.location.href = href;
+        window.location.href = `/${href}`;
       } else {
-        const element = document.querySelector(href.substring(1));
-        element?.scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
+    } else {
+      window.location.href = href;
     }
+
     setIsOpen(false);
     setShowProgramsDropdown(false);
   };
@@ -81,31 +88,15 @@ const Navigation: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 text-text-primary">
             {navItems.map((item) => (
-              <div
-                key={item.label}
-                className="relative group"
-              >
-                <motion.div
-                  whileHover={{ y: -2 }}
-                  transition={{ type: 'spring', stiffness: 400 }}
-                >
-                  {item.href.startsWith('/') ? (
-                    <Link
-                      to={item.href}
-                      className="text-text-secondary hover:text-text-primary transition-colors relative group"
-                    >
-                      {item.label}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                    </Link>
-                  ) : (
-                    <button
-                      onClick={() => handleNavClick(item.href)}
-                      className="text-text-secondary hover:text-text-primary transition-colors relative group"
-                    >
-                      {item.label}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                    </button>
-                  )}
+              <div key={item.label} className="relative group">
+                <motion.div whileHover={{ y: -2 }} transition={{ type: 'spring', stiffness: 400 }}>
+                  <button
+                    onClick={() => handleNavClick(item.href)}
+                    className="text-text-secondary hover:text-text-primary transition-colors relative group"
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  </button>
                 </motion.div>
               </div>
             ))}
@@ -118,10 +109,7 @@ const Navigation: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-text-primary"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <button className="md:hidden text-text-primary" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -136,40 +124,13 @@ const Navigation: React.FC = () => {
       >
         <div className="px-6 py-4 space-y-4">
           {navItems.map((item) => (
-            <div key={item.label}>
-              {item.href.startsWith('/') ? (
-                <Link
-                  to={item.href}
-                  className="block text-text-secondary hover:text-text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <button
-                  onClick={() => handleNavClick(item.href)}
-                  className="block text-text-secondary hover:text-text-primary transition-colors w-full text-left"
-                >
-                  {item.label}
-                </button>
-              )}
-              
-              {/* Mobile Dropdown */}
-              {item.dropdown && (
-                <div className="ml-4 mt-2 space-y-2">
-                  {item.dropdown.map((dropdownItem) => (
-                    <Link
-                      key={dropdownItem.label}
-                      to={dropdownItem.href}
-                      className="block text-text-muted hover:text-text-primary transition-colors text-sm"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {dropdownItem.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <button
+              key={item.label}
+              onClick={() => handleNavClick(item.href)}
+              className="block text-text-secondary hover:text-text-primary transition-colors w-full text-left"
+            >
+              {item.label}
+            </button>
           ))}
           <button 
             className="w-full bg-accent-gold text-black py-3 rounded-full font-semibold hover:bg-accent-gold-dark transition-colors"
