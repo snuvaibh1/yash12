@@ -57,8 +57,8 @@ const TransformationsScroll: React.FC = () => {
       </div>
 
       {/* Blue Line Message */}
-      <div className="text-center text-gray-300 text-lg font-medium mb-10 px-6">
-        Hundreds have already transformed—your journey could be next.
+      <div className="text-center text-gray-300 text-lg font-bold mb-10 px-6">
+        Hundreds have already transformed, your journey could be next.
       </div>
 
       {/* Static Testimonial Grid */}
