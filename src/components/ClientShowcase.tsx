@@ -26,8 +26,8 @@ const TransformationsScroll: React.FC = () => {
       <div
         className="overflow-x-auto mb-12"
         style={{
-          scrollbarWidth: 'none',         // Firefox
-          msOverflowStyle: 'none',        // IE 10+
+          scrollbarWidth: 'none', // Firefox
+          msOverflowStyle: 'none', // IE 10+
         }}
       >
         <div
@@ -54,6 +54,11 @@ const TransformationsScroll: React.FC = () => {
             display: none;
           }
         `}</style>
+      </div>
+
+      {/* Blue Line Message */}
+      <div className="text-center text-gray-300 text-lg font-medium mb-10 px-6">
+        Hundreds have already transformed—your journey could be next.
       </div>
 
       {/* Static Testimonial Grid */}
