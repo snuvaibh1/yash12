@@ -110,7 +110,7 @@ const Navigation: React.FC = () => {
               </div>
             ))}
             <button 
-              className="bg-accent-gold text-black px-6 py-2 rounded-full font-semibold hover:bg-accent-gold-dark transition-colors"
+              className="bg-[#C8A766] text-black px-6 py-2 rounded-full font-semibold hover:bg-accent-gold-dark transition-colors"
               onClick={() => window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')}
             >
               Get Started
