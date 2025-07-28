@@ -2,11 +2,11 @@ import React from 'react';
 
 const TransformationsScroll: React.FC = () => {
   const slides = [
-    { url: 'https://i.imgur.com/syOglcV.png', label: 'Week 1' },
-    { url: 'https://i.imgur.com/ipV2FoJ.png', label: 'Week 4' },
-    { url: 'https://i.imgur.com/pfOKWSS.png', label: 'Week 8' },
-    { url: 'https://i.imgur.com/tkrzjKd.png', label: 'Week 10' },
-    { url: 'https://i.imgur.com/5qNDU1a.png ', label: 'Week 12' },
+    { url: 'https://i.imgur.com/syOglcV.png'},
+    { url: 'https://i.imgur.com/ipV2FoJ.png'},
+    { url: 'https://i.imgur.com/pfOKWSS.png'},
+    { url: 'https://i.imgur.com/tkrzjKd.png'},
+    { url: 'https://i.imgur.com/5qNDU1a.png '},
     { url: 'https://i.imgur.com/dACYwmz.png'},
   ];
 
