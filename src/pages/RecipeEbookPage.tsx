@@ -42,7 +42,8 @@ const RecipeEbookPage: React.FC = () => {
   <span className="text-xl sm:text-2xl md:text-4xl text-white/80">Ebook</span>
 </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-                Over 800 have already grabbed it! Get your high-protein recipe eBook now for just ₹199.
+                800+ people already received theirs! 
+Get your Protein Centered Diet Guide now and fix your eating habits
               </p>
               <motion.button
                 className="bg-accent-gold text-black px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 hover:bg-accent-gold-dark transition-all duration-300"
