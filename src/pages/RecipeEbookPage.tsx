@@ -202,7 +202,7 @@ const RecipeEbookPage: React.FC = () => {
               className="bg-primary text-white px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 mx-auto hover:bg-primary/90 transition-all duration-300 mb-8"
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255, 0, 64, 0.4)' }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://rzp.io/rzp/9yScwCz', '_blank')}
+              onClick={() => window.open('https://rzp.io/rzp/vySu0ZG', '_blank')}
             >
               <span>ORDER NOW – ₹199</span>
               <ArrowRight className="w-6 h-6" />
