@@ -62,7 +62,7 @@ const TransformationsScroll: React.FC = () => {
       </div>
 
       {/* Static Testimonial Grid */}
-      <div className="flex justify-center">
+      <div className="px-0 sm:px-4 flex justify-center">
         <div className="bg-[#1c1c22] rounded-xl p-4 shadow-lg max-w-3xl w-full">
           <img
             src="https://i.imgur.com/PG8o7AP.jpeg"
