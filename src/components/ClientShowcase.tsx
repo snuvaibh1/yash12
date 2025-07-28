@@ -62,8 +62,9 @@ const TransformationsScroll: React.FC = () => {
       </div>
 
       {/* Static Testimonial Grid */}
+{/* Static Testimonial Grid */}
 <div className="flex justify-center">
-  <div className="bg-[#1c1c22] shadow-lg w-full sm:w-[100%] md:w-[100%] lg:w-[100%] rounded-xl">
+  <div className="bg-[#1c1c22] shadow-lg w-[100%] sm:w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%] rounded-xl">
     <img
       src="https://i.imgur.com/PG8o7AP.jpeg"
       alt="Testimonial Collage"
@@ -71,6 +72,7 @@ const TransformationsScroll: React.FC = () => {
     />
   </div>
 </div>
+
 
     </section>
   );
