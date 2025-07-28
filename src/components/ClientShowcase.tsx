@@ -7,7 +7,7 @@ const TransformationsScroll: React.FC = () => {
     { url: 'https://i.imgur.com/pfOKWSS.png', label: 'Week 8' },
     { url: 'https://i.imgur.com/tkrzjKd.png', label: 'Week 10' },
     { url: 'https://i.imgur.com/5qNDU1a.png ', label: 'Week 12' },
-    { url: 'https://i.imgur.com/dACYwmz.png', label: 'Week 16' },
+    { url: 'https://i.imgur.com/dACYwmz.png'},
   ];
 
   return (
