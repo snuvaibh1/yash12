@@ -5,7 +5,6 @@ const TransformationsScroll: React.FC = () => {
     { url: 'https://i.imgur.com/syOglcV.png'},
     { url: 'https://i.imgur.com/ipV2FoJ.png'},
     { url: 'https://i.imgur.com/pfOKWSS.png'},
-    { url: 'https://i.imgur.com/x55OZI2.png'},
     { url: 'https://i.imgur.com/5qNDU1a.png '},
     { url: 'https://i.imgur.com/dACYwmz.png'},
   ];
