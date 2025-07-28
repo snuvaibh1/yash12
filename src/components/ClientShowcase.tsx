@@ -62,12 +62,12 @@ const TransformationsScroll: React.FC = () => {
       </div>
 
       {/* Static Testimonial Grid */}
-<div className="w-full">
-  <div className="bg-[#1c1c22] rounded-xl shadow-lg w-full">
+<div className="w-screen max-w-none -mx-6 sm:mx-0">
+  <div className="bg-[#1c1c22] shadow-lg w-full">
     <img
       src="https://i.imgur.com/PG8o7AP.jpeg"
       alt="Testimonial Collage"
-      className="block w-full h-auto object-cover rounded-none"
+      className="block w-full h-auto object-cover"
     />
   </div>
 </div>
