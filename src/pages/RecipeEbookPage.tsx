@@ -50,7 +50,7 @@ const RecipeEbookPage: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.open('https://rzp.io/rzp/9yScwCz', '_blank')}
               >
-                <span>PRE-ORDER - ₹99</span>
+                <span>ORDER NOW - ₹349</span>
                 <ArrowRight className="w-6 h-6" />
               </motion.button>
             </motion.div>
