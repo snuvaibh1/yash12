@@ -65,7 +65,7 @@ const TransformationsScroll: React.FC = () => {
 <div className="flex justify-center">
   <div className="bg-[#1c1c22] shadow-lg w-[100%] sm:w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%] rounded-xl">
     <img
-      src="https://i.imgur.com/uOYF4c1.jpeg" 
+      src="https://i.imgur.com/rZXPtlF.jpeg" 
       alt="Testimonial Collage"
       className="w-full h-auto object-cover rounded-lg"
     />
