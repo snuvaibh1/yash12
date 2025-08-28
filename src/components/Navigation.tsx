@@ -70,6 +70,8 @@ const Navigation: React.FC = () => {
                 src="https://i.imgur.com/cYNtlkq.png"
                 alt="Champions Lifestyle Logo"
                 className="h-10 object-contain"
+                loading="eager"
+                decoding="async"
               />
             </motion.div>
           </button>

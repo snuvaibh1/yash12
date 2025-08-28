@@ -66,6 +66,23 @@ body {
   overflow-x: hidden;
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  font-display: swap;
+}
+
+/* Optimize image loading */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lazy loading optimization */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
 }
 
 /* GPU Acceleration for animations */
@@ -73,6 +90,7 @@ body {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+  will-change: transform;
 }
 
 /* Custom Animations */

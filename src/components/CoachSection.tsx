@@ -43,6 +43,8 @@ const CoachSection: React.FC = () => {
                 alt="Coach Yash"
                 className="w-full h-full object-cover rounded-3xl aspect-[4/5]"
                 onLoad={() => setImageLoaded(true)}
+                loading="lazy"
+                decoding="async"
               />
               <motion.div
                 className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent rounded-3xl"

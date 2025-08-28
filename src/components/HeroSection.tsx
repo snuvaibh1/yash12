@@ -51,6 +51,8 @@ const HeroSection: React.FC = () => {
           src="https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
           alt="Training Background"
           className="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
           style={{
             transform: `translate(${mousePosition.x}px, ${mousePosition.y}px) scale(1.1)`,
             transition: 'transform 0.3s ease-out',

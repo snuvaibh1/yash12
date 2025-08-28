@@ -15,6 +15,20 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ children })
   useEffect(() => {
     const startTime = performance.now();
 
+    // Optimize images with lazy loading
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement;
+          img.classList.add('loaded');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+
     // Performance monitoring
     const monitorPerformance = () => {
       if ('memory' in performance) {
@@ -53,6 +67,7 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ children })
 
     return () => {
       clearInterval(performanceTimer);
+      imageObserver.disconnect();
     };
   }, []);
 
@@ -66,6 +81,20 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ children })
     } else {
       console.log('WebGL supported - GPU acceleration enabled');
     }
+
+    // Preload critical resources
+    const criticalImages = [
+      'https://i.imgur.com/RXWtz5S.png', // Logo
+      'https://i.imgur.com/JNHqgCV.png'  // Hero background
+    ];
+
+    criticalImages.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
   }, []);
 
   return (

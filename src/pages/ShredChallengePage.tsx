@@ -70,6 +70,8 @@ const ShredChallengePage: React.FC = () => {
             src="https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
             alt="Beach Transformation"
             className="w-full h-full object-cover opacity-30"
+            loading="eager"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/60 to-dark/80" />
         </div>

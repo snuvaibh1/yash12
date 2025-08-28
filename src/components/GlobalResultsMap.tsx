@@ -85,6 +85,8 @@ const GlobalResultsMap: React.FC = () => {
               src="https://i.imgur.com/DaOn27P.png"
               alt="Global Transformation Network Map"
               className="w-full h-auto object-contain rounded-2xl max-w-full"
+              loading="lazy"
+              decoding="async"
               style={{
                 maxHeight: 'none',
                 minHeight: 'auto'

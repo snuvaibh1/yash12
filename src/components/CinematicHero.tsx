@@ -49,6 +49,8 @@ const CinematicHero: React.FC = () => {
           src="https://i.imgur.com/JNHqgCV.png"
           alt="Cinematic Background"
           className="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
         />
       </div>
 
@@ -85,6 +87,8 @@ const CinematicHero: React.FC = () => {
                 alt="Champions Lifestyle Logo"
                 className="w-full h-full object-contain filter drop-shadow-2xl"
                 onLoad={() => setLogoLoaded(true)}
+                loading="eager"
+                decoding="async"
                 initial={{ opacity: 0, scale: 1.2, filter: 'blur(10px)' }}
                 animate={{
                   opacity: logoLoaded ? 1 : 0,

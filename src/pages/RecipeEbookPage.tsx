@@ -23,6 +23,8 @@ const RecipeEbookPage: React.FC = () => {
             src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
             alt="Healthy Food Background"
             className="w-full h-full object-cover opacity-20"
+            loading="eager"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark/90" />
         </div>
@@ -74,6 +76,8 @@ Get your Protein Centered Diet Guide now and fix your eating habits
                         src="https://i.imgur.com/8SMuYqv.png"
                         alt="Healthy Meal"
                         className="w-full h-full object-contain rounded-xl"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div className="text-dark text-xs">

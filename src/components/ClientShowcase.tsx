@@ -42,6 +42,8 @@ const TransformationsScroll: React.FC = () => {
                   src={slide.url}
                   alt={slide.label}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -68,6 +70,8 @@ const TransformationsScroll: React.FC = () => {
       src="https://i.imgur.com/rZXPtlF.jpeg" 
       alt="Testimonial Collage"
       className="w-full h-auto object-cover rounded-lg"
+      loading="lazy"
+      decoding="async"
     />
   </div>
 </div>
