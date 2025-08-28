@@ -45,7 +45,7 @@ const RecipeEbookPage: React.FC = () => {
 </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
                 800+ people already received theirs! 
-Get your Protein Centered Diet Guide now and fix your eating habits
+Get your Protein Centered Diet Guide now and fix your eating habits
               </p>
               <motion.button
                 className="bg-accent-gold text-black px-12 py-6 rounded-full font-bold text-xl flex items-center space-x-3 hover:bg-accent-gold-dark transition-all duration-300"
@@ -153,7 +153,7 @@ Get your Protein Centered Diet Guide now and fix your eating habits
             <div className="w-16 h-16 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
               <Check className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">Design your own meal plan</h3>
+            <h3 className="text-xl font-bold text-white mb-4">Design your own meal plan</h3>
           </motion.div>
         </div>
       </section>
@@ -220,4 +220,3 @@ Get your Protein Centered Diet Guide now and fix your eating habits
 };
 
 export default RecipeEbookPage;
-

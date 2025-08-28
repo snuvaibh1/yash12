@@ -16,7 +16,7 @@ const CoachSection: React.FC = () => {
         'NASM-CNC (Certified Nutrition Coach)',
         'Diploma in Body Recomposition',
         'Diploma in Managing Busy Work Life',
-        'Men’s Lifestyle Coaching',
+        'Men's Lifestyle Coaching',
         'Hormonal Health Specialisation',
       ],
     },
@@ -87,7 +87,7 @@ const CoachSection: React.FC = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              Coach Yash is a NASM-CPT & CNC certified expert, specializing in men’s lifestyle, hormonal health, and body recomposition. He helps busy professionals build elite physiques without sacrificing work-life balance or energy. With diplomas in body transformation and hormonal mastery, Yash turns average routines into high-performance lifestyles.
+              Coach Yash is a NASM-CPT & CNC certified expert, specializing in men's lifestyle, hormonal health, and body recomposition. He helps busy professionals build elite physiques without sacrificing work-life balance or energy. With diplomas in body transformation and hormonal mastery, Yash turns average routines into high-performance lifestyles.
             </motion.p>
 
             {/* Achievements Box */}

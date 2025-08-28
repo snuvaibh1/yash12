@@ -246,4 +246,3 @@ const CinematicHero: React.FC = () => {
 };
 
 export default CinematicHero;
- 
