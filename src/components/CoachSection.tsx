@@ -16,7 +16,7 @@ const CoachSection: React.FC = () => {
         'NASM-CNC (Certified Nutrition Coach)',
         'Diploma in Body Recomposition',
         'Diploma in Managing Busy Work Life',
-        'Men's Lifestyle Coaching',
+        'Men\'s Lifestyle Coaching',
         'Hormonal Health Specialisation',
       ],
     },
