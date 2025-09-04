@@ -118,7 +118,7 @@ const CinematicHero: React.FC = () => {
                   scale: [1, 1.02, 1]
                 }}
                 transition={{ 
-                  duration: 4, 
+                  duration: 2, 
                   repeat: Infinity, 
                   ease: "easeInOut" 
                 }}
@@ -162,7 +162,7 @@ const CinematicHero: React.FC = () => {
                   transition={{
                     opacity: { duration: 1.2, delay: 1 },
                     backgroundPosition: {
-                      duration: 6,
+                      duration: 3,
                       ease: "easeInOut",
                       repeat: Infinity
                     }
@@ -210,7 +210,7 @@ const CinematicHero: React.FC = () => {
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                     animate={{ x: ['-100%', '100%'] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
                   />
                   <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
                     <span>Begin Transformation</span>
@@ -231,7 +231,7 @@ const CinematicHero: React.FC = () => {
                     <motion.div
                       className="absolute inset-0 rounded-full border-2 border-accent-gold/50"
                       animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
                     />
                   </div>
                   <span className="font-semibold text-lg md:text-xl">Watch Transformations</span>
