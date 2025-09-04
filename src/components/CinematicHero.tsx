@@ -12,8 +12,8 @@ const CinematicHero: React.FC = () => {
     offset: ['start start', 'end start']
   });
 
-  const mouseX = useSpring(0, { stiffness: 120, damping: 25 });
-  const mouseY = useSpring(0, { stiffness: 120, damping: 25 });
+  const mouseX = useSpring(0, { stiffness: 100, damping: 30 });
+  const mouseY = useSpring(0, { stiffness: 100, damping: 30 });
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   useEffect(() => {
@@ -30,10 +30,14 @@ const CinematicHero: React.FC = () => {
     };
 
     const container = containerRef.current;
-    if (container) container.addEventListener('mousemove', handleMouseMove);
+    if (container) {
+      container.addEventListener('mousemove', handleMouseMove);
+    }
 
     return () => {
-      if (container) container.removeEventListener('mousemove', handleMouseMove);
+      if (container) {
+        container.removeEventListener('mousemove', handleMouseMove);
+      }
     };
   }, [mouseX, mouseY]);
 
@@ -65,49 +69,66 @@ const CinematicHero: React.FC = () => {
             rotateZ: 360
           }}
           transition={{
-            duration: 2,   // faster
+            duration: 3.5,
             delay: 0.5,
             ease: [0.25, 0.46, 0.45, 0.94]
           }}
         >
-          <motion.div
-            className="relative w-[32rem] h-[32rem] sm:w-[36rem] sm:h-[36rem] md:w-[40rem] md:h-[40rem] lg:w-[48rem] lg:h-[48rem] xl:w-[56rem] xl:h-[56rem] flex items-center justify-center translate-y-[-3rem] sm:translate-y-0"
-            whileHover={{
-              scale: 1.05,
-              filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))'
-            }}
-            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <motion.img
-              src="https://i.imgur.com/RXWtz5S.png"
-              alt="Champions Lifestyle Logo"
-              className="w-full h-full object-contain filter drop-shadow-2xl"
-              onLoad={() => setLogoLoaded(true)}
-              loading="eager"
-              decoding="async"
-              initial={{ opacity: 0, scale: 1.2, filter: 'blur(10px)' }}
-              animate={{
-                opacity: logoLoaded ? 1 : 0,
-                scale: logoLoaded ? 1 : 1.2,
-                filter: logoLoaded
-                  ? 'blur(0px) drop-shadow(0 0 80px rgba(212, 175, 55, 0.5))'
-                  : 'blur(10px)'
-              }}
-              transition={{ duration: 1, delay: 0.8 }}
-            />
-
-            {/* Faster glow pulse */}
             <motion.div
-              className="absolute inset-0 pointer-events-none"
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.02, 1] }}
-              transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-              style={{
-                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
-                filter: 'blur(20px)',
-                zIndex: -1
+              className="relative w-[32rem] h-[32rem] sm:w-[36rem] sm:h-[36rem] md:w-[40rem] md:h-[40rem] lg:w-[48rem] lg:h-[48rem] xl:w-[56rem] xl:h-[56rem] flex items-center justify-center translate-y-[-3rem] sm:translate-y-0"
+              whileHover={{
+                scale: 1.05,
+                filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))'
               }}
-            />
-          </motion.div>
+              transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <motion.img
+                src="https://i.imgur.com/RXWtz5S.png"
+                alt="Champions Lifestyle Logo"
+                className="w-full h-full object-contain filter drop-shadow-2xl"
+                onLoad={() => setLogoLoaded(true)}
+                loading="eager"
+                decoding="async"
+                initial={{ opacity: 0, scale: 1.2, filter: 'blur(10px)' }}
+                animate={{
+                  opacity: logoLoaded ? 1 : 0,
+                  scale: logoLoaded ? 1 : 1.2,
+                  filter: logoLoaded ? 'blur(0px) drop-shadow(0 0 80px rgba(212, 175, 55, 0.5))' : 'blur(10px)'
+                }}
+                transition={{ 
+                  duration: 1.5, 
+                  delay: 1,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                style={{
+                  willChange: 'transform, filter, opacity',
+                  backfaceVisibility: 'hidden',
+                  perspective: '1000px'
+                }}
+              />
+              
+              {/* Premium shimmer effect */}
+
+              
+              {/* Subtle glow enhancement */}
+              <motion.div
+                className="absolute inset-0 pointer-events-none"
+                animate={{ 
+                  opacity: [0.3, 0.6, 0.3],
+                  scale: [1, 1.02, 1]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
+                style={{
+                  background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
+                  filter: 'blur(20px)',
+                  zIndex: -1
+                }}
+              />
+            </motion.div>
         </motion.div>
       </div>
 
@@ -117,9 +138,9 @@ const CinematicHero: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.5 }}
+            transition={{ duration: 1.2, delay: 3, ease: "easeOut" }}
           >
-            {/* Title with faster shimmer */}
+            {/* Cinematic Title */}
             <div className="relative flex items-center justify-center py-12 md:py-24">
               <div className="sticky top-[20vh] z-30">
                 <motion.h1
@@ -132,11 +153,40 @@ const CinematicHero: React.FC = () => {
                     textShadow: '0 0 50px rgba(212, 175, 55, 0.3)',
                     backgroundSize: '200% auto',
                   }}
-                  animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                />
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                  }}
+                  transition={{
+                    opacity: { duration: 1.2, delay: 1 },
+                    backgroundPosition: {
+                      duration: 3,
+                      ease: "easeInOut",
+                      repeat: Infinity
+                    }
+                  }}
+                >
+                  <br />
+                  <span className="text-accent-gold"> </span>
+                </motion.h1>
               </div>
             </div>
+
+            {/* Subtitle */}
+            <motion.p
+              className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed px-4"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 4.5 }}
+              style={{
+                filter: 'blur(0px)',
+                textShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
+              }}
+            >
+              <br className="hidden sm:block" />
+            </motion.p>
 
             {/* CTA Buttons */}
             <div className="mt-80 md:mt-56">
@@ -144,9 +194,8 @@ const CinematicHero: React.FC = () => {
                 className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 3 }}
+                transition={{ duration: 1, delay: 5 }}
               >
-                {/* Faster button shimmer */}
                 <motion.button
                   className="group relative bg-[#C8A766] text-black px-8 md:px-12 py-4 md:py-5 rounded-xl font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
                   whileHover={{ scale: 1.05 }}
@@ -154,11 +203,14 @@ const CinematicHero: React.FC = () => {
                   style={{
                     boxShadow: '0 0 50px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                   }}
+                  onClick={() =>
+                    window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')
+                  }
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                     animate={{ x: ['-100%', '100%'] }}
-                    transition={{ duration: 0.8, repeat: Infinity, ease: 'easeInOut' }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
                   />
                   <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
                     <span>Begin Transformation</span>
@@ -166,14 +218,20 @@ const CinematicHero: React.FC = () => {
                   </span>
                 </motion.button>
 
-                {/* Faster pulse ring */}
-                <motion.button className="group flex items-center space-x-3 md:space-x-4 text-white/90 hover:text-white transition-colors">
-                  <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                <motion.button
+                  className="group flex items-center space-x-3 md:space-x-4 text-white/90 hover:text-white transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() =>
+                    window.open('https://youtu.be/zoLP2Q0k6dE?si=ynVrRWElYFoa8aHU', '_blank')
+                  }
+                >
+                  <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors">
                     <Play className="w-6 h-6 md:w-8 md:h-8 ml-1" />
                     <motion.div
                       className="absolute inset-0 rounded-full border-2 border-accent-gold/50"
                       animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 0.8, repeat: Infinity }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
                     />
                   </div>
                   <span className="font-semibold text-lg md:text-xl">Watch Transformations</span>
