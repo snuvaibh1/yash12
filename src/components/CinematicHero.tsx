@@ -194,7 +194,7 @@ const CinematicHero: React.FC = () => {
                 className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 5 }}
+                transition={{ duration: 1, delay: 1.2 }}
               >
                 <motion.button
                   className="group relative bg-[#C8A766] text-black px-8 md:px-12 py-4 md:py-5 rounded-xl font-bold text-lg md:text-xl overflow-hidden w-full sm:w-auto"
