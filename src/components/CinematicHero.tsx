@@ -162,7 +162,7 @@ const CinematicHero: React.FC = () => {
                   transition={{
                     opacity: { duration: 1.2, delay: 1 },
                     backgroundPosition: {
-                      duration: 1,
+                      duration: 0.2,
                       ease: "easeInOut",
                       repeat: Infinity
                     }
