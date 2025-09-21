@@ -65,10 +65,11 @@ const BodyTypeQuiz: React.FC = () => {
   return (
     <div className="bg-black text-white min-h-screen flex items-center justify-center p-6">
       <div className="max-w-xl w-full relative">
-        {/* Animated golden border */}
-        <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-600 animate-border-shine"></div>
+        {/* Animated golden border wrapper */}
+        <div className="absolute inset-0 rounded-3xl p-[3px] animate-border-move bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500"></div>
 
-        <div className="relative bg-gray-950/90 rounded-3xl border border-yellow-500/30 shadow-[0_0_25px_rgba(255,215,0,0.2)] p-8">
+        {/* Quiz box (slightly different black) */}
+        <div className="relative bg-neutral-900 rounded-3xl p-8">
           {showResults ? (
             <div className="text-center space-y-6">
               <h2 className="text-3xl font-extrabold leading-tight">
@@ -87,7 +88,7 @@ const BodyTypeQuiz: React.FC = () => {
           ) : (
             <div className="space-y-6">
               <div className="text-center">
-                {/* Heading in World-Wide Transformation style */}
+                {/* Heading */}
                 <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-4">
                   <span className="block text-white">Body Type</span>
                   <span className="block text-yellow-400">Quiz</span>
@@ -131,13 +132,13 @@ const BodyTypeQuiz: React.FC = () => {
 
       {/* Rolling golden border animation */}
       <style>{`
-        @keyframes shine {
+        @keyframes borderMove {
           0% { background-position: 0% 50%; }
           100% { background-position: 200% 50%; }
         }
-        .animate-border-shine {
+        .animate-border-move {
           background-size: 200% 200%;
-          animation: shine 4s linear infinite;
+          animation: borderMove 5s linear infinite;
           border-radius: 1.5rem;
         }
       `}</style>
