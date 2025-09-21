@@ -71,7 +71,10 @@ const BodyTypeQuiz: React.FC = () => {
         <div className="relative bg-gray-950/90 rounded-3xl border border-yellow-500/30 shadow-[0_0_25px_rgba(255,215,0,0.2)] p-8">
           {showResults ? (
             <div className="text-center space-y-6">
-              <h2 className="text-3xl font-bold text-yellow-400">Your Plan</h2>
+              <h2 className="text-3xl font-extrabold leading-tight">
+                <span className="block text-white">Your</span>
+                <span className="block text-yellow-400">Plan</span>
+              </h2>
               <p className="text-xl font-medium text-yellow-200">{getRecommendedProgram(answers)}</p>
 
               <button
@@ -84,8 +87,14 @@ const BodyTypeQuiz: React.FC = () => {
           ) : (
             <div className="space-y-6">
               <div className="text-center">
-                <h1 className="text-3xl font-bold text-yellow-400 mb-2">Body Type Quiz</h1>
+                {/* Heading in World-Wide Transformation style */}
+                <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-4">
+                  <span className="block text-white">Body Type</span>
+                  <span className="block text-yellow-400">Quiz</span>
+                </h1>
                 <p className="text-gray-400 text-sm">Quick 3-step guide</p>
+
+                {/* Progress bar */}
                 <div className="mt-4">
                   <div className="bg-gray-800 rounded-full h-2 w-full">
                     <div
@@ -98,10 +107,12 @@ const BodyTypeQuiz: React.FC = () => {
                 </div>
               </div>
 
+              {/* Question */}
               <h2 className="text-xl font-semibold text-center text-yellow-200">
                 {quizQuestions[currentQuestion].question}
               </h2>
 
+              {/* Options */}
               <div className="grid gap-3">
                 {quizQuestions[currentQuestion].options.map((option, index) => (
                   <button
