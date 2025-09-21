@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface QuizQuestion {
   id: number;
@@ -9,42 +9,35 @@ interface QuizQuestion {
 const quizQuestions: QuizQuestion[] = [
   {
     id: 1,
-    question: "What is your primary fitness goal?",
-    options: ["Lose weight", "Build muscle", "Improve endurance", "General fitness"]
+    question: "What’s your main fitness goal?",
+    options: ["Lose weight", "Build muscle", "Improve endurance", "General fitness"],
   },
   {
     id: 2,
-    question: "How would you describe your current activity level?",
-    options: ["Sedentary", "Lightly active", "Moderately active", "Very active"]
+    question: "How active are you right now?",
+    options: ["Sedentary", "Lightly active", "Moderately active", "Very active"],
   },
   {
     id: 3,
-    question: "What is your preferred workout style?",
-    options: ["Strength training", "Cardio", "Mixed training", "Flexibility/Yoga"]
-  }
+    question: "Your favorite training style?",
+    options: ["Strength training", "Cardio", "Mixed", "Yoga / Flexibility"],
+  },
 ];
 
-// Logic to determine recommendation based on answers
+// Recommendation logic
 const getRecommendedProgram = (answers: string[]) => {
   const [goal, activityLevel, style] = answers;
 
   if (goal === "Lose weight" && activityLevel === "Sedentary") {
-    return "CLC STANDARD – Perfect for beginners ready to start their transformation journey.";
+    return "✨ CLC STANDARD – Perfect for beginners starting strong.";
   }
-
   if (goal === "Build muscle" && style === "Strength training") {
-    return "CLC PREMIUM – Our most popular program for serious transformations.";
+    return "🔥 CLC PREMIUM – Our most popular serious transformation plan.";
   }
-
-  if (
-    goal === "Improve endurance" ||
-    activityLevel === "Very active" ||
-    style === "Mixed training"
-  ) {
-    return "Entire Premium Program – Premium 1-on-1 coaching for ultimate results.";
+  if (goal === "Improve endurance" || activityLevel === "Very active" || style === "Mixed") {
+    return "🏆 ENTIRE PREMIUM – 1-on-1 elite coaching for ultimate results.";
   }
-
-  return "CLC STANDARD – A great place to begin your fitness journey.";
+  return "⭐ CLC STANDARD – A great start to your journey.";
 };
 
 const BodyTypeQuiz: React.FC = () => {
@@ -70,70 +63,73 @@ const BodyTypeQuiz: React.FC = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen flex items-center justify-center p-8">
-      <div className="max-w-2xl mx-auto">
-        {showResults ? (
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-8 text-gold">Your Results</h2>
-            <div className="bg-gray-900 p-8 rounded-lg border border-gold/20">
-              <p className="text-xl mb-6">
-                Based on your answers, we recommend:
-                <span className="block mt-2 text-gold font-semibold text-2xl">
-                  {getRecommendedProgram(answers)}
-                </span>
-              </p>
-              <div className="space-y-4 mb-8 text-left">
-                {answers.map((answer, index) => (
-                  <div key={index}>
-                    <span className="text-gold font-semibold">Q{index + 1}:</span> {answer}
-                  </div>
-                ))}
-              </div>
+    <div className="bg-black text-white min-h-screen flex items-center justify-center p-6">
+      <div className="max-w-xl w-full relative">
+        {/* Animated golden border */}
+        <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-600 animate-border-shine"></div>
+
+        <div className="relative bg-gray-950/90 rounded-3xl border border-yellow-500/30 shadow-[0_0_25px_rgba(255,215,0,0.2)] p-8">
+          {showResults ? (
+            <div className="text-center space-y-6">
+              <h2 className="text-3xl font-bold text-yellow-400">Your Plan</h2>
+              <p className="text-xl font-medium text-yellow-200">{getRecommendedProgram(answers)}</p>
+
               <button
                 onClick={resetQuiz}
-                className="bg-gold text-black px-8 py-3 rounded-lg font-semibold hover:bg-gold/90 transition-colors"
+                className="mt-6 w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-3 rounded-2xl shadow-lg hover:scale-105 transition-all"
               >
-                Take Quiz Again
+                Try Again
               </button>
             </div>
-          </div>
-        ) : (
-          <div>
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold mb-4 text-gold">Body Type Quiz</h1>
-              <p className="text-gray-300">Discover your personalized fitness approach</p>
-              <div className="mt-4">
-                <div className="bg-gray-800 rounded-full h-2 w-full">
-                  <div
-                    className="bg-gold h-2 rounded-full transition-all duration-300"
-                    style={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }}
-                  ></div>
+          ) : (
+            <div className="space-y-6">
+              <div className="text-center">
+                <h1 className="text-3xl font-bold text-yellow-400 mb-2">Body Type Quiz</h1>
+                <p className="text-gray-400 text-sm">Quick 3-step guide</p>
+                <div className="mt-4">
+                  <div className="bg-gray-800 rounded-full h-2 w-full">
+                    <div
+                      className="bg-gradient-to-r from-yellow-500 to-yellow-300 h-2 rounded-full transition-all duration-300"
+                      style={{
+                        width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%`,
+                      }}
+                    ></div>
+                  </div>
                 </div>
-                <p className="text-sm text-gray-400 mt-2">
-                  Question {currentQuestion + 1} of {quizQuestions.length}
-                </p>
               </div>
-            </div>
 
-            <div className="bg-gray-900 p-8 rounded-lg border border-gold/20">
-              <h2 className="text-2xl font-semibold mb-6">
+              <h2 className="text-xl font-semibold text-center text-yellow-200">
                 {quizQuestions[currentQuestion].question}
               </h2>
-              <div className="space-y-4">
+
+              <div className="grid gap-3">
                 {quizQuestions[currentQuestion].options.map((option, index) => (
                   <button
                     key={index}
                     onClick={() => handleAnswer(option)}
-                    className="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 border border-gray-600 hover:border-gold/50 rounded-lg transition-all duration-200"
+                    className="w-full p-4 rounded-2xl bg-gray-800 border border-yellow-500/20 text-left font-medium hover:border-yellow-400 hover:shadow-[0_0_15px_rgba(255,215,0,0.3)] hover:scale-[1.02] transition-all"
                   >
                     {option}
                   </button>
                 ))}
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
+
+      {/* Rolling golden border animation */}
+      <style>{`
+        @keyframes shine {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
+        }
+        .animate-border-shine {
+          background-size: 200% 200%;
+          animation: shine 4s linear infinite;
+          border-radius: 1.5rem;
+        }
+      `}</style>
     </div>
   );
 };
