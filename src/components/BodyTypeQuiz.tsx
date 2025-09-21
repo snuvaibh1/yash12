@@ -64,15 +64,17 @@ const BodyTypeQuiz: React.FC = () => {
 
   return (
     <div className="bg-black text-white min-h-screen flex items-center justify-center p-6">
-      <div className="relative max-w-xl w-full">
-        {/* Golden animated border around box */}
-        <div className="absolute inset-0 rounded-3xl p-[3px] bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-600 animate-border-glow"></div>
+      <div className="max-w-xl w-full relative">
+        {/* Animated golden border */}
+        <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-600 animate-border-shine"></div>
 
-        {/* Quiz box (slightly lighter black) */}
-        <div className="relative bg-neutral-900 rounded-3xl p-8 shadow-xl">
+        <div className="relative bg-gray-950/90 rounded-3xl border border-yellow-500/30 shadow-[0_0_25px_rgba(255,215,0,0.2)] p-8">
           {showResults ? (
             <div className="text-center space-y-6">
-              <h2 className="text-3xl font-bold text-yellow-400">Your Plan</h2>
+              <h2 className="text-3xl font-extrabold leading-tight">
+                <span className="block text-white">Your</span>
+                <span className="block text-yellow-400">Plan</span>
+              </h2>
               <p className="text-xl font-medium text-yellow-200">{getRecommendedProgram(answers)}</p>
 
               <button
@@ -85,8 +87,14 @@ const BodyTypeQuiz: React.FC = () => {
           ) : (
             <div className="space-y-6">
               <div className="text-center">
-                <h1 className="text-3xl font-bold text-yellow-400 mb-2">Body Type Quiz</h1>
+                {/* Heading in World-Wide Transformation style */}
+                <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-4">
+                  <span className="block text-white">Body Type</span>
+                  <span className="block text-yellow-400">Quiz</span>
+                </h1>
                 <p className="text-gray-400 text-sm">Quick 3-step guide</p>
+
+                {/* Progress bar */}
                 <div className="mt-4">
                   <div className="bg-gray-800 rounded-full h-2 w-full">
                     <div
@@ -99,10 +107,12 @@ const BodyTypeQuiz: React.FC = () => {
                 </div>
               </div>
 
+              {/* Question */}
               <h2 className="text-xl font-semibold text-center text-yellow-200">
                 {quizQuestions[currentQuestion].question}
               </h2>
 
+              {/* Options */}
               <div className="grid gap-3">
                 {quizQuestions[currentQuestion].options.map((option, index) => (
                   <button
@@ -119,15 +129,15 @@ const BodyTypeQuiz: React.FC = () => {
         </div>
       </div>
 
-      {/* Golden glowing border animation */}
+      {/* Rolling golden border animation */}
       <style>{`
-        @keyframes borderGlow {
+        @keyframes shine {
           0% { background-position: 0% 50%; }
           100% { background-position: 200% 50%; }
         }
-        .animate-border-glow {
+        .animate-border-shine {
           background-size: 200% 200%;
-          animation: borderGlow 5s linear infinite;
+          animation: shine 4s linear infinite;
           border-radius: 1.5rem;
         }
       `}</style>
@@ -136,4 +146,3 @@ const BodyTypeQuiz: React.FC = () => {
 };
 
 export default BodyTypeQuiz;
-
