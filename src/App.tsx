@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import PerformanceOptimizer from './components/PerformanceOptimizer';
+import CacheManagerComponent from './components/CacheManager';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
@@ -33,21 +34,23 @@ function App() {
 
   return (
     <PerformanceOptimizer>
-      <div className="min-h-screen bg-bg-primary text-text-primary dark-theme">
-        <Navigation />
-        <main>
-          <React.Suspense fallback={<PageLoader />}>
-            <AnimatePresence mode="wait">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/8w-shred-challenge" element={<ShredChallengePage />} />
-                <Route path="/recipe-ebook" element={<RecipeEbookPage />} />
-              </Routes>
-            </AnimatePresence>
-          </React.Suspense>
-        </main>
-        <Footer />
-      </div>
+      <CacheManagerComponent>
+        <div className="min-h-screen bg-bg-primary text-text-primary dark-theme">
+          <Navigation />
+          <main>
+            <React.Suspense fallback={<PageLoader />}>
+              <AnimatePresence mode="wait">
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/8w-shred-challenge" element={<ShredChallengePage />} />
+                  <Route path="/recipe-ebook" element={<RecipeEbookPage />} />
+                </Routes>
+              </AnimatePresence>
+            </React.Suspense>
+          </main>
+          <Footer />
+        </div>
+      </CacheManagerComponent>
     </PerformanceOptimizer>
   );
 }
