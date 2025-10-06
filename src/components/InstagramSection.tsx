@@ -40,7 +40,7 @@ const InstagramSection: React.FC = () => {
     },
     {
       id: 6,
-      image: 'https://i.imgur.com/VWfHxZA.jpeg',
+      image: 'https://ik.imagekit.io/wr1enblrm/VWfHxZA_d.webp?updatedAt=1759758684023',
       likes: 2743,
       comments: 178
     }
