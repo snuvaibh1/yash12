@@ -67,7 +67,7 @@ const Navigation: React.FC = () => {
               transition={{ type: 'spring', stiffness: 400 }}
             >
               <img
-                src="https://i.imgur.com/cYNtlkq.png"
+                src="https://ik.imagekit.io/wr1enblrm/cYNtlkq_d.webp?updatedAt=1759756869733"
                 alt="Champions Lifestyle Logo"
                 className="h-10 object-contain"
                 loading="eager"
