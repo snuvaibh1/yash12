@@ -6,7 +6,7 @@ const TransformationsScroll: React.FC = () => {
     { url: 'https://ik.imagekit.io/wr1enblrm/ipV2FoJ_d.webp?updatedAt=1759757094636'},
     { url: 'https://ik.imagekit.io/wr1enblrm/pfOKWSS.png?updatedAt=1759757693564'},
     { url: 'https://ik.imagekit.io/wr1enblrm/5qNDU1a.png?updatedAt=1759757242565 '},
-    { url: 'https://i.imgur.com/dACYwmz.png'},
+    { url: 'https://ik.imagekit.io/wr1enblrm/dACYwmz.png?updatedAt=1759757760639'},
   ];
 
   return (
