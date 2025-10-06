@@ -166,7 +166,7 @@ const InstagramSection: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src="https://i.imgur.com/2oHlhBf.png" alt="Logo" className="w-6 h-6" />
+            <img src="https://ik.imagekit.io/wr1enblrm/RXWtz5S_d.webp?updatedAt=1759756775583" alt="Logo" className="w-6 h-6" />
             <span>Follow @campione.yash</span>
           </motion.a>
         </motion.div>
