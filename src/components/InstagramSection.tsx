@@ -8,7 +8,7 @@ const InstagramSection: React.FC = () => {
   const instagramPosts = [
     {
       id: 1,
-      image: 'https://i.imgur.com/OoeJNor.jpeg',
+      image: 'https://ik.imagekit.io/wr1enblrm/OoeJNor_d.webp?updatedAt=1759758264393',
       likes: 2847,
       comments: 156,
       timeAgo: '2h'
