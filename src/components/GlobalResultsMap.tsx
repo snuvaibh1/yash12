@@ -82,7 +82,7 @@ const GlobalResultsMap: React.FC = () => {
         >
           <div className="relative w-full rounded-2xl overflow-hidden flex items-center justify-center">
             <img
-              src="https://i.imgur.com/DaOn27P.png"
+              src="https://ik.imagekit.io/wr1enblrm/DaOn27P_d.webp?updatedAt=1759757986447"
               alt="Global Transformation Network Map"
               className="w-full h-auto object-contain rounded-2xl max-w-full"
               loading="lazy"
