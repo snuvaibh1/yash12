@@ -69,7 +69,7 @@ const InstagramSection: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="flex items-center justify-center space-x-3 mb-6">
-            <img src="https://i.imgur.com/2oHlhBf.png" alt="Logo" className="w-8 h-8" />
+            <img src="https://ik.imagekit.io/wr1enblrm/RXWtz5S_d.webp?updatedAt=1759756775583" alt="Logo" className="w-8 h-8" />
             <h2 className="text-4xl md:text-6xl font-black">
               Real-Time
               <br />
