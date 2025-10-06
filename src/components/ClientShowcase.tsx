@@ -2,7 +2,7 @@ import React from 'react';
 
 const TransformationsScroll: React.FC = () => {
   const slides = [
-    { url: 'https://i.imgur.com/syOglcV.png'},
+    { url: 'https://ik.imagekit.io/wr1enblrm/syOglcV.png?updatedAt=1759757632039'},
     { url: 'https://ik.imagekit.io/wr1enblrm/ipV2FoJ_d.webp?updatedAt=1759757094636'},
     { url: 'https://i.imgur.com/pfOKWSS.png'},
     { url: 'https://ik.imagekit.io/wr1enblrm/5qNDU1a.png?updatedAt=1759757242565 '},
