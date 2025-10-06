@@ -46,25 +46,4 @@ export default defineConfig({
       'Cache-Control': 'public, max-age=31536000'
     }
   }
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          animations: ['framer-motion', 'gsap'],
-          icons: ['lucide-react'],
-          routing: ['react-router-dom']
-        }
-      }
-    },
-    chunkSizeWarningLimit: 1000
-  },
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-    include: ['react', 'react-dom', 'framer-motion']
-  },
-  server: {
-    hmr: {
-      overlay: false
-    }
-  }
 });
