@@ -46,7 +46,7 @@ const CinematicHero: React.FC = () => {
       {/* Static Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://i.imgur.com/JNHqgCV.png"
+          src="https://ik.imagekit.io/wr1enblrm/JNHqgCV_d.webp?updatedAt=1759756712645"
           alt="Cinematic Background"
           className="w-full h-full object-cover"
           loading="eager"
