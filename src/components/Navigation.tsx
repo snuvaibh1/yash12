@@ -151,22 +151,6 @@ const Navigation: React.FC = () => {
                   {item.label}
                 </button>
               )}
-              
-              {/* Mobile Dropdown */}
-              {item.dropdown && (
-                <div className="ml-4 mt-2 space-y-2">
-                  {item.dropdown.map((dropdownItem) => (
-                    <Link
-                      key={dropdownItem.label}
-                      to={dropdownItem.href}
-                      className="block text-text-muted hover:text-text-primary transition-colors text-sm"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {dropdownItem.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
           <button 

@@ -180,8 +180,10 @@ Get your Protein Centered Diet Guide now and fix your eating habits
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-            />
-            <div className="text-white/60 text-lg" />
+            >
+              "This recipe book completely transformed how I approach nutrition. Simple, practical, and effective!"
+            </motion.blockquote>
+            <div className="text-white/60 text-lg">- Champions Lifestyle Community Member</div>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-8" />
           </motion.div>
         </div>
