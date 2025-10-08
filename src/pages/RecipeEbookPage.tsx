@@ -73,7 +73,7 @@ Get your Protein Centered Diet Guide now and fix your eating habits
                     </div>
                     <div className="w-full h-48 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl mb-4 flex items-center justify-center">
                       <img
-                        src="https://i.imgur.com/8SMuYqv.png"
+                        src="https://ik.imagekit.io/slfql4jkj/8SMuYqv_d.webp?updatedAt=1759924114968"
                         alt="Healthy Meal"
                         className="w-full h-full object-contain rounded-xl"
                         loading="lazy"
