@@ -12,19 +12,6 @@ const CacheManagerComponent: React.FC<CacheManagerProps> = ({ children }) => {
   const cacheManager = CacheManager.getInstance();
 
   useEffect(() => {
-    // Check if cache should be cleared on app start
-    if (cacheManager.shouldClearCache()) {
-      handleCacheClear();
-    }
-
-    // Show clear cache button in development or if performance issues detected
-    const isDevelopment = process.env.NODE_ENV === 'development';
-    const hasPerformanceIssues = checkPerformanceIssues();
-    
-    if (isDevelopment || hasPerformanceIssues) {
-      setShowClearButton(true);
-    }
-
     // Register service worker
     registerServiceWorker();
   }, []);
@@ -52,21 +39,16 @@ const CacheManagerComponent: React.FC<CacheManagerProps> = ({ children }) => {
 
   const handleCacheClear = async () => {
     setIsClearing(true);
-    
+
     try {
       // Clear all types of cache
       await cacheManager.clearBrowserCache();
       await cacheManager.clearServiceWorkerCache();
       cacheManager.clearImageCache();
-      
+
       // Show success message
       console.log('Cache cleared successfully');
-      
-      // Optional: Reload page after clearing
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
-      
+
     } catch (error) {
       console.error('Error clearing cache:', error);
     } finally {
