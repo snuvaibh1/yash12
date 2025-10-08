@@ -168,9 +168,9 @@ const CinematicHero: React.FC = () => {
                     }
                   }}
                 >
-                  TRANSFORM YOUR
+                   
                   <br />
-                  <span className="text-accent-gold">LIFESTYLE</span>
+                  <span className="text-accent-gold"> </span>
                 </motion.h1>
               </div>
             </div>
@@ -186,9 +186,9 @@ const CinematicHero: React.FC = () => {
                 textShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
               }}
             >
-              Elite fitness coaching designed to unlock your full potential
+               
               <br className="hidden sm:block" />
-              Transform your body, mind, and lifestyle
+               
             </motion.p>
 
             {/* CTA Buttons */}
