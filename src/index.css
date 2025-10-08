@@ -86,10 +86,8 @@ img[loading="lazy"].loaded {
 
 /* GPU Acceleration for animations */
 .transform-gpu {
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  perspective: 1000px;
-  will-change: transform;
 }
 
 /* Custom Animations */
@@ -132,8 +130,8 @@ img[loading="lazy"].loaded {
 
 /* Cinematic Effects */
 .cinematic-blur {
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .depth-of-field {
@@ -146,16 +144,8 @@ img[loading="lazy"].loaded {
 }
 
 /* Performance Classes */
-.will-change-transform {
-  will-change: transform;
-}
-
-.will-change-opacity {
-  will-change: opacity;
-}
-
 .hardware-accelerated {
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
 }
 
